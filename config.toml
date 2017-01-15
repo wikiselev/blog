@@ -4,7 +4,7 @@ languageCode = "en-us"
 title = "Vladimir Kiselev"
 theme = "hugo-lithium-theme"
 googleAnalytics = "UA-57698291-1"
-disqusShortname = "genatuk"
+disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 
 [permalinks]
