@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Vladimir Kiselev</title>
+    <link>/post/index.xml</link>
+    <description>Recent content in Posts on Vladimir Kiselev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 11 Dec 2015 20:26:17 +0000</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to start working with R</title>
+      <link>/2015/12/11/how-to-start-working-with-r/</link>
+      <pubDate>Fri, 11 Dec 2015 20:26:17 +0000</pubDate>
+      
+      <guid>/2015/12/11/how-to-start-working-with-r/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve just come across a great &lt;a href=&#34;http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/&#34;&gt;blog post&lt;/a&gt; about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SC3 poster</title>
+      <link>/2015/10/29/sc3-poster/</link>
+      <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
+      
+      <guid>/2015/10/29/sc3-poster/</guid>
+      <description>&lt;p&gt;I am attending the &lt;a href=&#34;https://registration.hinxton.wellcome.ac.uk/events/item.aspx?e=517&#34;&gt;Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://f1000research.com/posters/4-1182&#34;&gt;http://f1000research.com/posters/4-1182&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In total our group is presenting 5 posters! Here they are:&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/wikiselev&#34;&gt;@wikiselev&lt;/a&gt; with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/KhxnOGGlUW&#34;&gt;pic.twitter.com/KhxnOGGlUW&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659812760742707200&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Poster selfie at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/UYCwHJJwZB&#34;&gt;pic.twitter.com/UYCwHJJwZB&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659813009271967744&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Tallulah with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/jbJTzuMygQ&#34;&gt;pic.twitter.com/jbJTzuMygQ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659820075474665472&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/ge_parada&#34;&gt;@ge_parada&lt;/a&gt; with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/LIxgC0hSky&#34;&gt;pic.twitter.com/LIxgC0hSky&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659820180281925632&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/IGeoso&#34;&gt;@IGeoso&lt;/a&gt; with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/Vy8eIKiRWX&#34;&gt;pic.twitter.com/Vy8eIKiRWX&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659812588059025408&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How medicine turns into advertising</title>
+      <link>/2015/10/20/how-medicine-turns-into-advertising/</link>
+      <pubDate>Tue, 20 Oct 2015 20:23:30 +0000</pubDate>
+      
+      <guid>/2015/10/20/how-medicine-turns-into-advertising/</guid>
+      <description>&lt;p&gt;I have just learnt about some &lt;a href=&#34;https://www.washingtonpost.com/news/to-your-health/wp/2015/10/16/a-comprehensive-guide-to-theranos-troubles-and-what-it-means-for-you/&#34;&gt;tension&lt;/a&gt; growing around &lt;a href=&#34;https://www.theranos.com/&#34;&gt;Theranos&lt;/a&gt; biotech startup. Looks like their advertisement strategy worked very well, giving them more than 400 million dollars of investments. However, now the whole technology is under a big question. The topic is familiar to me because last year I took part in the &lt;a href=&#34;http://www.biotechnologyyes.co.uk/biotechnologyyes/index.aspx&#34;&gt;Biotechnology YES&lt;/a&gt; competition and my team presented a similar idea of diagnosing cancer relapse from a blood test. We figured out how many bottlenecks and troubles appear once you start implementing the technology. And already at that time I felt that there are a lot of unrealistic projects out there that get some funding by really good advertising but then they usually quickly die. I am not sure the same is happenning with &lt;a href=&#34;https://www.theranos.com/&#34;&gt;Theranos&lt;/a&gt; because they are alredy very big and are running, but let&amp;rsquo;s see.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SC3 - consensus clustering of single cell RNA Seq data</title>
+      <link>/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
+      
+      <guid>/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <description>&lt;p&gt;Today I presented the &lt;a href=&#34;http://github.com/hemberg-lab/SC3&#34;&gt;SC3 tool&lt;/a&gt; that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the &lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/edgeR.html&#34;&gt;&lt;strong&gt;edgeR&lt;/strong&gt;&lt;/a&gt; developer &lt;a href=&#34;https://sites.google.com/site/davismcc/&#34;&gt;Davis McCarthy&lt;/a&gt;. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;922a274fae4b4e4ea08cdea190642bed&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My new paper is out!</title>
+      <link>/2015/10/13/my-new-paper-is-out/</link>
+      <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
+      
+      <guid>/2015/10/13/my-new-paper-is-out/</guid>
+      <description>&lt;p&gt;My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a &lt;a href=&#34;http://nar.oxfordjournals.org/content/early/2015/10/11/nar.gkv1015.full&#34;&gt;link&lt;/a&gt; to it. It has been long 4 years since I started that project and I am very happy that finally it is published!&lt;/p&gt;
+
+&lt;p&gt;Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ISMARA client</title>
+      <link>/2015/09/22/ismara-client/</link>
+      <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
+      
+      <guid>/2015/09/22/ismara-client/</guid>
+      <description>&lt;p&gt;I was using &lt;a href=&#34;https://ismara.unibas.ch/fcgi/mara&#34;&gt;ISMARA&lt;/a&gt; for my last paper which is now in press in &lt;a href=&#34;http://nar.oxfordjournals.org/&#34;&gt;NAR journal&lt;/a&gt;. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading. Finally this problem is solved now and ISMARA developers introduced a &lt;a href=&#34;https://ismara.unibas.ch/ISMARA/client/&#34;&gt;client&lt;/a&gt; which can be downloaded and used for data preprocessing. The preprocessed data is then very small and light and can be easily and fastly uploaded even with a slow internet connection. This is excellent, thank you ISMARA guys for your great work. The next step would be to release the code! :-)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics Algorithms</title>
+      <link>/2015/09/15/bioinformatics-algorithms/</link>
+      <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
+      
+      <guid>/2015/09/15/bioinformatics-algorithms/</guid>
+      <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
+
+&lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for now, I am off to read some really cool stuff, hope you can share my excitement!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>ISMB 2015 Poster</title>
+      <link>/2015/07/23/ismb-2015-poster/</link>
+      <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
+      
+      <guid>/2015/07/23/ismb-2015-poster/</guid>
+      <description>&lt;p&gt;At &lt;a href=&#34;http://www.iscb.org/ismbeccb2015&#34;&gt;ISMB-2015&lt;/a&gt; in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;You can view/download the poster at &lt;a href=&#34;http://f1000research.com/posters/4-226&#34;&gt;F1000 website&lt;/a&gt;. All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Job applications</title>
+      <link>/2015/07/21/job-applications/</link>
+      <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
+      
+      <guid>/2015/07/21/job-applications/</guid>
+      <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
+
+&lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:
+https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;usp=sharing --&gt;
+
+&lt;iframe src=&#39;http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;font=Arvo-PTSans&amp;maptype=toner&amp;lang=en&amp;height=350&#39; width=&#39;100%&#39; height=&#39;360&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The timeline was created by using a &lt;a href=&#34;http://timeline.knightlab.com/&#34;&gt;timeline tool&lt;/a&gt; from KnightLab.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Hello world</title>
+      <link>/2015/07/21/hello-world/</link>
+      <pubDate>Tue, 21 Jul 2015 19:43:09 +0000</pubDate>
+      
+      <guid>/2015/07/21/hello-world/</guid>
+      <description>&lt;p&gt;Hi all,&lt;/p&gt;
+
+&lt;p&gt;I just started this blog and will use it as my main personal blog. I will fetch all my useful stuff that is elsewhere on the Web and post it here. My contact details are below - let&amp;rsquo;s stay in touch!&lt;/p&gt;
+
+&lt;p&gt;Cheers,
+Vlad&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Plain Markdown Post</title>
+      <link>/2014/12/30/a-plain-markdown-post/</link>
+      <pubDate>Tue, 30 Dec 2014 21:49:57 -0700</pubDate>
+      
+      <guid>/2014/12/30/a-plain-markdown-post/</guid>
+      <description>&lt;p&gt;This is a post written in plain Markdown (&lt;code&gt;*.md&lt;/code&gt;) instead of R Markdown (&lt;code&gt;*.Rmd&lt;/code&gt;). The major differences are:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (&lt;code&gt;```{r}&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;A plain Markdown post is rendered through &lt;a href=&#34;https://gohugo.io/overview/configuration/&#34;&gt;Blackfriday&lt;/a&gt;, and an R Markdown document is compiled by &lt;a href=&#34;http://rmarkdown.rstudio.com&#34;&gt;&lt;strong&gt;rmarkdown&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;http://pandoc.org&#34;&gt;Pandoc&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown. For example, you can write a task list with Blackfriday but not with Pandoc:&lt;/p&gt;
+
+&lt;ul class=&#34;task-list&#34;&gt;
+&lt;li&gt;&lt;input type=&#34;checkbox&#34; checked disabled class=&#34;task-list-item&#34;&gt; Write an R package.&lt;/li&gt;
+&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Write a book.&lt;/li&gt;
+&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;input type=&#34;checkbox&#34; disabled class=&#34;task-list-item&#34;&gt; Profit!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Similarly, Blackfriday does not support LaTeX math and Pandoc does. I have added the MathJax support to this theme (&lt;a href=&#34;https://github.com/yihui/hugo-lithium-theme&#34;&gt;hugo-lithium-theme&lt;/a&gt;) but there is a caveat for plain Markdown posts: you have to include inline math expressions in  a pair of escaped parentheses &lt;code&gt;\&lt;/code&gt;&lt;code&gt;( \)&lt;/code&gt; instead of dollar signs &lt;code&gt;$ $&lt;/code&gt;, e.g. &lt;code&gt;\(S_n = \sum_{i=1}^n X_i\)&lt;/code&gt;. For R Markdown posts, you can use &lt;code&gt;$ $&lt;/code&gt; to write inline math expressions.&lt;/p&gt;
+
+&lt;p&gt;When creating a new post, you have to decide whether the post format is Markdown or R Markdown, and this can be done via the &lt;code&gt;rmd&lt;/code&gt; argument of the function &lt;code&gt;blogdown::new_post()&lt;/code&gt;, e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;blogdown::new_post(&amp;quot;Post Title&amp;quot;, rmd = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

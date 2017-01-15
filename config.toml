@@ -1,0 +1,25 @@
+baseurl = "/"
+relativeurls = true
+languageCode = "en-us"
+title = "Vladimir Kiselev"
+theme = "hugo-lithium-theme"
+googleAnalytics = "UA-57698291-1"
+disqusShortname = "wikiselev"
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+[[menu.main]]
+    name = "Stuff"
+    url = "/stuff/"
+
+[params]
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.9.0"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
