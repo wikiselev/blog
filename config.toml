@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "http://genat.uk"
 relativeurls = true
 languageCode = "en-us"
 title = "Vladimir Kiselev"
