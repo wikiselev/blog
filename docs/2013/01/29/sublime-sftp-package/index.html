@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.18.1" />
+
+
+<title>Sublime SFTP package - Vladimir Kiselev</title>
+<meta property="og:title" content="Sublime SFTP package - Vladimir Kiselev">
+
+
+
+  
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="http://genat.uk/css/main.css" media="all">
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+    <a href="http://genat.uk/"><div class="nav-title">Vladimir Kiselev</div></a>
+  <ul class="nav-links">
+    
+    <li><a href="../../../../about/">About</a></li>
+    
+    <li><a href="../../../../stuff/">Stuff</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Sublime SFTP package</h1>
+
+    
+    <span class="article-date">January 29, 2013</span>
+    
+
+    <div class="article-content">
+      <p>I’ve become an addicted fan of the <a href="http://www.sublimetext.com/">Sublime Text editor</a>. This is the most amazing text editor I’ve worked with. It’s been already greatly described in other blogs (see, for example <a href="http://1p1e1.tumblr.com/post/14262857223/9-reasons-you-must-install-sublime-text-2-code-like-a">here</a> and <a href="http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/">here</a>), so I am not going into the details about it’s cool features. What I want to write about is one it’s packages which I find particularly useful — <a href="http://wbond.net/sublime_packages/sftp">Sublime SFTP</a>.</p>
+
+<p>This package is very convenient if you run your jobs on a remote machine or a computational cluster. It’s basic functions are transferring files to the remote machine via FTP, FTPS and SFTP. But due to Sublime key bindings (keyboard shortcuts) the whole process of synchronizing your files is very handy (you almost don’t need a mouse) and takes milliseconds. And more importantly, you don’t need any other software except Sublime to edit and synchronize your code — it’s an all-in-one product!</p>
+
+<p>By default, Sublime SFTP free trial is indefinite (it’s not restricted to 30 days), but you will occasionally receive a message asking to buy a license. Once you buy a license and activate it, you will receive no messages.</p>
+
+<p>As I said this package is very handy. Here is a snapshot of it’s features:</p>
+
+
+<figure >
+    
+        <img src="../../../../images/sublime.png" />
+    
+    
+</figure>
+
+
+<p>On the negative side — to be honest the only problem I had with this package was ssh localhost authentication (I am tunneling my remote machine using an RSA token key, and then mapping it using my localhost). I am not sure whether all of this make any sense, but I hope more experienced guys will understand it! Anyway, whenever I wanted to SFTP to my remote machine my Sublime editor always showed an error message about failed localhost authentication. The solution to this problem turned out to be quite simple. Normally, what you need to do is to change one of your ssh settings in <strong>~/.ssh/config</strong> (user configuration file) or <strong>/etc/ssh_config</strong> (global system configuration file). To edit these files you will need to change their permissions — please have a look here on how to do this. In the files you need to uncomment or add <strong>NoHostAuthenticationForLocalhost</strong> setting and change its value to <strong>yes</strong> (for more description on ssh settings please look <a href="http://linuxcommando.blogspot.co.uk/2008/10/how-to-disable-ssh-host-key-checking.html">here</a> and <a href="http://linuxcommando.blogspot.co.uk/2008/10/how-to-disable-ssh-host-key-checking.html">here</a>):</p>
+
+<p>NoHostAuthenticationForLocalhost yes</p>
+
+<p>Once you’ve done that your Sublime SFTP should not show any error message about the localhost authorization.</p>
+
+<p>Do you use this package a lot? Like it? Did you have any problems with it? Any tips about them? Please comment!</p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'genatuk';
+    var disqus_identifier = 'http:\/\/genat.uk\/2013\/01\/29\/sublime-sftp-package\/';
+    var disqus_title = 'Sublime SFTP package';
+    var disqus_url = 'http:\/\/genat.uk\/2013\/01\/29\/sublime-sftp-package\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</main>
+
+
+    </div>
+    
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/r.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/yaml.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/tex.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/languages/bash.min.js"></script>
+    
+    <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+    
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-57698291-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
+
