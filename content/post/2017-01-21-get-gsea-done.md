@@ -1,5 +1,5 @@
 ---
-date: 2017-01-20T17:36:50Z
+date: 2017-01-21T19:57:37Z
 title: "Get GSEA done!"
 ---
 
@@ -25,13 +25,13 @@ So, after such a long introduction I can finally tell you how to easily run GSEA
 
 The first gene set should be created, ranked by some value and written to a file. The simplest example would be a set of differentially expressed genes ranked by their log-fold change. The file format must be [rnk](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29):
 
-![](http://genat.uk/images/Rnk_format_snapshot.gif)
+{{< figure src="/images/Rnk_format_snapshot.gif" title="" >}}
 
 ## Gene file (*.grp)
 
 The second gene set should be just created and written to a file. The file format must be [grp](http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29):
 
-![](http://genat.uk/images/Grp_format_snapshot.gif)
+{{< figure src="/images/Grp_format_snapshot.gif" title="" >}}
 
 ## Run GSEA
 
@@ -58,7 +58,7 @@ The second gene set should be just created and written to a file. The file forma
 3. In _Files produces as part of this analysis_ double click on the html report. The report will open in your browser window.
 4. To view a standard GSEA plot click on the _Snapshot of enrichment results_ link:
 
-![](http://genat.uk/images/gsea_plot.png)
+{{< figure src="/images/gsea_plot.png" title="" >}}
 
 ## Conclusions
 

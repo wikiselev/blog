@@ -2,54 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vladimir Kiselev</title>
-    <link>http://genat.uk/index.xml</link>
+    <link>/index.xml</link>
     <description>Recent content on Vladimir Kiselev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jan 2017 17:36:50 +0000</lastBuildDate>
-    <atom:link href="http://genat.uk/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Jan 2017 19:57:37 +0000</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Get GSEA done!</title>
-      <link>http://genat.uk/2017/01/20/get-gsea-done/</link>
-      <pubDate>Fri, 20 Jan 2017 17:36:50 +0000</pubDate>
+      <link>/2017/01/21/get-gsea-done/</link>
+      <pubDate>Sat, 21 Jan 2017 19:57:37 +0000</pubDate>
       
-      <guid>http://genat.uk/2017/01/20/get-gsea-done/</guid>
-      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+      <guid>/2017/01/21/get-gsea-done/</guid>
+      <description>
 
-/BLOGDOWN-BODY-BEFORE --&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Thousands of times I’ve heard of the &lt;a href=&#34;http://software.broadinstitute.org/gsea/index.jsp&#34;&gt;&lt;strong&gt;Gene Set Enrichment Analysis&lt;/strong&gt;&lt;/a&gt; or GSEA. Thousands of times I tried to run it and thousands of times I failed!&lt;/p&gt;
-&lt;p&gt;As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn’t work out well…&lt;/p&gt;
-&lt;p&gt;First of all, there are millions of R tools which can run GSEA analysis. A simple Google search provides quite a large list: &lt;a href=&#34;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&#34; class=&#34;uri&#34;&gt;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&lt;/a&gt;. However, if you read manuals from these tools it is still quite tricky to figure out how to run GSEA.&lt;/p&gt;
+&lt;p&gt;Thousands of times I&amp;rsquo;ve heard of the &lt;a href=&#34;http://software.broadinstitute.org/gsea/index.jsp&#34;&gt;&lt;strong&gt;Gene Set Enrichment Analysis&lt;/strong&gt;&lt;/a&gt; or GSEA. Thousands of times I tried to run it and thousands of times I failed!&lt;/p&gt;
+
+&lt;p&gt;As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn&amp;rsquo;t work out well&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;First of all, there are millions of R tools which can run GSEA analysis. A simple Google search provides quite a large list: &lt;a href=&#34;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&#34;&gt;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&lt;/a&gt;. However, if you read manuals from these tools it is still quite tricky to figure out how to run GSEA.&lt;/p&gt;
+
 &lt;p&gt;Additionally, most of the tools are written and explained for microarray data only. In my case I needed to perform GSEA on a mix of microarray and single-cell RNA-Seq data. So I still had no idea how to start.&lt;/p&gt;
-&lt;p&gt;As usual in these cases it is better to go to the origin and figure out what the definition of GSEA is. It is easy to find the original paper about GSEA: &lt;a href=&#34;http://www.pnas.org/content/102/43/15545.full.pdf&#34; class=&#34;uri&#34;&gt;http://www.pnas.org/content/102/43/15545.full.pdf&lt;/a&gt;. From reading the paper it is clear that in a very primitive way to perform the GSEA one just needs two gene sets, where one is ranked using continuous variable and another one is just a simple gene list. Without going into the details, the goal of GSEA is to determine whether the members of the second set are randomly distributed throughout the first set or primarily found at its top or bottom. I had already prepared both gene sets but still could not find a tool to perform this simple procedure.&lt;/p&gt;
-&lt;p&gt;Again, going back to the origins, the first GSEA tool developed by the authors of the original publication is available from the Broad Institute webiste: &lt;a href=&#34;http://software.broadinstitute.org/gsea&#34; class=&#34;uri&#34;&gt;http://software.broadinstitute.org/gsea&lt;/a&gt;. I downloaded and ran the tool. However, I was still unable ot get any meaningful result, except getting different uninterpretable errors.&lt;/p&gt;
+
+&lt;p&gt;As usual in these cases it is better to go to the origin and figure out what the definition of GSEA is. It is easy to find the original paper about GSEA: &lt;a href=&#34;http://www.pnas.org/content/102/43/15545.full.pdf&#34;&gt;http://www.pnas.org/content/102/43/15545.full.pdf&lt;/a&gt;. From reading the paper it is clear that in a very primitive way to perform the GSEA one just needs two gene sets, where one is ranked using continuous variable and another one is just a simple gene list. Without going into the details, the goal of GSEA is to determine whether the members of the second set are randomly distributed throughout the first set or primarily found at its top or bottom. I had already prepared both gene sets but still could not find a tool to perform this simple procedure.&lt;/p&gt;
+
+&lt;p&gt;Again, going back to the origins, the first GSEA tool developed by the authors of the original publication is available from the Broad Institute webiste: &lt;a href=&#34;http://software.broadinstitute.org/gsea&#34;&gt;http://software.broadinstitute.org/gsea&lt;/a&gt;. I downloaded and ran the tool. However, I was still unable ot get any meaningful result, except getting different uninterpretable errors.&lt;/p&gt;
+
 &lt;p&gt;So, when all hopes were lost, I desperately contacted a bioinformatician who was helping my collaborators with the analysis. Apparently he went through similar difficulties with GSEA before, but he was more persistent than I was and he was able to run it using the tool from the Broad Institute. But more importantly he recorded his steps in a manual and kindly shared it with me.&lt;/p&gt;
-&lt;p&gt;So, after such a long introduction I can finally tell you how to easily run GSEA when you have two gene sets, one of which is ranked using a continuous variable (e.g. log-fold change in expression if the genes are differentially expressed).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;gene-rank-file-.rnk&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Gene rank file (*.rnk)&lt;/h2&gt;
+
+&lt;p&gt;So, after such a long introduction I can finally tell you how to easily run GSEA when you have two gene sets, one of which is ranked using a continuous variable (e.g. log-fold change in expression if the genes are differentially expressed).&lt;/p&gt;
+
+&lt;h2 id=&#34;gene-rank-file-rnk&#34;&gt;Gene rank file (*.rnk)&lt;/h2&gt;
+
 &lt;p&gt;The first gene set should be created, ranked by some value and written to a file. The simplest example would be a set of differentially expressed genes ranked by their log-fold change. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29&#34;&gt;rnk&lt;/a&gt;:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://genat.uk/images/Rnk_format_snapshot.gif&#34; /&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;gene-file-.grp&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Gene file (*.grp)&lt;/h2&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./images/Rnk_format_snapshot.gif&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;gene-file-grp&#34;&gt;Gene file (*.grp)&lt;/h2&gt;
+
 &lt;p&gt;The second gene set should be just created and written to a file. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29&#34;&gt;grp&lt;/a&gt;:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://genat.uk/images/Grp_format_snapshot.gif&#34; /&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;run-gsea&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Run GSEA&lt;/h2&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
-&lt;li&gt;You can download and launch the software by clicking the &lt;strong&gt;Launch&lt;/strong&gt; button at &lt;a href=&#34;http://www.broadinstitute.org/gsea/downloads.jsp&#34; class=&#34;uri&#34;&gt;http://www.broadinstitute.org/gsea/downloads.jsp&lt;/a&gt;.&lt;/li&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./images/Grp_format_snapshot.gif&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;run-gsea&#34;&gt;Run GSEA&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You can download and launch the software by clicking the &lt;strong&gt;Launch&lt;/strong&gt; button at &lt;a href=&#34;http://www.broadinstitute.org/gsea/downloads.jsp&#34;&gt;http://www.broadinstitute.org/gsea/downloads.jsp&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Click on &lt;strong&gt;Load data&lt;/strong&gt; button in the left menu.&lt;/li&gt;
 &lt;li&gt;Load the two data files (&lt;em&gt;rnk&lt;/em&gt; and &lt;em&gt;grp&lt;/em&gt;).&lt;/li&gt;
 &lt;li&gt;In the main menu at the top click on &lt;em&gt;Tools&lt;/em&gt; -&amp;gt; &lt;em&gt;GseaPreranked&lt;/em&gt;.&lt;/li&gt;
@@ -65,47 +80,43 @@
 &lt;li&gt;Set &lt;em&gt;Min size: exclude smaller sets&lt;/em&gt; to &lt;strong&gt;1&lt;/strong&gt; for the peace of mind.&lt;/li&gt;
 &lt;li&gt;Click &lt;em&gt;Run&lt;/em&gt; button!&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;div id=&#34;view-the-results&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;View the results&lt;/h2&gt;
-&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+
+&lt;h2 id=&#34;view-the-results&#34;&gt;View the results&lt;/h2&gt;
+
+&lt;ol&gt;
 &lt;li&gt;Click on &lt;em&gt;Analysis history&lt;/em&gt; in the left menu.&lt;/li&gt;
 &lt;li&gt;In &lt;em&gt;Reports&lt;/em&gt; -&amp;gt; &lt;em&gt;Current session&lt;/em&gt; click on your newly created report&lt;/li&gt;
 &lt;li&gt;In &lt;em&gt;Files produces as part of this analysis&lt;/em&gt; double click on the html report. The report will open in your browser window.&lt;/li&gt;
 &lt;li&gt;To view a standard GSEA plot click on the &lt;em&gt;Snapshot of enrichment results&lt;/em&gt; link:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://genat.uk/images/gsea_plot.png&#34; /&gt;
 
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Conclusions&lt;/h2&gt;
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;./images/gsea_plot.png&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
+
 &lt;p&gt;Hope this manual was helpful for you and hope you have managed to run GSEA analysis on your data. If you know any other GSEA tools please let me know!&lt;/p&gt;
-&lt;/div&gt;
-
-
-&lt;!-- BLOGDOWN-HEAD
-
-
-
-
-/BLOGDOWN-HEAD --&gt;
 </description>
     </item>
     
     <item>
       <title>Hello, World! 2</title>
-      <link>http://genat.uk/2017/01/16/hello-world-2/</link>
+      <link>/2017/01/16/hello-world-2/</link>
       <pubDate>Mon, 16 Jan 2017 08:54:39 +0000</pubDate>
       
-      <guid>http://genat.uk/2017/01/16/hello-world-2/</guid>
+      <guid>/2017/01/16/hello-world-2/</guid>
       <description>&lt;!-- BLOGDOWN-BODY-BEFORE
 
 /BLOGDOWN-BODY-BEFORE --&gt;
 
 &lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/2017/01/16/hello-world-2/figures/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/2017/01/16/hello-world-2/figures/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
 
 
 &lt;!-- BLOGDOWN-HEAD
@@ -119,20 +130,20 @@
     
     <item>
       <title>How to start working with R</title>
-      <link>http://genat.uk/2015/12/11/how-to-start-working-with-r/</link>
+      <link>/2015/12/11/how-to-start-working-with-r/</link>
       <pubDate>Fri, 11 Dec 2015 20:26:17 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/12/11/how-to-start-working-with-r/</guid>
+      <guid>/2015/12/11/how-to-start-working-with-r/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve just come across a great &lt;a href=&#34;http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/&#34;&gt;blog post&lt;/a&gt; about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SC3 poster</title>
-      <link>http://genat.uk/2015/10/29/sc3-poster/</link>
+      <link>/2015/10/29/sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/10/29/sc3-poster/</guid>
+      <guid>/2015/10/29/sc3-poster/</guid>
       <description>&lt;p&gt;I am attending the &lt;a href=&#34;https://registration.hinxton.wellcome.ac.uk/events/item.aspx?e=517&#34;&gt;Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:&lt;/p&gt;
@@ -160,20 +171,20 @@
     
     <item>
       <title>How medicine turns into advertising</title>
-      <link>http://genat.uk/2015/10/20/how-medicine-turns-into-advertising/</link>
+      <link>/2015/10/20/how-medicine-turns-into-advertising/</link>
       <pubDate>Tue, 20 Oct 2015 20:23:30 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/10/20/how-medicine-turns-into-advertising/</guid>
+      <guid>/2015/10/20/how-medicine-turns-into-advertising/</guid>
       <description>&lt;p&gt;I have just learnt about some &lt;a href=&#34;https://www.washingtonpost.com/news/to-your-health/wp/2015/10/16/a-comprehensive-guide-to-theranos-troubles-and-what-it-means-for-you/&#34;&gt;tension&lt;/a&gt; growing around &lt;a href=&#34;https://www.theranos.com/&#34;&gt;Theranos&lt;/a&gt; biotech startup. Looks like their advertisement strategy worked very well, giving them more than 400 million dollars of investments. However, now the whole technology is under a big question. The topic is familiar to me because last year I took part in the &lt;a href=&#34;http://www.biotechnologyyes.co.uk/biotechnologyyes/index.aspx&#34;&gt;Biotechnology YES&lt;/a&gt; competition and my team presented a similar idea of diagnosing cancer relapse from a blood test. We figured out how many bottlenecks and troubles appear once you start implementing the technology. And already at that time I felt that there are a lot of unrealistic projects out there that get some funding by really good advertising but then they usually quickly die. I am not sure the same is happenning with &lt;a href=&#34;https://www.theranos.com/&#34;&gt;Theranos&lt;/a&gt; because they are alredy very big and are running, but let&amp;rsquo;s see.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SC3 - consensus clustering of single cell RNA Seq data</title>
-      <link>http://genat.uk/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <link>/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</link>
       <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <guid>/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</guid>
       <description>&lt;p&gt;Today I presented the &lt;a href=&#34;http://github.com/hemberg-lab/SC3&#34;&gt;SC3 tool&lt;/a&gt; that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the &lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/edgeR.html&#34;&gt;&lt;strong&gt;edgeR&lt;/strong&gt;&lt;/a&gt; developer &lt;a href=&#34;https://sites.google.com/site/davismcc/&#34;&gt;Davis McCarthy&lt;/a&gt;. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;922a274fae4b4e4ea08cdea190642bed&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -184,10 +195,10 @@
     
     <item>
       <title>My new paper is out!</title>
-      <link>http://genat.uk/2015/10/13/my-new-paper-is-out/</link>
+      <link>/2015/10/13/my-new-paper-is-out/</link>
       <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/10/13/my-new-paper-is-out/</guid>
+      <guid>/2015/10/13/my-new-paper-is-out/</guid>
       <description>&lt;p&gt;My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a &lt;a href=&#34;http://nar.oxfordjournals.org/content/early/2015/10/11/nar.gkv1015.full&#34;&gt;link&lt;/a&gt; to it. It has been long 4 years since I started that project and I am very happy that finally it is published!&lt;/p&gt;
 
 &lt;p&gt;Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!&lt;/p&gt;
@@ -196,20 +207,20 @@
     
     <item>
       <title>ISMARA client</title>
-      <link>http://genat.uk/2015/09/22/ismara-client/</link>
+      <link>/2015/09/22/ismara-client/</link>
       <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/09/22/ismara-client/</guid>
+      <guid>/2015/09/22/ismara-client/</guid>
       <description>&lt;p&gt;I was using &lt;a href=&#34;https://ismara.unibas.ch/fcgi/mara&#34;&gt;ISMARA&lt;/a&gt; for my last paper which is now in press in &lt;a href=&#34;http://nar.oxfordjournals.org/&#34;&gt;NAR journal&lt;/a&gt;. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading. Finally this problem is solved now and ISMARA developers introduced a &lt;a href=&#34;https://ismara.unibas.ch/ISMARA/client/&#34;&gt;client&lt;/a&gt; which can be downloaded and used for data preprocessing. The preprocessed data is then very small and light and can be easily and fastly uploaded even with a slow internet connection. This is excellent, thank you ISMARA guys for your great work. The next step would be to release the code! :-)&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Bioinformatics Algorithms</title>
-      <link>http://genat.uk/2015/09/15/bioinformatics-algorithms/</link>
+      <link>/2015/09/15/bioinformatics-algorithms/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/09/15/bioinformatics-algorithms/</guid>
+      <guid>/2015/09/15/bioinformatics-algorithms/</guid>
       <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
 
 &lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
@@ -220,10 +231,10 @@
     
     <item>
       <title>ISMB 2015 Poster</title>
-      <link>http://genat.uk/2015/07/23/ismb-2015-poster/</link>
+      <link>/2015/07/23/ismb-2015-poster/</link>
       <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/07/23/ismb-2015-poster/</guid>
+      <guid>/2015/07/23/ismb-2015-poster/</guid>
       <description>&lt;p&gt;At &lt;a href=&#34;http://www.iscb.org/ismbeccb2015&#34;&gt;ISMB-2015&lt;/a&gt; in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;&lt;/p&gt;
 
 &lt;p&gt;You can view/download the poster at &lt;a href=&#34;http://f1000research.com/posters/4-226&#34;&gt;F1000 website&lt;/a&gt;. All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
@@ -234,10 +245,10 @@
     
     <item>
       <title>Job applications</title>
-      <link>http://genat.uk/2015/07/21/job-applications/</link>
+      <link>/2015/07/21/job-applications/</link>
       <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/07/21/job-applications/</guid>
+      <guid>/2015/07/21/job-applications/</guid>
       <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
 
 &lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:
@@ -251,10 +262,10 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
     
     <item>
       <title>Hello world</title>
-      <link>http://genat.uk/2015/07/21/hello-world/</link>
+      <link>/2015/07/21/hello-world/</link>
       <pubDate>Tue, 21 Jul 2015 19:43:09 +0000</pubDate>
       
-      <guid>http://genat.uk/2015/07/21/hello-world/</guid>
+      <guid>/2015/07/21/hello-world/</guid>
       <description>&lt;p&gt;Hi all,&lt;/p&gt;
 
 &lt;p&gt;I just started this blog and will use it as my main personal blog. I will fetch all my useful stuff that is elsewhere on the Web and post it here. My contact details are below - let&amp;rsquo;s stay in touch!&lt;/p&gt;
@@ -266,10 +277,10 @@ Vlad&lt;/p&gt;
     
     <item>
       <title>A Plain Markdown Post</title>
-      <link>http://genat.uk/2014/12/30/a-plain-markdown-post/</link>
+      <link>/2014/12/30/a-plain-markdown-post/</link>
       <pubDate>Tue, 30 Dec 2014 21:49:57 -0700</pubDate>
       
-      <guid>http://genat.uk/2014/12/30/a-plain-markdown-post/</guid>
+      <guid>/2014/12/30/a-plain-markdown-post/</guid>
       <description>&lt;p&gt;This is a post written in plain Markdown (&lt;code&gt;*.md&lt;/code&gt;) instead of R Markdown (&lt;code&gt;*.Rmd&lt;/code&gt;). The major differences are:&lt;/p&gt;
 
 &lt;ol&gt;
@@ -297,10 +308,10 @@ Vlad&lt;/p&gt;
     
     <item>
       <title>About</title>
-      <link>http://genat.uk/about/</link>
+      <link>/about/</link>
       <pubDate>Mon, 05 May 2014 21:48:51 -0700</pubDate>
       
-      <guid>http://genat.uk/about/</guid>
+      <guid>/about/</guid>
       <description>
 
 
@@ -338,10 +349,10 @@ Vlad&lt;/p&gt;
     
     <item>
       <title>Stuff</title>
-      <link>http://genat.uk/stuff/</link>
+      <link>/stuff/</link>
       <pubDate>Wed, 15 Jan 2014 20:45:09 +0000</pubDate>
       
-      <guid>http://genat.uk/stuff/</guid>
+      <guid>/stuff/</guid>
       <description>
 
 &lt;h4 id=&#34;data-visualization&#34;&gt;Data Visualization&lt;/h4&gt;

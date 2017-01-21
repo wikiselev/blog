@@ -21,18 +21,14 @@
 
 <link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/github.min.css' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="http://genat.uk/css/main.css" media="all">
-
-
-
-
+<link rel="stylesheet" href="../../../../css/main.css" media="all">
 
   </head>
   <body>
     <div class="wrapper">
       <header class="header">
         <nav class="nav">
-    <a href="http://genat.uk/"><div class="nav-title">Vladimir Kiselev</div></a>
+    <a href="../../../../"><div class="nav-title">Vladimir Kiselev</div></a>
   <ul class="nav-links">
     
     <li><a href="../../../../about/">About</a></li>
@@ -55,43 +51,60 @@
     <h1 class="article-title">Get GSEA done!</h1>
 
     
-    <span class="article-date">January 20, 2017</span>
+    <span class="article-date">January 21, 2017</span>
     
 
     <div class="article-content">
+      
 
+<h2 id="introduction">Introduction</h2>
 
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
-<p>Thousands of times I’ve heard of the <a href="http://software.broadinstitute.org/gsea/index.jsp"><strong>Gene Set Enrichment Analysis</strong></a> or GSEA. Thousands of times I tried to run it and thousands of times I failed!</p>
-<p>As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn’t work out well…</p>
-<p>First of all, there are millions of R tools which can run GSEA analysis. A simple Google search provides quite a large list: <a href="https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r" class="uri">https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r</a>. However, if you read manuals from these tools it is still quite tricky to figure out how to run GSEA.</p>
+<p>Thousands of times I&rsquo;ve heard of the <a href="http://software.broadinstitute.org/gsea/index.jsp"><strong>Gene Set Enrichment Analysis</strong></a> or GSEA. Thousands of times I tried to run it and thousands of times I failed!</p>
+
+<p>As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn&rsquo;t work out well&hellip;</p>
+
+<p>First of all, there are millions of R tools which can run GSEA analysis. A simple Google search provides quite a large list: <a href="https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r">https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r</a>. However, if you read manuals from these tools it is still quite tricky to figure out how to run GSEA.</p>
+
 <p>Additionally, most of the tools are written and explained for microarray data only. In my case I needed to perform GSEA on a mix of microarray and single-cell RNA-Seq data. So I still had no idea how to start.</p>
-<p>As usual in these cases it is better to go to the origin and figure out what the definition of GSEA is. It is easy to find the original paper about GSEA: <a href="http://www.pnas.org/content/102/43/15545.full.pdf" class="uri">http://www.pnas.org/content/102/43/15545.full.pdf</a>. From reading the paper it is clear that in a very primitive way to perform the GSEA one just needs two gene sets, where one is ranked using continuous variable and another one is just a simple gene list. Without going into the details, the goal of GSEA is to determine whether the members of the second set are randomly distributed throughout the first set or primarily found at its top or bottom. I had already prepared both gene sets but still could not find a tool to perform this simple procedure.</p>
-<p>Again, going back to the origins, the first GSEA tool developed by the authors of the original publication is available from the Broad Institute webiste: <a href="http://software.broadinstitute.org/gsea" class="uri">http://software.broadinstitute.org/gsea</a>. I downloaded and ran the tool. However, I was still unable ot get any meaningful result, except getting different uninterpretable errors.</p>
+
+<p>As usual in these cases it is better to go to the origin and figure out what the definition of GSEA is. It is easy to find the original paper about GSEA: <a href="http://www.pnas.org/content/102/43/15545.full.pdf">http://www.pnas.org/content/102/43/15545.full.pdf</a>. From reading the paper it is clear that in a very primitive way to perform the GSEA one just needs two gene sets, where one is ranked using continuous variable and another one is just a simple gene list. Without going into the details, the goal of GSEA is to determine whether the members of the second set are randomly distributed throughout the first set or primarily found at its top or bottom. I had already prepared both gene sets but still could not find a tool to perform this simple procedure.</p>
+
+<p>Again, going back to the origins, the first GSEA tool developed by the authors of the original publication is available from the Broad Institute webiste: <a href="http://software.broadinstitute.org/gsea">http://software.broadinstitute.org/gsea</a>. I downloaded and ran the tool. However, I was still unable ot get any meaningful result, except getting different uninterpretable errors.</p>
+
 <p>So, when all hopes were lost, I desperately contacted a bioinformatician who was helping my collaborators with the analysis. Apparently he went through similar difficulties with GSEA before, but he was more persistent than I was and he was able to run it using the tool from the Broad Institute. But more importantly he recorded his steps in a manual and kindly shared it with me.</p>
-<p>So, after such a long introduction I can finally tell you how to easily run GSEA when you have two gene sets, one of which is ranked using a continuous variable (e.g. log-fold change in expression if the genes are differentially expressed).</p>
-</div>
-<div id="gene-rank-file-.rnk" class="section level2">
-<h2>Gene rank file (*.rnk)</h2>
+
+<p>So, after such a long introduction I can finally tell you how to easily run GSEA when you have two gene sets, one of which is ranked using a continuous variable (e.g. log-fold change in expression if the genes are differentially expressed).</p>
+
+<h2 id="gene-rank-file-rnk">Gene rank file (*.rnk)</h2>
+
 <p>The first gene set should be created, ranked by some value and written to a file. The simplest example would be a set of differentially expressed genes ranked by their log-fold change. The file format must be <a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29">rnk</a>:</p>
-<div class="figure">
-<img src="http://genat.uk/images/Rnk_format_snapshot.gif" />
 
-</div>
-</div>
-<div id="gene-file-.grp" class="section level2">
-<h2>Gene file (*.grp)</h2>
+
+<figure >
+    
+        <img src="../../../../images/Rnk_format_snapshot.gif" />
+    
+    
+</figure>
+
+
+<h2 id="gene-file-grp">Gene file (*.grp)</h2>
+
 <p>The second gene set should be just created and written to a file. The file format must be <a href="http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29">grp</a>:</p>
-<div class="figure">
-<img src="http://genat.uk/images/Grp_format_snapshot.gif" />
 
-</div>
-</div>
-<div id="run-gsea" class="section level2">
-<h2>Run GSEA</h2>
-<ol style="list-style-type: decimal">
-<li>You can download and launch the software by clicking the <strong>Launch</strong> button at <a href="http://www.broadinstitute.org/gsea/downloads.jsp" class="uri">http://www.broadinstitute.org/gsea/downloads.jsp</a>.</li>
+
+<figure >
+    
+        <img src="../../../../images/Grp_format_snapshot.gif" />
+    
+    
+</figure>
+
+
+<h2 id="run-gsea">Run GSEA</h2>
+
+<ol>
+<li>You can download and launch the software by clicking the <strong>Launch</strong> button at <a href="http://www.broadinstitute.org/gsea/downloads.jsp">http://www.broadinstitute.org/gsea/downloads.jsp</a>.</li>
 <li>Click on <strong>Load data</strong> button in the left menu.</li>
 <li>Load the two data files (<em>rnk</em> and <em>grp</em>).</li>
 <li>In the main menu at the top click on <em>Tools</em> -&gt; <em>GseaPreranked</em>.</li>
@@ -107,26 +120,28 @@
 <li>Set <em>Min size: exclude smaller sets</em> to <strong>1</strong> for the peace of mind.</li>
 <li>Click <em>Run</em> button!</li>
 </ol>
-</div>
-<div id="view-the-results" class="section level2">
-<h2>View the results</h2>
-<ol style="list-style-type: decimal">
+
+<h2 id="view-the-results">View the results</h2>
+
+<ol>
 <li>Click on <em>Analysis history</em> in the left menu.</li>
 <li>In <em>Reports</em> -&gt; <em>Current session</em> click on your newly created report</li>
 <li>In <em>Files produces as part of this analysis</em> double click on the html report. The report will open in your browser window.</li>
 <li>To view a standard GSEA plot click on the <em>Snapshot of enrichment results</em> link:</li>
 </ol>
-<div class="figure">
-<img src="http://genat.uk/images/gsea_plot.png" />
 
-</div>
-</div>
-<div id="conclusions" class="section level2">
-<h2>Conclusions</h2>
+
+<figure >
+    
+        <img src="../../../../images/gsea_plot.png" />
+    
+    
+</figure>
+
+
+<h2 id="conclusions">Conclusions</h2>
+
 <p>Hope this manual was helpful for you and hope you have managed to run GSEA analysis on your data. If you know any other GSEA tools please let me know!</p>
-</div>
-
-
 
     </div>
   </article>
@@ -134,9 +149,9 @@
   <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'genatuk';
-    var disqus_identifier = 'http:\/\/genat.uk\/2017\/01\/20\/get-gsea-done\/';
+    var disqus_identifier = '\/2017\/01\/21\/get-gsea-done\/';
     var disqus_title = 'Get GSEA done!';
-    var disqus_url = 'http:\/\/genat.uk\/2017\/01\/20\/get-gsea-done\/';
+    var disqus_url = '\/2017\/01\/21\/get-gsea-done\/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
