@@ -34,7 +34,7 @@
 &lt;h2&gt;Gene rank file (*.rnk)&lt;/h2&gt;
 &lt;p&gt;The first gene set should be created, ranked by some value and written to a file. The simplest example would be a set of differentially expressed genes ranked by their log-fold change. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29&#34;&gt;rnk&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;images/Rnk_format_snapshot.gif&#34; /&gt;
+&lt;img src=&#34;http://genat.uk/images/Rnk_format_snapshot.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -42,7 +42,7 @@
 &lt;h2&gt;Gene file (*.grp)&lt;/h2&gt;
 &lt;p&gt;The second gene set should be just created and written to a file. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29&#34;&gt;grp&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;images/Grp_format_snapshot.gif&#34; /&gt;
+&lt;img src=&#34;http://genat.uk/images/Grp_format_snapshot.gif&#34; /&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -74,7 +74,10 @@
 &lt;li&gt;In &lt;em&gt;Files produces as part of this analysis&lt;/em&gt; double click on the html report. The report will open in your browser window.&lt;/li&gt;
 &lt;li&gt;To view a standard GSEA plot click on the &lt;em&gt;Snapshot of enrichment results&lt;/em&gt; link:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;{{&amp;lt; figure src=“images/gsea_plot.png” title=“” &amp;gt;}} &lt;img src=&#34;images/gsea_plot.png&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://genat.uk/images/gsea_plot.png&#34; /&gt;
+
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;
