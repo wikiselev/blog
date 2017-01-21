@@ -6,8 +6,84 @@
     <description>Recent content in Posts on Vladimir Kiselev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Jan 2017 08:54:39 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jan 2017 17:36:50 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Get GSEA done!</title>
+      <link>/2017/01/20/get-gsea-done/</link>
+      <pubDate>Fri, 20 Jan 2017 17:36:50 +0000</pubDate>
+      
+      <guid>/2017/01/20/get-gsea-done/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Thousands of times I’ve heard of the &lt;a href=&#34;http://software.broadinstitute.org/gsea/index.jsp&#34;&gt;&lt;strong&gt;Gene Set Enrichment Analysis&lt;/strong&gt;&lt;/a&gt; or GSEA. Thousands of times I tried to run it and thousands of times I failed!&lt;/p&gt;
+&lt;p&gt;As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn’t work out well…&lt;/p&gt;
+&lt;p&gt;First of all, there are millions of R tools which can run GSEA analysis. A simple Google search provides quite a large list: &lt;a href=&#34;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&#34; class=&#34;uri&#34;&gt;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&lt;/a&gt;. However, if you read manuals from these tools it is still quite tricky to figure out how to run GSEA.&lt;/p&gt;
+&lt;p&gt;Additionally, most of the tools are written and explained for microarray data only. In my case I needed to perform GSEA on a mix of microarray and single-cell RNA-Seq data. So I still had no idea how to start.&lt;/p&gt;
+&lt;p&gt;As usual in these cases it is better to go to the origin and figure out what the definition of GSEA is. It is easy to find the original paper about GSEA: &lt;a href=&#34;http://www.pnas.org/content/102/43/15545.full.pdf&#34; class=&#34;uri&#34;&gt;http://www.pnas.org/content/102/43/15545.full.pdf&lt;/a&gt;. From reading the paper it is clear that in a very primitive way to perform the GSEA one just needs two gene sets, where one is ranked using continuous variable and another one is just a simple gene list. Without going into the details, the goal of GSEA is to determine whether the members of the second set are randomly distributed throughout the first set or primarily found at its top or bottom. I had already prepared both gene sets but still could not find a tool to perform this simple procedure.&lt;/p&gt;
+&lt;p&gt;Again, going back to the origins, the first GSEA tool developed by the authors of the original publication is available from the Broad Institute webiste: &lt;a href=&#34;http://software.broadinstitute.org/gsea&#34; class=&#34;uri&#34;&gt;http://software.broadinstitute.org/gsea&lt;/a&gt;. I downloaded and ran the tool. However, I was still unable ot get any meaningful result, except getting different uninterpretable errors.&lt;/p&gt;
+&lt;p&gt;So, when all hopes were lost, I desperately contacted a bioinformatician who was helping my collaborators with the analysis. Apparently he went through similar difficulties with GSEA before, but he was more persistent than I was and he was able to run it using the tool from the Broad Institute. But more importantly he recorded his steps in a manual and kindly shared it with me.&lt;/p&gt;
+&lt;p&gt;So, after such a long introduction I can finally tell you how to easily run GSEA when you have two gene sets, one of which is ranked using a continuous variable (e.g. log-fold change in expression if the genes are differentially expressed).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gene-rank-file-.rnk&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Gene rank file (*.rnk)&lt;/h2&gt;
+&lt;p&gt;The first gene set should be created, ranked by some value and written to a file. The simplest example would be a set of differentially expressed genes ranked by their log-fold change. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29&#34;&gt;rnk&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;{{&amp;lt; figure src=“/images/Rnk_format_snapshot.gif”&amp;gt;}}&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gene-file-.grp&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Gene file (*.grp)&lt;/h2&gt;
+&lt;p&gt;The second gene set should be just created and written to a file. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29&#34;&gt;grp&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;{{&amp;lt; figure src=“/images/Grp_format_snapshot.gif”&amp;gt;}}&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;run-gsea&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Run GSEA&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;You can download and launch the software by clicking the &lt;strong&gt;Launch&lt;/strong&gt; button at &lt;a href=&#34;http://www.broadinstitute.org/gsea/downloads.jsp&#34; class=&#34;uri&#34;&gt;http://www.broadinstitute.org/gsea/downloads.jsp&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Click on &lt;strong&gt;Load data&lt;/strong&gt; button in the left menu.&lt;/li&gt;
+&lt;li&gt;Load the two data files (&lt;em&gt;rnk&lt;/em&gt; and &lt;em&gt;grp&lt;/em&gt;).&lt;/li&gt;
+&lt;li&gt;In the main menu at the top click on &lt;em&gt;Tools&lt;/em&gt; -&amp;gt; &lt;em&gt;GseaPreranked&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Click on &lt;em&gt;Gene sets database&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Click on &lt;em&gt;Gene sets (grp)&lt;/em&gt; tab and choose the &lt;em&gt;grp&lt;/em&gt; file you have loaded.&lt;/li&gt;
+&lt;li&gt;Click OK.&lt;/li&gt;
+&lt;li&gt;Click on &lt;em&gt;Ranked list&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Choose the &lt;em&gt;rnk&lt;/em&gt; file you have loaded.&lt;/li&gt;
+&lt;li&gt;Set &lt;em&gt;Collapse dataset to gene symbols&lt;/em&gt; to &lt;strong&gt;false&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Click on show &lt;em&gt;Basic Fields&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Change &lt;em&gt;Enrichment statistic&lt;/em&gt; to &lt;strong&gt;classic&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Set &lt;em&gt;Max size: exclude larger sets&lt;/em&gt; to a value higher than the number of genes in you gene set.&lt;/li&gt;
+&lt;li&gt;Set &lt;em&gt;Min size: exclude smaller sets&lt;/em&gt; to &lt;strong&gt;1&lt;/strong&gt; for the peace of mind.&lt;/li&gt;
+&lt;li&gt;Click &lt;em&gt;Run&lt;/em&gt; button!&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div id=&#34;view-the-results&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;View the results&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Click on &lt;em&gt;Analysis history&lt;/em&gt; in the left menu.&lt;/li&gt;
+&lt;li&gt;In &lt;em&gt;Reports&lt;/em&gt; -&amp;gt; &lt;em&gt;Current session&lt;/em&gt; click on your newly created report&lt;/li&gt;
+&lt;li&gt;In &lt;em&gt;Files produces as part of this analysis&lt;/em&gt; double click on the html report. The report will open in your browser window.&lt;/li&gt;
+&lt;li&gt;To view a standard GSEA plot click on the &lt;em&gt;Snapshot of enrichment results&lt;/em&gt; link:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;{{&amp;lt; figure src=“/images/gsea_plot.png”&amp;gt;}}&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;p&gt;Hope this manual was helpful for you and hope you have managed to run GSEA analysis on your data. If you know any other GSEA tools please let me know!&lt;/p&gt;
+&lt;/div&gt;
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
+</description>
+    </item>
     
     <item>
       <title>Hello, World! 2</title>
