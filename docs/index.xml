@@ -74,10 +74,7 @@
 &lt;li&gt;In &lt;em&gt;Files produces as part of this analysis&lt;/em&gt; double click on the html report. The report will open in your browser window.&lt;/li&gt;
 &lt;li&gt;To view a standard GSEA plot click on the &lt;em&gt;Snapshot of enrichment results&lt;/em&gt; link:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;images/gsea_plot.png&#34; /&gt;
-
-&lt;/div&gt;
+&lt;p&gt;{{&amp;lt; figure src=“images/gsea_plot.png” title=“” &amp;gt;}} &lt;img src=&#34;images/gsea_plot.png&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;conclusions&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Conclusions&lt;/h2&gt;

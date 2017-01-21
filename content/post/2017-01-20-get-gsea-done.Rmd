@@ -58,6 +58,7 @@ The second gene set should be just created and written to a file. The file forma
 3. In _Files produces as part of this analysis_ double click on the html report. The report will open in your browser window.
 4. To view a standard GSEA plot click on the _Snapshot of enrichment results_ link:
 
+{{< figure src="images/gsea_plot.png" title="" >}}
 ![](images/gsea_plot.png)
 
 ## Conclusions
