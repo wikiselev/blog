@@ -106,17 +106,17 @@
     </item>
     
     <item>
-      <title>Hello, World! 2</title>
-      <link>http://genat.uk/2017/01/16/hello-world-2/</link>
+      <title>Hello, World!</title>
+      <link>http://genat.uk/2017/01/16/hello-world/</link>
       <pubDate>Mon, 16 Jan 2017 08:54:39 +0000</pubDate>
       
-      <guid>http://genat.uk/2017/01/16/hello-world-2/</guid>
+      <guid>http://genat.uk/2017/01/16/hello-world/</guid>
       <description>&lt;!-- BLOGDOWN-BODY-BEFORE
 
 /BLOGDOWN-BODY-BEFORE --&gt;
 
 &lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/2017/01/16/hello-world-2/figures/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/2017/01/16/hello-world/figures/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
 
 
 &lt;!-- BLOGDOWN-HEAD
@@ -261,21 +261,6 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
     </item>
     
     <item>
-      <title>Hello world</title>
-      <link>http://genat.uk/2015/07/21/hello-world/</link>
-      <pubDate>Tue, 21 Jul 2015 19:43:09 +0000</pubDate>
-      
-      <guid>http://genat.uk/2015/07/21/hello-world/</guid>
-      <description>&lt;p&gt;Hi all,&lt;/p&gt;
-
-&lt;p&gt;I just started this blog and will use it as my main personal blog. I will fetch all my useful stuff that is elsewhere on the Web and post it here. My contact details are below - let&amp;rsquo;s stay in touch!&lt;/p&gt;
-
-&lt;p&gt;Cheers,
-Vlad&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>About</title>
       <link>http://genat.uk/about/</link>
       <pubDate>Mon, 05 May 2014 21:48:51 -0700</pubDate>
@@ -403,6 +388,24 @@ Vlad&lt;/p&gt;
 
 
 &lt;p&gt;Please find full description here: &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki/Kmer-expected-number-of-occurrences-in-a-DNA-string&#34;&gt;K-mer expected number of occurrences in a DNA string&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Interesting bioinformatics questions</title>
+      <link>http://genat.uk/2013/12/04/interesting-bioinformatics-questions/</link>
+      <pubDate>Wed, 04 Dec 2013 22:20:56 +0000</pubDate>
+      
+      <guid>http://genat.uk/2013/12/04/interesting-bioinformatics-questions/</guid>
+      <description>&lt;p&gt;While doing &lt;a href=&#34;https://class.coursera.org/bioinformatics-001/&#34;&gt;Bioinformatics algorithms online course&lt;/a&gt; together with &lt;a href=&#34;https://beta.stepic.org/&#34;&gt;Stepic online educational resource&lt;/a&gt; I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms&#34;&gt;https://github.com/wikiselev/bioinformatics-algorithms&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope this will be useful for your everyday work.&lt;/p&gt;
+
+&lt;p&gt;List of all scripts and explanation to them can be found at the repository’s &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki&#34;&gt;wiki&lt;/a&gt;. Please find all the descriptions there. Note that here I don’t provide any solutions to the course scored assignments. These are optional questions.&lt;/p&gt;
+
+&lt;p&gt;Please let me know if you have any comments or useful feedback! Enjoy!&lt;/p&gt;
 </description>
     </item>
     
