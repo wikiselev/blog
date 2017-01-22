@@ -1,26 +1,121 @@
-baseurl = "http://genat.uk/"
-relativeurls = true
-languageCode = "en-us"
+baseurl = "http://genat.uk"
 title = "Vladimir Kiselev"
-theme = "hugo-lithium-theme"
+copyright = "&copy; 2017 Vladimir Kiselev"
+theme = "hugo-academic"
+enableEmoji = true
+footnotereturnlinkcontents = "<sup>^</sup>"
 publishDir = "docs"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "genatuk"
+
+# Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-57698291-1"
-ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
+# Default language to use (if you setup multilingual support)
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-[[menu.main]]
-    name = "Stuff"
-    url = "/stuff/"
+[blackfriday]
+  hrefTargetBlank = true
 
 [params]
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.9.0"
-    highlightjsLang = ["r", "yaml", "tex", "bash"]
-    highlightjsTheme = "github"
-    Author = "Vladimir Kiselev"
-    disqusShortname = "genatuk"
+  name = "Vladimir Kiselev"
+  role = "PostDoc"
+  organization = "Sanger Institute"
+  avatar = "userpic.jpg"
+  email = "vladimir.yu.kiselev@gmail.com"
+  
+  # options for highlight.js (version, additional languages, and theme)
+  highlightjsVersion = "9.9.0"
+  highlightjsLang = ["r", "yaml", "tex", "bash"]
+  highlightjsTheme = "github"
+
+  # Enable Keybase in Contact section by entering your keybase.io username.
+  keybase = ""
+
+  # Date format (refer to Go's date format: http://flippinggodateformat.com )
+  #   Examples: "Mon, Jan 2, 2006" or "2006-01-02"
+  date_format = "Mon, Jan 2, 2006"
+
+  # Enable global LaTeX math rendering?
+  #   If false, you can enable it locally on a per page basis.
+  math = false
+
+  # Enable native social sharing buttons?
+  sharing = true
+
+  # Link custom CSS and JS assets
+  #   (relative to /static/css and /static/js respectively)
+  custom_css = ["custom.css"]
+  custom_js  = []
+
+  # Social/Academic Networking
+  #
+  # Icon pack "fa" includes the following social network icons:
+  #
+  #   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
+  #   youtube, instagram, soundcloud
+  #
+  #   For email icon, use "fa" icon pack, "envelope" icon, and
+  #   "mailto:your@email.com" as the link.
+  #
+  #   Full list: https://fortawesome.github.io/Font-Awesome/icons/
+  #
+  # Icon pack "ai" includes the following academic network icons:
+  #
+  #   google-scholar, arxiv, orcid, researchgate, mendeley
+  #
+  #   Full list: https://jpswalsh.github.io/academicons/
+
+  [[params.social]]
+    icon = "envelope"
+    icon_pack = "fa"
+    link = "mailto:vladimir.yu.kiselev@gmail.com"
+
+  [[params.social]]
+    icon = "twitter"
+    icon_pack = "fa"
+    link = "//twitter.com/wikiselev"
+
+  [[params.social]]
+    icon = "google-scholar"
+    icon_pack = "ai"
+    link = "https://scholar.google.com/citations?user=ADHDR8EAAAAJ"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "http://github.com/wikiselev"
+
+
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+[[menu.main]]
+  name = "About"
+  url = "#about"
+  weight = 1
+
+[[menu.main]]
+  name = "Posts"
+  url = "#posts"
+  weight = 2
+
+[[menu.main]]
+  name = "Projects"
+  url = "#projects"
+  weight = 3
+
+[[menu.main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 4
+
+# Languages
+#   Create a [languages.X] block for each language you want, where X is the language ID.
+
+# Configure the English version of the website.
+[languages.en]
+  languageCode = "en-us"

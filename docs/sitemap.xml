@@ -1,116 +1,202 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <url>
-    <loc>http://genat.uk/2017/01/21/get-gsea-done/</loc>
-    <lastmod>2017-01-21T19:57:37+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2017-01-21-get-gsea-done/</loc>
+      <lastmod>2017-01-21T19:57:37+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2017/01/16/hello-world/</loc>
-    <lastmod>2017-01-16T08:54:39+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2017-01-16-hello-world/</loc>
+      <lastmod>2017-01-16T08:54:39+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/12/11/how-to-start-working-with-r/</loc>
-    <lastmod>2015-12-11T20:26:17+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/project/sc3/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/10/29/sc3-poster/</loc>
-    <lastmod>2015-10-29T20:25:03+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/project/ftl1/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/10/20/how-medicine-turns-into-advertising/</loc>
-    <lastmod>2015-10-20T20:23:30+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/project/sc-rna-seq-course/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/10/13/sc3---consensus-clustering-of-single-cell-rna-seq-data/</loc>
-    <lastmod>2015-10-13T20:21:44+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</loc>
+      <lastmod>2015-12-11T20:26:17+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/10/13/my-new-paper-is-out/</loc>
-    <lastmod>2015-10-13T20:20:07+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-10-29-sc3-poster/</loc>
+      <lastmod>2015-10-29T20:25:03+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/09/22/ismara-client/</loc>
-    <lastmod>2015-09-22T20:15:33+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</loc>
+      <lastmod>2015-10-20T20:23:30+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/09/15/bioinformatics-algorithms/</loc>
-    <lastmod>2015-09-15T19:58:31+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</loc>
+      <lastmod>2015-10-13T20:21:44+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/07/23/ismb-2015-poster/</loc>
-    <lastmod>2015-07-23T19:50:48+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</loc>
+      <lastmod>2015-10-13T20:20:07+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2015/07/21/job-applications/</loc>
-    <lastmod>2015-07-21T19:46:25+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-09-22-ismara-client/</loc>
+      <lastmod>2015-09-22T20:15:33+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/about/</loc>
-    <lastmod>2014-05-05T21:48:51-07:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</loc>
+      <lastmod>2015-09-15T19:58:31+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/stuff/</loc>
-    <lastmod>2014-01-15T20:45:09+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-07-23-ismb-2015-poster/</loc>
+      <lastmod>2015-07-23T19:50:48+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2014/01/10/k-mer-expected-number-of-occurrences-in-a-dna-string/</loc>
-    <lastmod>2014-01-10T22:24:07+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2015-07-21-job-applications/</loc>
+      <lastmod>2015-07-21T19:46:25+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2013/12/04/interesting-bioinformatics-questions/</loc>
-    <lastmod>2013-12-04T22:20:56+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</loc>
+      <lastmod>2014-01-10T22:24:07+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2013/11/19/array-and-sequential-cluster-jobs/</loc>
-    <lastmod>2013-11-19T22:19:28+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</loc>
+      <lastmod>2013-12-04T22:20:56+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2013/11/02/easy-report-script-for-easy-r-reporting/</loc>
-    <lastmod>2013-11-02T22:14:08+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2013-11-19-array-and-sequential-cluster-jobs/</loc>
+      <lastmod>2013-11-19T22:19:28+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2013/10/10/bioinformatics-algorithms-online-course/</loc>
-    <lastmod>2013-10-10T22:11:12+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</loc>
+      <lastmod>2013-11-02T22:14:08+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2013/01/29/sublime-sftp-package/</loc>
-    <lastmod>2013-01-29T22:03:06+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</loc>
+      <lastmod>2013-10-10T22:11:12+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/2012/10/20/automated-snapshotting-with-igv-genomic-browser/</loc>
-    <lastmod>2012-10-20T21:28:49+00:00</lastmod>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2013-01-29-sublime-sftp-package/</loc>
+      <lastmod>2013-01-29T22:03:06+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/post/</loc>
-    <lastmod>2017-01-21T19:57:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+    <url>
+      <loc>http://genat.uk/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</loc>
+      <lastmod>2012-10-20T21:28:49+00:00</lastmod>
+    </url>
+    
   
-  <url>
-    <loc>http://genat.uk/</loc>
-    <lastmod>2017-01-21T19:57:37+00:00</lastmod>
-    <priority>0</priority>
-  </url>
+    
+    
+  
+    
+    
+    <url>
+      <loc>http://genat.uk/post/</loc>
+      <lastmod>2017-01-21T19:57:37+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://genat.uk/project/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://genat.uk/</loc>
+      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
   
 </urlset>

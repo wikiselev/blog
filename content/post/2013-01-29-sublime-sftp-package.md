@@ -11,7 +11,7 @@ By default, Sublime SFTP free trial is indefinite (it’s not restricted to 30 d
 
 As I said this package is very handy. Here is a snapshot of it’s features:
 
-{{<figure src="/images/sublime.png">}}
+{{<figure src="/img/sublime.png">}}
 
 On the negative side — to be honest the only problem I had with this package was ssh localhost authentication (I am tunneling my remote machine using an RSA token key, and then mapping it using my localhost). I am not sure whether all of this make any sense, but I hope more experienced guys will understand it! Anyway, whenever I wanted to SFTP to my remote machine my Sublime editor always showed an error message about failed localhost authentication. The solution to this problem turned out to be quite simple. Normally, what you need to do is to change one of your ssh settings in __~/.ssh/config__ (user configuration file) or __/etc/ssh_config__ (global system configuration file). To edit these files you will need to change their permissions — please have a look here on how to do this. In the files you need to uncomment or add __NoHostAuthenticationForLocalhost__ setting and change its value to __yes__ (for more description on ssh settings please look [here](http://linuxcommando.blogspot.co.uk/2008/10/how-to-disable-ssh-host-key-checking.html) and [here](http://linuxcommando.blogspot.co.uk/2008/10/how-to-disable-ssh-host-key-checking.html)):
 
