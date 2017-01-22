@@ -38,4 +38,4 @@ weight = 2
 
 # About
 <br>
-I am a PostDoc at the Sanger Institute in Martin Hemberg’s lab. Currently I work on statistical method development for single-cell sequencing data.
+I am a PostDoc at the [Sanger Institute](http://www.sanger.ac.uk/) in [Martin Hemberg’s lab](http://www.sanger.ac.uk/science/groups/hemberg-group). Currently I work on statistical method development for single-cell sequencing data.

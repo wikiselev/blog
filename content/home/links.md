@@ -1,7 +1,17 @@
----
-date: 2014-01-15T20:45:09Z
-title: "Stuff"
----
++++
+# Links widget.
+
+date = "2016-04-20T00:00:00"
+draft = false
+
+title = "Links"
+subtitle = ""
+widget = "links"
+
+# Order that this section will appear in.
+weight = 60
+
++++
 
 #### Data Visualization
    * [D3.js](http://bost.ocks.org/mike/)
@@ -48,4 +58,3 @@ title: "Stuff"
    * [CodePen](http://codepen.io/)
    * [Free Online IDE and Terminal](http://www.tutorialspoint.com/codingground.htm)
    <br><br>
-   

@@ -1,5 +1,5 @@
 baseurl = "http://genat.uk"
-title = "Vladimir Kiselev"
+title = "женатик"
 copyright = "&copy; 2017 Vladimir Kiselev"
 theme = "hugo-academic"
 enableEmoji = true
@@ -39,7 +39,7 @@ defaultContentLanguageInSubdir = false
 
   # Enable global LaTeX math rendering?
   #   If false, you can enable it locally on a per page basis.
-  math = false
+  math = true
 
   # Enable native social sharing buttons?
   sharing = true
@@ -71,6 +71,11 @@ defaultContentLanguageInSubdir = false
     icon = "envelope"
     icon_pack = "fa"
     link = "mailto:vladimir.yu.kiselev@gmail.com"
+    
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "https://uk.linkedin.com/in/wikiselev"
 
   [[params.social]]
     icon = "twitter"
@@ -86,7 +91,6 @@ defaultContentLanguageInSubdir = false
     icon = "github"
     icon_pack = "fa"
     link = "http://github.com/wikiselev"
-
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
@@ -109,9 +113,14 @@ defaultContentLanguageInSubdir = false
   weight = 3
 
 [[menu.main]]
+  name = "Links"
+  url = "#links"
+  weight = 4
+
+[[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 4
+  weight = 5
 
 # Languages
 #   Create a [languages.X] block for each language you want, where X is the language ID.
