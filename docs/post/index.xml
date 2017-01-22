@@ -7,8 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <lastBuildDate>Sat, 21 Jan 2017 19:57:37 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jan 2017 02:12:52 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>New website theme</title>
+      <link>http://genat.uk/post/2017-01-22-new-website-theme/</link>
+      <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
+      
+      <guid>http://genat.uk/post/2017-01-22-new-website-theme/</guid>
+      <description>&lt;p&gt;I have just updated this website with an &lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34;&gt;academic theme&lt;/a&gt; and it looks amazing! I&amp;rsquo;m glad I&amp;rsquo;ve tried it. Now I not only have a solid functionality behind the website but also quite a pretty website&amp;rsquo;s face. I am convinced that &lt;a href=&#34;http://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; is great and very fast for building websites. Please do not hesitate to try it out!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Get GSEA done!</title>
@@ -307,41 +317,6 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
       <description>&lt;p&gt;Why didn’t I know about Array and Sequential Cluster Jobs before??? Very-very useful!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/&#34; target=&#34;_blank&#34;&gt;https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>easy-Report script for easy R reporting</title>
-      <link>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
-      <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
-      <description>&lt;p&gt;Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best). In this case I would spend a lot of time for coding, then for commenting and then for creating a report in a pdf or powerpoint/keynote format. Luckily there are tools that can help with reporting your results in a very efficient way.&lt;/p&gt;
-
-&lt;p&gt;I was fascinated by those tools and wrote a script that quickly creates an html and slide reports from an &lt;a href=&#34;http://www.rstudio.com/ide/docs/authoring/using_markdown&#34; target=&#34;_blank&#34;&gt;RMarkdown&lt;/a&gt; file. The tools that I used were two existing R packages: &lt;a href=&#34;https://github.com/yihui/knitr&#34; target=&#34;_blank&#34;&gt;knitr&lt;/a&gt; and &lt;a href=&#34;https://github.com/ramnathv/slidify&#34; target=&#34;_blank&#34;&gt;slidify&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Proper reporting not only helped me a lot in my data analysis but now I also spend a significantly less amount of time for creating my project update reports every couple of weeks (I practically spend no time!)&lt;/p&gt;
-
-&lt;p&gt;The script is quite simple and ready to use, so I would highly recommend it to R users of any level.&lt;/p&gt;
-
-&lt;p&gt;The script repository is located here (there is also a detailed description on it’s usage):&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/wikiselev/easy-Report&#34; target=&#34;_blank&#34;&gt;https://github.com/wikiselev/easy-Report&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To quickly get the script repository, run the script and see an example report please follow these steps:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/wikiselev/easy-Report.git
-cd easy-Report
-Rscript easy-Report.R script.Rmd report
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After running the code above all output report files will be located in ‘report’ folder. If there was no error you should get the same HTML reports as these two:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wikiselev.github.io/easy-Report/report.html&#34; target=&#34;_blank&#34;&gt;http://wikiselev.github.io/easy-Report/report.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wikiselev.github.io/easy-Report/slides.html&#34; target=&#34;_blank&#34;&gt;http://wikiselev.github.io/easy-Report/slides.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope this script will be useful for some of you and very much accelerate your work progress! Please let me know if you have any questions.&lt;/p&gt;
 </description>
     </item>
     
