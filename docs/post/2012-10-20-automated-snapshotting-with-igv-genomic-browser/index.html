@@ -132,13 +132,16 @@
 
 <div class="container">
 
-  <article class="article" itemscope itemtype="http://schema.org/Article">
+    <div class="row">
+      <div class="col-xs-12 col-md-8 col-md-offset-2">
 
-    
-
-    <h1 itemprop="name">Automated snapshotting with IGV genomic browser</h1>
-
-    
+          <article class="article" itemscope itemtype="http://schema.org/Article">
+        
+            
+        
+            <h1 itemprop="name">Automated snapshotting with IGV genomic browser</h1>
+        
+            
 
 <div class="article-metadata">
 
@@ -198,9 +201,9 @@
 
 </div>
 
-
-    <div class="article-style" itemprop="articleBody">
-      <p>Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given <strong>protein_list</strong> at specific genomic locations (a given <strong>gene_list</strong>). To take a snapshot of any genomic region I usually use <a href="http://www.broadinstitute.org/igv/home" target="_blank">IGV genomic browser</a> (in this post version 2.1.24 (2563) was used). When <strong>protein_list</strong> (&lt;10 data files) and <strong>gene_list</strong> (&lt;10 regions) are small snapshotting can be easily done manually. However, during the development of the project these lists can become quite big and unfeasible for manual processing. And that’s what happened with me. By accident, at the same time I found out that IGV browser is able to execute batch files of its own format. It didn’t take me long to figure out how it all works and in about half an hour I wrote a simple batch script which automated the whole process of taking my snapshots in IGV browser. I won’t go into the description how to write such a script as you can find all necessary information at the link above. However, I’ll make some useful comments about the batch file.</p>
+        
+            <div class="article-style" itemprop="articleBody">
+              <p>Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given <strong>protein_list</strong> at specific genomic locations (a given <strong>gene_list</strong>). To take a snapshot of any genomic region I usually use <a href="http://www.broadinstitute.org/igv/home" target="_blank">IGV genomic browser</a> (in this post version 2.1.24 (2563) was used). When <strong>protein_list</strong> (&lt;10 data files) and <strong>gene_list</strong> (&lt;10 regions) are small snapshotting can be easily done manually. However, during the development of the project these lists can become quite big and unfeasible for manual processing. And that’s what happened with me. By accident, at the same time I found out that IGV browser is able to execute batch files of its own format. It didn’t take me long to figure out how it all works and in about half an hour I wrote a simple batch script which automated the whole process of taking my snapshots in IGV browser. I won’t go into the description how to write such a script as you can find all necessary information at the link above. However, I’ll make some useful comments about the batch file.</p>
 
 <p>Let’s define the <strong>gene_list</strong> as a simple text file with the following structure:</p>
 
@@ -299,11 +302,11 @@ Color abbreviations: {\bf {\color{green} A}, {\color{blue} C}, {\color{red} T}, 
 
 <p><strong>UPD</strong>. If your <strong>gene_list</strong> is an automatically generated BED file then you can use a utility, called <a href="https://groups.google.com/forum/#!msg/bedtools-discuss/lkrMv5J_LJI/Q38uzhI6l0MJ" target="_blank">bedToIgv</a>, provided by BEDtools to generate an IGV batch file. Note that you should install the newest version of BEDtools to be able to use this utility (v. 2.17.0 on 13/11/12). If you <strong>gene_list</strong> is not an automatically generated BED file then the utility won’t be very useful for you.</p>
 
-    </div>
-
-  </article>
-
-  <nav>
+            </div>
+        
+          </article>
+        
+          <nav>
   <ul class="pager">
     
 
@@ -314,7 +317,7 @@ Color abbreviations: {\bf {\color{green} A}, {\color{blue} C}, {\color{red} T}, 
   </ul>
 </nav>
 
-  
+          
 <section id="comments">
   <div id="disqus_thread">
     <div id="disqus_thread"></div>
@@ -336,6 +339,9 @@ Color abbreviations: {\bf {\color{green} A}, {\color{blue} C}, {\color{red} T}, 
 </section>
 
 
+          
+        </div>
+    </div>
 
 </div>
 <footer class="site-footer">

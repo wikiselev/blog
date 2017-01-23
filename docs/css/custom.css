@@ -1,3 +1,6 @@
 body {
-  margin-top: 120px; /* Offset body content by navbar height. */
+  margin-top: 140px; /* Offset body content by navbar height. */
+}
+.home-section:nth-of-type(even) {
+  background-color: rgb(230, 230, 230);
 }
