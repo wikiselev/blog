@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Papers on женатик</title>
-    <link>/tags/papers/index.xml</link>
+    <link>http://genat.uk/tags/papers/index.xml</link>
     <description>Recent content in Papers on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>My new paper is out!</title>
-      <link>/post/2015-10-13-my-new-paper-is-out/</link>
+      <link>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</link>
       <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
       
-      <guid>/post/2015-10-13-my-new-paper-is-out/</guid>
+      <guid>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</guid>
       <description>&lt;p&gt;My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a &lt;a href=&#34;http://nar.oxfordjournals.org/content/early/2015/10/11/nar.gkv1015.full&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to it. It has been long 4 years since I started that project and I am very happy that finally it is published!&lt;/p&gt;
 
 &lt;p&gt;Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!&lt;/p&gt;

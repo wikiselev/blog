@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jobs on женатик</title>
-    <link>/tags/jobs/index.xml</link>
+    <link>http://genat.uk/tags/jobs/index.xml</link>
     <description>Recent content in Jobs on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Job applications</title>
-      <link>/post/2015-07-21-job-applications/</link>
+      <link>http://genat.uk/post/2015-07-21-job-applications/</link>
       <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
       
-      <guid>/post/2015-07-21-job-applications/</guid>
+      <guid>http://genat.uk/post/2015-07-21-job-applications/</guid>
       <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
 
 &lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:

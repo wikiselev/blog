@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bionformatics on женатик</title>
-    <link>/tags/bionformatics/index.xml</link>
+    <link>http://genat.uk/tags/bionformatics/index.xml</link>
     <description>Recent content in Bionformatics on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,14 +11,14 @@
     
     <item>
       <title>K-mer expected number of occurrences in a DNA string</title>
-      <link>/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
+      <link>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
       <pubDate>Fri, 10 Jan 2014 22:24:07 +0000</pubDate>
       
-      <guid>/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
+      <guid>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
       <description>
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/kmer-expect-occur.png&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/kmer-expect-occur.png&#34; /&gt;
     
     
 &lt;/figure&gt;

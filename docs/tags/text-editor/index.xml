@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Text Editor on женатик</title>
-    <link>/tags/text-editor/index.xml</link>
+    <link>http://genat.uk/tags/text-editor/index.xml</link>
     <description>Recent content in Text Editor on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Sublime SFTP package</title>
-      <link>/post/2013-01-29-sublime-sftp-package/</link>
+      <link>http://genat.uk/post/2013-01-29-sublime-sftp-package/</link>
       <pubDate>Tue, 29 Jan 2013 22:03:06 +0000</pubDate>
       
-      <guid>/post/2013-01-29-sublime-sftp-package/</guid>
+      <guid>http://genat.uk/post/2013-01-29-sublime-sftp-package/</guid>
       <description>&lt;p&gt;I’ve become an addicted fan of the &lt;a href=&#34;http://www.sublimetext.com/&#34; target=&#34;_blank&#34;&gt;Sublime Text editor&lt;/a&gt;. This is the most amazing text editor I’ve worked with. It’s been already greatly described in other blogs (see, for example &lt;a href=&#34;http://1p1e1.tumblr.com/post/14262857223/9-reasons-you-must-install-sublime-text-2-code-like-a&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;), so I am not going into the details about it’s cool features. What I want to write about is one it’s packages which I find particularly useful — &lt;a href=&#34;http://wbond.net/sublime_packages/sftp&#34; target=&#34;_blank&#34;&gt;Sublime SFTP&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This package is very convenient if you run your jobs on a remote machine or a computational cluster. It’s basic functions are transferring files to the remote machine via FTP, FTPS and SFTP. But due to Sublime key bindings (keyboard shortcuts) the whole process of synchronizing your files is very handy (you almost don’t need a mouse) and takes milliseconds. And more importantly, you don’t need any other software except Sublime to edit and synchronize your code — it’s an all-in-one product!&lt;/p&gt;
@@ -26,7 +26,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/sublime.png&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/sublime.png&#34; /&gt;
     
     
 &lt;/figure&gt;

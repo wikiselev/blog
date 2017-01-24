@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hpc Cluster on женатик</title>
-    <link>/tags/hpc-cluster/index.xml</link>
+    <link>http://genat.uk/tags/hpc-cluster/index.xml</link>
     <description>Recent content in Hpc Cluster on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Array and Sequential Cluster Jobs</title>
-      <link>/post/2013-11-19-array-and-sequential-cluster-jobs/</link>
+      <link>http://genat.uk/post/2013-11-19-array-and-sequential-cluster-jobs/</link>
       <pubDate>Tue, 19 Nov 2013 22:19:28 +0000</pubDate>
       
-      <guid>/post/2013-11-19-array-and-sequential-cluster-jobs/</guid>
+      <guid>http://genat.uk/post/2013-11-19-array-and-sequential-cluster-jobs/</guid>
       <description>&lt;p&gt;Why didn’t I know about Array and Sequential Cluster Jobs before??? Very-very useful!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/&#34; target=&#34;_blank&#34;&gt;https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/&lt;/a&gt;&lt;/p&gt;

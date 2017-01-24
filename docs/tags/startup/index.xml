@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Startup on женатик</title>
-    <link>/tags/startup/index.xml</link>
+    <link>http://genat.uk/tags/startup/index.xml</link>
     <description>Recent content in Startup on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>How medicine turns into advertising</title>
-      <link>/post/2015-10-20-how-medicine-turns-into-advertising/</link>
+      <link>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</link>
       <pubDate>Tue, 20 Oct 2015 20:23:30 +0000</pubDate>
       
-      <guid>/post/2015-10-20-how-medicine-turns-into-advertising/</guid>
+      <guid>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</guid>
       <description>&lt;p&gt;I have just learnt about some &lt;a href=&#34;https://www.washingtonpost.com/news/to-your-health/wp/2015/10/16/a-comprehensive-guide-to-theranos-troubles-and-what-it-means-for-you/&#34; target=&#34;_blank&#34;&gt;tension&lt;/a&gt; growing around &lt;a href=&#34;https://www.theranos.com/&#34; target=&#34;_blank&#34;&gt;Theranos&lt;/a&gt; biotech startup. Looks like their advertisement strategy worked very well, giving them more than 400 million dollars of investments. However, now the whole technology is under a big question. The topic is familiar to me because last year I took part in the &lt;a href=&#34;http://www.biotechnologyyes.co.uk/biotechnologyyes/index.aspx&#34; target=&#34;_blank&#34;&gt;Biotechnology YES&lt;/a&gt; competition and my team presented a similar idea of diagnosing cancer relapse from a blood test. We figured out how many bottlenecks and troubles appear once you start implementing the technology. And already at that time I felt that there are a lot of unrealistic projects out there that get some funding by really good advertising but then they usually quickly die. I am not sure the same is happenning with &lt;a href=&#34;https://www.theranos.com/&#34; target=&#34;_blank&#34;&gt;Theranos&lt;/a&gt; because they are alredy very big and are running, but let&amp;rsquo;s see.&lt;/p&gt;
 </description>
     </item>

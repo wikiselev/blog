@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Work on женатик</title>
-    <link>/categories/work/index.xml</link>
+    <link>http://genat.uk/categories/work/index.xml</link>
     <description>Recent content in Work on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Get GSEA done!</title>
-      <link>/post/2017-01-21-get-gsea-done/</link>
+      <link>http://genat.uk/post/2017-01-21-get-gsea-done/</link>
       <pubDate>Sat, 21 Jan 2017 19:57:37 +0000</pubDate>
       
-      <guid>/post/2017-01-21-get-gsea-done/</guid>
+      <guid>http://genat.uk/post/2017-01-21-get-gsea-done/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -42,7 +42,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/Rnk_format_snapshot.gif&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/Rnk_format_snapshot.gif&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -55,7 +55,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/Grp_format_snapshot.gif&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/Grp_format_snapshot.gif&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -93,7 +93,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/gsea_plot.png&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/gsea_plot.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -107,20 +107,20 @@
     
     <item>
       <title>How to start working with R</title>
-      <link>/post/2015-12-11-how-to-start-working-with-r/</link>
+      <link>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</link>
       <pubDate>Fri, 11 Dec 2015 20:26:17 +0000</pubDate>
       
-      <guid>/post/2015-12-11-how-to-start-working-with-r/</guid>
+      <guid>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve just come across a great &lt;a href=&#34;http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SC3 poster</title>
-      <link>/post/2015-10-29-sc3-poster/</link>
+      <link>http://genat.uk/post/2015-10-29-sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>/post/2015-10-29-sc3-poster/</guid>
+      <guid>http://genat.uk/post/2015-10-29-sc3-poster/</guid>
       <description>&lt;p&gt;I am attending the &lt;a href=&#34;https://registration.hinxton.wellcome.ac.uk/events/item.aspx?e=517&#34; target=&#34;_blank&#34;&gt;Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:&lt;/p&gt;
@@ -148,10 +148,10 @@
     
     <item>
       <title>SC3 - consensus clustering of single cell RNA Seq data</title>
-      <link>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <link>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
       <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
       
-      <guid>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <guid>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
       <description>&lt;p&gt;Today I presented the &lt;a href=&#34;http://github.com/hemberg-lab/SC3&#34; target=&#34;_blank&#34;&gt;SC3 tool&lt;/a&gt; that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the &lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/edgeR.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;edgeR&lt;/strong&gt;&lt;/a&gt; developer &lt;a href=&#34;https://sites.google.com/site/davismcc/&#34; target=&#34;_blank&#34;&gt;Davis McCarthy&lt;/a&gt;. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;922a274fae4b4e4ea08cdea190642bed&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -162,10 +162,10 @@
     
     <item>
       <title>My new paper is out!</title>
-      <link>/post/2015-10-13-my-new-paper-is-out/</link>
+      <link>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</link>
       <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
       
-      <guid>/post/2015-10-13-my-new-paper-is-out/</guid>
+      <guid>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</guid>
       <description>&lt;p&gt;My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a &lt;a href=&#34;http://nar.oxfordjournals.org/content/early/2015/10/11/nar.gkv1015.full&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to it. It has been long 4 years since I started that project and I am very happy that finally it is published!&lt;/p&gt;
 
 &lt;p&gt;Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!&lt;/p&gt;
@@ -174,20 +174,20 @@
     
     <item>
       <title>ISMARA client</title>
-      <link>/post/2015-09-22-ismara-client/</link>
+      <link>http://genat.uk/post/2015-09-22-ismara-client/</link>
       <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
       
-      <guid>/post/2015-09-22-ismara-client/</guid>
+      <guid>http://genat.uk/post/2015-09-22-ismara-client/</guid>
       <description>&lt;p&gt;I was using &lt;a href=&#34;https://ismara.unibas.ch/fcgi/mara&#34; target=&#34;_blank&#34;&gt;ISMARA&lt;/a&gt; for my last paper which is now in press in &lt;a href=&#34;http://nar.oxfordjournals.org/&#34; target=&#34;_blank&#34;&gt;NAR journal&lt;/a&gt;. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading. Finally this problem is solved now and ISMARA developers introduced a &lt;a href=&#34;https://ismara.unibas.ch/ISMARA/client/&#34; target=&#34;_blank&#34;&gt;client&lt;/a&gt; which can be downloaded and used for data preprocessing. The preprocessed data is then very small and light and can be easily and fastly uploaded even with a slow internet connection. This is excellent, thank you ISMARA guys for your great work. The next step would be to release the code! :-)&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Bioinformatics Algorithms</title>
-      <link>/post/2015-09-15-bioinformatics-algorithms/</link>
+      <link>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>/post/2015-09-15-bioinformatics-algorithms/</guid>
+      <guid>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</guid>
       <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34; target=&#34;_blank&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
 
 &lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
@@ -198,10 +198,10 @@
     
     <item>
       <title>ISMB 2015 Poster</title>
-      <link>/post/2015-07-23-ismb-2015-poster/</link>
+      <link>http://genat.uk/post/2015-07-23-ismb-2015-poster/</link>
       <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
       
-      <guid>/post/2015-07-23-ismb-2015-poster/</guid>
+      <guid>http://genat.uk/post/2015-07-23-ismb-2015-poster/</guid>
       <description>&lt;p&gt;At &lt;a href=&#34;http://www.iscb.org/ismbeccb2015&#34; target=&#34;_blank&#34;&gt;ISMB-2015&lt;/a&gt; in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;&lt;/p&gt;
 
 &lt;p&gt;You can view/download the poster at &lt;a href=&#34;http://f1000research.com/posters/4-226&#34; target=&#34;_blank&#34;&gt;F1000 website&lt;/a&gt;. All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
@@ -212,10 +212,10 @@
     
     <item>
       <title>Job applications</title>
-      <link>/post/2015-07-21-job-applications/</link>
+      <link>http://genat.uk/post/2015-07-21-job-applications/</link>
       <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
       
-      <guid>/post/2015-07-21-job-applications/</guid>
+      <guid>http://genat.uk/post/2015-07-21-job-applications/</guid>
       <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
 
 &lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:
@@ -229,14 +229,14 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
     
     <item>
       <title>K-mer expected number of occurrences in a DNA string</title>
-      <link>/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
+      <link>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
       <pubDate>Fri, 10 Jan 2014 22:24:07 +0000</pubDate>
       
-      <guid>/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
+      <guid>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
       <description>
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/kmer-expect-occur.png&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/kmer-expect-occur.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -248,10 +248,10 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
     
     <item>
       <title>Interesting bioinformatics questions</title>
-      <link>/post/2013-12-04-interesting-bioinformatics-questions/</link>
+      <link>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</link>
       <pubDate>Wed, 04 Dec 2013 22:20:56 +0000</pubDate>
       
-      <guid>/post/2013-12-04-interesting-bioinformatics-questions/</guid>
+      <guid>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</guid>
       <description>&lt;p&gt;While doing &lt;a href=&#34;https://class.coursera.org/bioinformatics-001/&#34; target=&#34;_blank&#34;&gt;Bioinformatics algorithms online course&lt;/a&gt; together with &lt;a href=&#34;https://beta.stepic.org/&#34; target=&#34;_blank&#34;&gt;Stepic online educational resource&lt;/a&gt; I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms&#34; target=&#34;_blank&#34;&gt;https://github.com/wikiselev/bioinformatics-algorithms&lt;/a&gt;&lt;/p&gt;
@@ -266,10 +266,10 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
     
     <item>
       <title>Array and Sequential Cluster Jobs</title>
-      <link>/post/2013-11-19-array-and-sequential-cluster-jobs/</link>
+      <link>http://genat.uk/post/2013-11-19-array-and-sequential-cluster-jobs/</link>
       <pubDate>Tue, 19 Nov 2013 22:19:28 +0000</pubDate>
       
-      <guid>/post/2013-11-19-array-and-sequential-cluster-jobs/</guid>
+      <guid>http://genat.uk/post/2013-11-19-array-and-sequential-cluster-jobs/</guid>
       <description>&lt;p&gt;Why didn’t I know about Array and Sequential Cluster Jobs before??? Very-very useful!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/&#34; target=&#34;_blank&#34;&gt;https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/&lt;/a&gt;&lt;/p&gt;
@@ -278,10 +278,10 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
     
     <item>
       <title>easy-Report script for easy R reporting</title>
-      <link>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
+      <link>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
       <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
       
-      <guid>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
+      <guid>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
       <description>&lt;p&gt;Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best). In this case I would spend a lot of time for coding, then for commenting and then for creating a report in a pdf or powerpoint/keynote format. Luckily there are tools that can help with reporting your results in a very efficient way.&lt;/p&gt;
 
 &lt;p&gt;I was fascinated by those tools and wrote a script that quickly creates an html and slide reports from an &lt;a href=&#34;http://www.rstudio.com/ide/docs/authoring/using_markdown&#34; target=&#34;_blank&#34;&gt;RMarkdown&lt;/a&gt; file. The tools that I used were two existing R packages: &lt;a href=&#34;https://github.com/yihui/knitr&#34; target=&#34;_blank&#34;&gt;knitr&lt;/a&gt; and &lt;a href=&#34;https://github.com/ramnathv/slidify&#34; target=&#34;_blank&#34;&gt;slidify&lt;/a&gt;.&lt;/p&gt;
@@ -313,10 +313,10 @@ Rscript easy-Report.R script.Rmd report
     
     <item>
       <title>Bioinformatics Algorithms Online Course</title>
-      <link>/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
+      <link>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
       <pubDate>Thu, 10 Oct 2013 22:11:12 +0000</pubDate>
       
-      <guid>/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
+      <guid>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
       <description>&lt;p&gt;I am going to take the following online course which starts at the end of October:&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://www.coursera.org/course/bioinformatics&#34; target=&#34;_blank&#34;&gt;https://www.coursera.org/course/bioinformatics&lt;/a&gt;&lt;/p&gt;
@@ -333,10 +333,10 @@ Rscript easy-Report.R script.Rmd report
     
     <item>
       <title>Sublime SFTP package</title>
-      <link>/post/2013-01-29-sublime-sftp-package/</link>
+      <link>http://genat.uk/post/2013-01-29-sublime-sftp-package/</link>
       <pubDate>Tue, 29 Jan 2013 22:03:06 +0000</pubDate>
       
-      <guid>/post/2013-01-29-sublime-sftp-package/</guid>
+      <guid>http://genat.uk/post/2013-01-29-sublime-sftp-package/</guid>
       <description>&lt;p&gt;I’ve become an addicted fan of the &lt;a href=&#34;http://www.sublimetext.com/&#34; target=&#34;_blank&#34;&gt;Sublime Text editor&lt;/a&gt;. This is the most amazing text editor I’ve worked with. It’s been already greatly described in other blogs (see, for example &lt;a href=&#34;http://1p1e1.tumblr.com/post/14262857223/9-reasons-you-must-install-sublime-text-2-code-like-a&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;), so I am not going into the details about it’s cool features. What I want to write about is one it’s packages which I find particularly useful — &lt;a href=&#34;http://wbond.net/sublime_packages/sftp&#34; target=&#34;_blank&#34;&gt;Sublime SFTP&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This package is very convenient if you run your jobs on a remote machine or a computational cluster. It’s basic functions are transferring files to the remote machine via FTP, FTPS and SFTP. But due to Sublime key bindings (keyboard shortcuts) the whole process of synchronizing your files is very handy (you almost don’t need a mouse) and takes milliseconds. And more importantly, you don’t need any other software except Sublime to edit and synchronize your code — it’s an all-in-one product!&lt;/p&gt;
@@ -348,7 +348,7 @@ Rscript easy-Report.R script.Rmd report
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;../../img/sublime.png&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/sublime.png&#34; /&gt;
     
     
 &lt;/figure&gt;

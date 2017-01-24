@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Snapshots on женатик</title>
-    <link>/tags/snapshots/index.xml</link>
+    <link>http://genat.uk/tags/snapshots/index.xml</link>
     <description>Recent content in Snapshots on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -11,10 +11,10 @@
     
     <item>
       <title>Automated snapshotting with IGV genomic browser</title>
-      <link>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</link>
+      <link>http://genat.uk/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</link>
       <pubDate>Sat, 20 Oct 2012 21:28:49 +0000</pubDate>
       
-      <guid>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</guid>
+      <guid>http://genat.uk/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</guid>
       <description>&lt;p&gt;Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given &lt;strong&gt;protein_list&lt;/strong&gt; at specific genomic locations (a given &lt;strong&gt;gene_list&lt;/strong&gt;). To take a snapshot of any genomic region I usually use &lt;a href=&#34;http://www.broadinstitute.org/igv/home&#34; target=&#34;_blank&#34;&gt;IGV genomic browser&lt;/a&gt; (in this post version 2.1.24 (2563) was used). When &lt;strong&gt;protein_list&lt;/strong&gt; (&amp;lt;10 data files) and &lt;strong&gt;gene_list&lt;/strong&gt; (&amp;lt;10 regions) are small snapshotting can be easily done manually. However, during the development of the project these lists can become quite big and unfeasible for manual processing. And that’s what happened with me. By accident, at the same time I found out that IGV browser is able to execute batch files of its own format. It didn’t take me long to figure out how it all works and in about half an hour I wrote a simple batch script which automated the whole process of taking my snapshots in IGV browser. I won’t go into the description how to write such a script as you can find all necessary information at the link above. However, I’ll make some useful comments about the batch file.&lt;/p&gt;
 
 &lt;p&gt;Let’s define the &lt;strong&gt;gene_list&lt;/strong&gt; as a simple text file with the following structure:&lt;/p&gt;
