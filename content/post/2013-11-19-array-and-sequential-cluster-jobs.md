@@ -1,6 +1,8 @@
 ---
 date: 2013-11-19T22:19:28Z
 title: "Array and Sequential Cluster Jobs"
+categories: ["work"]
+tags: ["HPC cluster", "array jobs"]
 ---
 
 Why didn’t I know about Array and Sequential Cluster Jobs before??? Very-very useful!

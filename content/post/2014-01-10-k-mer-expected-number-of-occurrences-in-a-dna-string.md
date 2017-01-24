@@ -1,6 +1,8 @@
 ---
 date: 2014-01-10T22:24:07Z
 title: "K-mer expected number of occurrences in a DNA string"
+categories: ["work"]
+tags: ["bionformatics"]
 ---
 
 {{<figure src="/img/kmer-expect-occur.png">}}

@@ -1,6 +1,9 @@
 ---
 date: 2013-01-29T22:03:06Z
 title: "Sublime SFTP package"
+categories: ["work"]
+tags: ["text editor", "sublime"]
+summary: "I’ve become an addicted fan of the Sublime Text editor. This is the most amazing text editor I’ve worked with..."
 ---
 
 I’ve become an addicted fan of the [Sublime Text editor](http://www.sublimetext.com/). This is the most amazing text editor I’ve worked with. It’s been already greatly described in other blogs (see, for example [here](http://1p1e1.tumblr.com/post/14262857223/9-reasons-you-must-install-sublime-text-2-code-like-a) and [here](http://robdodson.me/blog/2012/06/23/sublime-text-2-tips-and-shortcuts/)), so I am not going into the details about it’s cool features. What I want to write about is one it’s packages which I find particularly useful — [Sublime SFTP](http://wbond.net/sublime_packages/sftp).

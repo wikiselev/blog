@@ -1,6 +1,9 @@
 ---
 date: 2012-10-20T21:28:49Z
 title: "Automated snapshotting with IGV genomic browser"
+categories: ["work"]
+tags: ["IGV", "snapshots"]
+summary: "Description of how to run an automated snapshotting using IGV browser..."
 ---
 
 Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given __protein_list__ at specific genomic locations (a given __gene_list__). To take a snapshot of any genomic region I usually use [IGV genomic browser](http://www.broadinstitute.org/igv/home) (in this post version 2.1.24 (2563) was used). When __protein_list__ (<10 data files) and __gene_list__ (<10 regions) are small snapshotting can be easily done manually. However, during the development of the project these lists can become quite big and unfeasible for manual processing. And that’s what happened with me. By accident, at the same time I found out that IGV browser is able to execute batch files of its own format. It didn’t take me long to figure out how it all works and in about half an hour I wrote a simple batch script which automated the whole process of taking my snapshots in IGV browser. I won’t go into the description how to write such a script as you can find all necessary information at the link above. However, I’ll make some useful comments about the batch file.

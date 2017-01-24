@@ -1,6 +1,9 @@
 ---
 date: 2013-11-02T22:14:08Z
 title: "easy-Report script for easy R reporting"
+categories: ["work"]
+tags: ["R", "reports"]
+summary: "Here I describe a script I wrote for easy reporting in R..."
 ---
 
 Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best). In this case I would spend a lot of time for coding, then for commenting and then for creating a report in a pdf or powerpoint/keynote format. Luckily there are tools that can help with reporting your results in a very efficient way.

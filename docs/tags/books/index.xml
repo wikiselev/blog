@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Books on женатик</title>
+    <link>/tags/books/index.xml</link>
+    <description>Recent content in Books on женатик</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
+    <atom:link href="/tags/books/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bioinformatics Algorithms</title>
+      <link>/post/2015-09-15-bioinformatics-algorithms/</link>
+      <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
+      
+      <guid>/post/2015-09-15-bioinformatics-algorithms/</guid>
+      <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34; target=&#34;_blank&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
+
+&lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
+
+&lt;p&gt;That&amp;rsquo;s all for now, I am off to read some really cool stuff, hope you can share my excitement!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,6 +1,9 @@
 ---
 date: 2017-01-21T19:57:37Z
 title: "Get GSEA done!"
+categories: ["work"]
+tags: ["GSEA"]
+summary: "Thousands of times I've heard of the Gene Set Enrichment Analysis or GSEA. Thousands of times I tried to run it and thousands of times I failed..."
 ---
 
 ## Introduction

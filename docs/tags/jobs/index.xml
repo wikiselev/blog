@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jobs on женатик</title>
+    <link>/tags/jobs/index.xml</link>
+    <description>Recent content in Jobs on женатик</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
+    <atom:link href="/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Job applications</title>
+      <link>/post/2015-07-21-job-applications/</link>
+      <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
+      
+      <guid>/post/2015-07-21-job-applications/</guid>
+      <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
+
+&lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:
+https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;usp=sharing --&gt;
+
+&lt;iframe src=&#39;http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;font=Arvo-PTSans&amp;maptype=toner&amp;lang=en&amp;height=350&#39; width=&#39;100%&#39; height=&#39;360&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The timeline was created by using a &lt;a href=&#34;http://timeline.knightlab.com/&#34; target=&#34;_blank&#34;&gt;timeline tool&lt;/a&gt; from KnightLab.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

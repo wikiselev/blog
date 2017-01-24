@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on женатик</title>
-    <link>http://genat.uk/project/index.xml</link>
+    <link>/project/index.xml</link>
     <description>Recent content in Projects on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,28 +12,55 @@
     
     <item>
       <title>SC3</title>
-      <link>http://genat.uk/project/sc3/</link>
+      <link>/project/sc3/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/sc3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ftl1.support</title>
-      <link>http://genat.uk/project/ftl1/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://genat.uk/project/ftl1/</guid>
+      <guid>/project/sc3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scRNA-seq course</title>
-      <link>http://genat.uk/project/sc-rna-seq-course/</link>
+      <link>/project/sc-rna-seq-course/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/sc-rna-seq-course/</guid>
+      <guid>/project/sc-rna-seq-course/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My PhD thesis</title>
+      <link>/project/phd/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/project/phd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My chords</title>
+      <link>/project/chords/</link>
+      <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/project/chords/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ftl1.support</title>
+      <link>/project/ftl1/</link>
+      <pubDate>Fri, 27 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ftl1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>St Ephraim Orthodox Parish</title>
+      <link>/project/stephraim/</link>
+      <pubDate>Wed, 27 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/project/stephraim/</guid>
       <description></description>
     </item>
     

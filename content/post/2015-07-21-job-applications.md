@@ -1,6 +1,9 @@
 ---
 date: 2015-07-21T19:46:25Z
 title: "Job applications"
+categories: ["work"]
+tags: ["jobs"]
+summary: "Below is a timeline of my job applications since PhD. You can drag it to see the latest applications..."
 ---
 
 Below is a timeline of my job applications since PhD. You can drag it to see the latest applications. 

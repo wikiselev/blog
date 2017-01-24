@@ -1,6 +1,8 @@
 ---
 date: 2013-10-10T22:11:12Z
 title: "Bioinformatics Algorithms Online Course"
+categories: ["work"]
+tags: ["bioinformatics"]
 ---
 
 I am going to take the following online course which starts at the end of October:

@@ -1,6 +1,9 @@
 ---
 date: 2013-12-04T22:20:56Z
 title: "Interesting bioinformatics questions"
+categories: ["work"]
+tags: ["bioinformatics"]
+summary: "I’ve created a GitHub repository where I will store my scripts and descriptions of some bioinformatics questions..."
 ---
 
 While doing [Bioinformatics algorithms online course](https://class.coursera.org/bioinformatics-001/) together with [Stepic online educational resource](https://beta.stepic.org/) I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:

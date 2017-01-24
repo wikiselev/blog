@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Snapshots on женатик</title>
+    <link>/tags/snapshots/index.xml</link>
+    <description>Recent content in Snapshots on женатик</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
+    <atom:link href="/tags/snapshots/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Automated snapshotting with IGV genomic browser</title>
+      <link>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</link>
+      <pubDate>Sat, 20 Oct 2012 21:28:49 +0000</pubDate>
+      
+      <guid>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</guid>
+      <description>&lt;p&gt;Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given &lt;strong&gt;protein_list&lt;/strong&gt; at specific genomic locations (a given &lt;strong&gt;gene_list&lt;/strong&gt;). To take a snapshot of any genomic region I usually use &lt;a href=&#34;http://www.broadinstitute.org/igv/home&#34; target=&#34;_blank&#34;&gt;IGV genomic browser&lt;/a&gt; (in this post version 2.1.24 (2563) was used). When &lt;strong&gt;protein_list&lt;/strong&gt; (&amp;lt;10 data files) and &lt;strong&gt;gene_list&lt;/strong&gt; (&amp;lt;10 regions) are small snapshotting can be easily done manually. However, during the development of the project these lists can become quite big and unfeasible for manual processing. And that’s what happened with me. By accident, at the same time I found out that IGV browser is able to execute batch files of its own format. It didn’t take me long to figure out how it all works and in about half an hour I wrote a simple batch script which automated the whole process of taking my snapshots in IGV browser. I won’t go into the description how to write such a script as you can find all necessary information at the link above. However, I’ll make some useful comments about the batch file.&lt;/p&gt;
+
+&lt;p&gt;Let’s define the &lt;strong&gt;gene_list&lt;/strong&gt; as a simple text file with the following structure:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                              # Examples of the values:
+gene1                         # PTGS2
+gene1_full_name               # Prostaglandin-endoperoxide synthase 2 (COX-2)
+gene1_url                     # http://www.ncbi.nlm.nih.gov/gene/5743
+gene1_location                # chr1:186,640,920-186,641,060
+
+gene2
+gene2_full_name
+gene2_url
+gene2_location
+
+# all other genomic locations
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And shall the &lt;strong&gt;protein_list&lt;/strong&gt; be just a folder (/Users/Vladimir/IGV/protein_list/) with CLIP data files, let’s say of .BED format (can be other formats, e.g. WIG):&lt;/p&gt;
+
+&lt;p&gt;protein1.BED
+protein2.BED
+…&lt;/p&gt;
+
+&lt;p&gt;Having defined &lt;strong&gt;gene_list&lt;/strong&gt; and &lt;strong&gt;protein_list&lt;/strong&gt; as shown above my IGV batch file will look like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;new
+
+load /Users/Vladimir/IGV/protein_list/protein1.BED,/Users/Vladimir/IGV/protein_list/protein2.BED # all other protein data files
+
+snapshotDirectory /Users/Vladimir/IGV/snapshots/
+
+goto gene1_location
+snapshot gene1.png
+
+goto gene2_location
+snapshot gene2.png
+
+# all other genomic locations
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now my comments about the batch file and protein data files:
+1. If your BED (or other format) data files are large it’s better to use &lt;a href=&#34;http://www.broadinstitute.org/igv/igvtools&#34; target=&#34;_blank&#34;&gt;IGV tools&lt;/a&gt; to process them into a more convenient format to improve the performance of IGV browser (.tdf).
+2. IGV browser is very sensitive to a file path definition – I always had to define the full path to a file or a folder to make it work (e.g. /Users/Vladimir/IGV/protein_list/protein1.BED or /Users/Vladimir/IGV/snapshots/ instead of just protein_list/protein1.BED or snapshots/). Also please separate files in the &lt;em&gt;load&lt;/em&gt; line strictly by a comma and don’t add any space before and after it! Otherwise, the script won’t work!&lt;/p&gt;
+
+&lt;p&gt;To run the batch file you need to go to the File menu tab of the IGV browser and click on &lt;em&gt;Run Batch Script&amp;hellip;&lt;/em&gt;. Then choose your batch file (in my case ‘IGV_script.txt’) in the windows dialog and wait until the browser takes all the snapshots for you automatically and then voila! All my snapshots are now in /Users/Vladimir/IGV/snapshots/ folder. If I run my example script ‘IGV_script.txt’ I will get 2 snapshots.&lt;/p&gt;
+
+&lt;p&gt;But, unfortunately, that was not the end of the problem. My ultimate &lt;strong&gt;gene_list&lt;/strong&gt; contained more than 50 genomic regions providing me with more than 50 snapshots (I imagine, you could have more than that). It was not easy at all to view, share and compare those snapshots. I felt that I needed another automated script that would integrate all my snapshots into one file with a basic annotation to make my life easy. I tried several options but ended up with the old and reliable &lt;a href=&#34;http://en.wikipedia.org/wiki/LaTeX&#34; target=&#34;_blank&#34;&gt;LaTex&lt;/a&gt;. Here is an example of a .tex script which can be used to combine into one file snapshots generated by my example batch file ‘IGV_script.txt’:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;\documentclass[landscape,letterpaper]{article}
+\renewcommand{\rmdefault}{phv}      % Arial
+\setlength{\oddsidemargin}{-0.9in}    
+\setlength{\textwidth}{10.7in}         
+\setlength{\textheight}{7in}         
+\setlength{\topmargin}{-1.0in}         
+\setlength{\headsep}{0.25in}         
+\setlength{\parskip}{1.2ex}
+\setlength{\parindent}{0mm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true}
+\usepackage[dvipsnames]{xcolor}
+
+\begin{document}
+{\bf gene1_full_name}
+\url{gene1_url}
+gene1_location
+Color abbreviations: {\bf {\color{green} A}, {\color{blue} C}, {\color{red} T}, {\color{Orange} G}}
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale = X]{snapshots/gene1.png}     % change X to a value between 0 and 1 to fit a snapshot to the file page size
+\end{center}
+\end{figure}
+\cleardoublepage
+{\bf gene2_full_name}
+\url{gene2_url}
+gene2_location
+Color abbreviations: {\bf {\color{green} A}, {\color{blue} C}, {\color{red} T}, {\color{Orange} G}}
+\begin{figure}[!ht]
+\begin{center}
+    \includegraphics[scale = X]{snapshots/gene2.png}     % change X to a value between 0 and 1 to fit a snapshot to the file page size
+\end{center}
+\end{figure}
+% all other snapshots
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The outcome of this script is a .pdf document on each page of which is a single IGV snapshot with its basic description.&lt;/p&gt;
+
+&lt;p&gt;So, now when you have all your snapshots combined in one file it’s much easier to deal with your results!&lt;/p&gt;
+
+&lt;p&gt;Hope this post was helpful. Please let me know if you’ve had any problems with it.&lt;/p&gt;
+
+&lt;p&gt;Note: Everywhere throughout this post I used IGV genomic browser of version 2.1.24 (2563)&lt;/p&gt;
+
+&lt;p&gt;P.S. Of course one could automate the process even more, so that the only initial income parameters required are &lt;strong&gt;gene_list&lt;/strong&gt; and &lt;strong&gt;protein_list&lt;/strong&gt;. Then it is possible to create (e.g. using a python script) and execute (e.g. using a shell script) all necessary scripts automatically. I’ll probably do this later on and update you about it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPD&lt;/strong&gt;. If your &lt;strong&gt;gene_list&lt;/strong&gt; is an automatically generated BED file then you can use a utility, called &lt;a href=&#34;https://groups.google.com/forum/#!msg/bedtools-discuss/lkrMv5J_LJI/Q38uzhI6l0MJ&#34; target=&#34;_blank&#34;&gt;bedToIgv&lt;/a&gt;, provided by BEDtools to generate an IGV batch file. Note that you should install the newest version of BEDtools to be able to use this utility (v. 2.17.0 on 13/11/12). If you &lt;strong&gt;gene_list&lt;/strong&gt; is not an automatically generated BED file then the utility won’t be very useful for you.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
