@@ -15,6 +15,7 @@ weight = 2
     "Bioinformatics",
     "Physics",
     "Basketball",
+    "Volleyball",
     "Guitar"
   ]
 
@@ -38,4 +39,4 @@ weight = 2
 
 # About
 <br>
-I am a PostDoc at the [Sanger Institute](http://www.sanger.ac.uk/) in [Martin Hemberg’s lab](http://www.sanger.ac.uk/science/groups/hemberg-group). Currently I work on statistical method development for single-cell sequencing data.
+I am a Staff Scientist at the [Sanger Institute](http://www.sanger.ac.uk/) in [Martin Hemberg’s group](http://www.sanger.ac.uk/science/groups/hemberg-group). I work on method development for single-cell sequencing data.
