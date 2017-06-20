@@ -90,7 +90,7 @@ defaultContentLanguageInSubdir = false
   [[params.social]]
     icon = "publons"
     icon_pack = "ai"
-    link = "https://publons.com/a/1265642/"
+    link = "https://publons.com/author/1265642/vladimir-kiselev"
 
   [[params.social]]
     icon = "orcid"
