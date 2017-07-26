@@ -149,11 +149,38 @@
     </item>
     
     <item>
+      <title>cloud scmap</title>
+      <link>http://genat.uk/project/cloud-scmap/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://genat.uk/project/cloud-scmap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scRNA-Seq datasets</title>
+      <link>http://genat.uk/project/datasets/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://genat.uk/project/datasets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>scRNA-seq course</title>
       <link>http://genat.uk/project/sc-rna-seq-course/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>http://genat.uk/project/sc-rna-seq-course/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>scmap</title>
+      <link>http://genat.uk/project/scmap/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://genat.uk/project/scmap/</guid>
       <description></description>
     </item>
     
@@ -255,56 +282,6 @@
 &lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
 
 &lt;p&gt;That&amp;rsquo;s all for now, I am off to read some really cool stuff, hope you can share my excitement!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ISMB 2015 Poster</title>
-      <link>http://genat.uk/post/2015-07-23-ismb-2015-poster/</link>
-      <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/2015-07-23-ismb-2015-poster/</guid>
-      <description>&lt;p&gt;At &lt;a href=&#34;http://www.iscb.org/ismbeccb2015&#34; target=&#34;_blank&#34;&gt;ISMB-2015&lt;/a&gt; in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;You can view/download the poster at &lt;a href=&#34;http://f1000research.com/posters/4-226&#34; target=&#34;_blank&#34;&gt;F1000 website&lt;/a&gt;. All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Job applications</title>
-      <link>http://genat.uk/post/2015-07-21-job-applications/</link>
-      <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/2015-07-21-job-applications/</guid>
-      <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
-
-&lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:
-https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;usp=sharing --&gt;
-
-&lt;iframe src=&#39;http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;font=Arvo-PTSans&amp;maptype=toner&amp;lang=en&amp;height=350&#39; width=&#39;100%&#39; height=&#39;360&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The timeline was created by using a &lt;a href=&#34;http://timeline.knightlab.com/&#34; target=&#34;_blank&#34;&gt;timeline tool&lt;/a&gt; from KnightLab.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>K-mer expected number of occurrences in a DNA string</title>
-      <link>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
-      <pubDate>Fri, 10 Jan 2014 22:24:07 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
-      <description>
-&lt;figure &gt;
-    
-        &lt;img src=&#34;http://genat.uk/img/kmer-expect-occur.png&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-&lt;p&gt;Please find full description here: &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki/Kmer-expected-number-of-occurrences-in-a-DNA-string&#34; target=&#34;_blank&#34;&gt;K-mer expected number of occurrences in a DNA string&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
