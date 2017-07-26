@@ -365,6 +365,15 @@
     
     
     <url>
+      <loc>http://genat.uk/tags/private/</loc>
+      <lastmod>2013-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://genat.uk/project/</loc>
       <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
@@ -454,8 +463,26 @@
     
     
     <url>
+      <loc>http://genat.uk/tags/volunteering/</loc>
+      <lastmod>2012-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://genat.uk/tags/web/</loc>
       <lastmod>2017-01-22T02:12:52+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://genat.uk/tags/work/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

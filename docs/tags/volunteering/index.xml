@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Volunteering on женатик</title>
+    <link>http://genat.uk/tags/volunteering/index.xml</link>
+    <description>Recent content in Volunteering on женатик</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
+    <atom:link href="/tags/volunteering/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ftl1.support</title>
+      <link>http://genat.uk/project/ftl1/</link>
+      <pubDate>Fri, 27 Apr 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://genat.uk/project/ftl1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>St Ephraim Orthodox Parish</title>
+      <link>http://genat.uk/project/stephraim/</link>
+      <pubDate>Wed, 27 Apr 2011 00:00:00 +0000</pubDate>
+      
+      <guid>http://genat.uk/project/stephraim/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
