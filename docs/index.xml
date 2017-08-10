@@ -11,6 +11,204 @@
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>gCompass</title>
+      <link>http://genat.uk/post/2017-08-10-gCompass/</link>
+      <pubDate>Thu, 10 Aug 2017 17:19:20 +0100</pubDate>
+      
+      <guid>http://genat.uk/post/2017-08-10-gCompass/</guid>
+      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+
+/BLOGDOWN-BODY-BEFORE --&gt;
+
+&lt;div id=&#34;about&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;About&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;gCompass&lt;/strong&gt; is a tool that allows one to search single cell RNA-Seq databases using either lists of genes or GO term lists, e.g. searching for cell-types where a specific set of genes are expressed. Here we provide a tutorial on how to create an index from your dataset and how to run queries using the created index.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;gCompass&lt;/strong&gt; is a part of &lt;a href=&#34;https://github.com/hemberg-lab/scmap&#34;&gt;scmap&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cloud implementation of &lt;strong&gt;gCompass&lt;/strong&gt; with a large collection of datasets is available on our &lt;a href=&#34;http://www.hemberg-lab.cloud/gcompass&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;dataset&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Dataset&lt;/h1&gt;
+&lt;p&gt;We will run &lt;strong&gt;gCompass&lt;/strong&gt; on a human pancreas &lt;a href=&#34;http://dx.doi.org/10.1016/j.cels.2016.09.002&#34;&gt;dataset&lt;/a&gt;. &lt;code&gt;scater&lt;/code&gt; object created from the data from this dataset can be downloaded from our &lt;a href=&#34;https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#muraro&#34;&gt;website&lt;/a&gt;. We will put it in the &lt;code&gt;data&lt;/code&gt; folder in the root directory. &lt;strong&gt;gCompass&lt;/strong&gt; is compatible with the &lt;code&gt;scater&lt;/code&gt; format and we will run it directly on the downloaded dataset:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scater)
+muraro &amp;lt;- readRDS(&amp;quot;~/data/muraro.rds&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gene-index&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Gene Index&lt;/h1&gt;
+&lt;p&gt;Now we are ready to create a gene index using our dataset:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scmap)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Creating a generic function for &amp;#39;toJSON&amp;#39; from package &amp;#39;jsonlite&amp;#39; in package &amp;#39;googleVis&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;geneIndex &amp;lt;- buildGeneIndex(muraro)
+head(geneIndex)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##                alpha     ductal endothelial      delta     acinar
+## A1BG-AS1 0.000000000 0.00000000  0.00000000 0.00000000 0.00000000
+## A1BG     0.123152709 0.01224490  0.00000000 0.09844560 0.04109589
+## A1CF     0.895320197 0.11020408  0.04761905 0.68911917 0.62557078
+## A2M-AS1  0.027093596 0.02448980  0.00000000 0.02072539 0.01826484
+## A2ML1    0.013546798 0.01632653  0.04761905 0.02072539 0.05022831
+## A2M      0.004926108 0.06122449  0.95238095 0.02072539 0.02739726
+##                beta unclear      gamma mesenchymal epsilon
+## A1BG-AS1 0.00000000    0.00 0.00000000      0.0000       0
+## A1BG     0.14062500    0.00 0.12871287      0.2875       0
+## A1CF     0.55357143    0.25 0.69306931      0.0500       1
+## A2M-AS1  0.02455357    0.00 0.02970297      0.0625       0
+## A2ML1    0.01562500    0.00 0.01980198      0.0375       0
+## A2M      0.01116071    0.00 0.00990099      0.8125       0&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The gene index contains probability of expression of each gene in each cell type (ratio of expressed cells versus all cells in a given cell type). Since we only need to store one floating point value for each gene and cell type, the size of the index will scale with the total number of cell types in the atlas.&lt;/p&gt;
+&lt;p&gt;By default the &lt;code&gt;cell_type1&lt;/code&gt; column of the &lt;code&gt;pData&lt;/code&gt; slot of the &lt;code&gt;scater&lt;/code&gt; object is used to define cell types, however it can also be defined manually using the &lt;code&gt;cell_type_column&lt;/code&gt; argument of the &lt;code&gt;buildGeneIndex&lt;/code&gt; function (check &lt;code&gt;?buildGeneIndex&lt;/code&gt;).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;marker-genes&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Marker genes&lt;/h1&gt;
+&lt;p&gt;Now let’s define lists of cell type specific marker genes. We will use the &lt;a href=&#34;http://dx.doi.org/10.1016/j.cels.2016.09.002&#34;&gt;original publication&lt;/a&gt;, namely Figure 1:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# these genes are taken from fig. 1
+muraro_alpha &amp;lt;- c(&amp;quot;GCG&amp;quot;, &amp;quot;LOXL4&amp;quot;, &amp;quot;PLCE1&amp;quot;, &amp;quot;IRX2&amp;quot;, &amp;quot;GC&amp;quot;, &amp;quot;KLHL41&amp;quot;, &amp;quot;CRYBA2&amp;quot;, &amp;quot;TTR&amp;quot;, &amp;quot;TM4SF4&amp;quot;, &amp;quot;RGS4&amp;quot;)
+muraro_beta &amp;lt;- c(&amp;quot;INS&amp;quot;, &amp;quot;IAPP&amp;quot;, &amp;quot;MAFA&amp;quot;, &amp;quot;NPTX2&amp;quot;, &amp;quot;DLK1&amp;quot;, &amp;quot;ADCYAP1&amp;quot;, &amp;quot;PFKFB2&amp;quot;, &amp;quot;PDX1&amp;quot;, &amp;quot;TGFBR3&amp;quot;, &amp;quot;SYT13&amp;quot;)
+muraro_gamma &amp;lt;- c(&amp;quot;PPY&amp;quot;, &amp;quot;SERTM1&amp;quot;, &amp;quot;CARTPT&amp;quot;, &amp;quot;SLITRK6&amp;quot;, &amp;quot;ETV1&amp;quot;, &amp;quot;THSD7A&amp;quot;, &amp;quot;AQP3&amp;quot;, &amp;quot;ENTPD2&amp;quot;, &amp;quot;PTGFR&amp;quot;, &amp;quot;CHN2&amp;quot;)
+muraro_delta &amp;lt;- c(&amp;quot;SST&amp;quot;, &amp;quot;PRG4&amp;quot;, &amp;quot;LEPR&amp;quot;, &amp;quot;RBP4&amp;quot;, &amp;quot;BCHE&amp;quot;, &amp;quot;HHEX&amp;quot;, &amp;quot;FRZB&amp;quot;, &amp;quot;PCSK1&amp;quot;, &amp;quot;RGS2&amp;quot;, &amp;quot;GABRG2&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Additionally, we will use cell type specific marker genes from another human pancreas &lt;a href=&#34;https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#segerstolpe&#34;&gt;publication&lt;/a&gt; (taken from Figures 2 and 3):&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# these genes are taken from fig. 2
+segerstolpe_alpha &amp;lt;- c(&amp;quot;GCG&amp;quot;, &amp;quot;TTR&amp;quot;, &amp;quot;SSR4&amp;quot;, &amp;quot;CRYBA2&amp;quot;, &amp;quot;SPINT2&amp;quot;, &amp;quot;PEMT&amp;quot;, &amp;quot;CHGA&amp;quot;, &amp;quot;GPX3&amp;quot;, &amp;quot;TMEM176B&amp;quot;, &amp;quot;GC&amp;quot;, &amp;quot;FKBP2&amp;quot;, &amp;quot;PCSK2&amp;quot;, &amp;quot;NAA20&amp;quot;, &amp;quot;TMEM176A&amp;quot;, &amp;quot;ERP29&amp;quot;, &amp;quot;DPM3&amp;quot;, &amp;quot;TMED3&amp;quot;, &amp;quot;CNPY2&amp;quot;, &amp;quot;C10orf10&amp;quot;, &amp;quot;TUBA1B&amp;quot;, &amp;quot;SMIM24&amp;quot;, &amp;quot;F10&amp;quot;, &amp;quot;FXYD5&amp;quot;, &amp;quot;CD46&amp;quot;, &amp;quot;SLC22A17&amp;quot;)
+segerstolpe_beta &amp;lt;- c(&amp;quot;INS&amp;quot;, &amp;quot;SCGN&amp;quot;, &amp;quot;IAPP&amp;quot;, &amp;quot;FXYD2&amp;quot;, &amp;quot;RPL3&amp;quot;, &amp;quot;G6PC2&amp;quot;, &amp;quot;HSP90AB1&amp;quot;, &amp;quot;PEBP1&amp;quot;, &amp;quot;HSPA8&amp;quot;, &amp;quot;EIR4A2&amp;quot;, &amp;quot;ERO1LB&amp;quot;, &amp;quot;SERINC1&amp;quot;, &amp;quot;SLC30A8&amp;quot;, &amp;quot;FAM159B&amp;quot;, &amp;quot;SURF4&amp;quot;, &amp;quot;NPTX2&amp;quot;, &amp;quot;PFKFB2&amp;quot;, &amp;quot;EDARADD&amp;quot;, &amp;quot;MEG3&amp;quot;, &amp;quot;HOPX&amp;quot;, &amp;quot;LMO1&amp;quot;, &amp;quot;PDX1&amp;quot;, &amp;quot;PTEN&amp;quot;, &amp;quot;SH3GL2&amp;quot;, &amp;quot;ADCYAP1&amp;quot;)
+segerstolpe_gamma &amp;lt;- c(&amp;quot;PPY&amp;quot;, &amp;quot;MALAT1&amp;quot;, &amp;quot;SCG2&amp;quot;, &amp;quot;SCGB2A1&amp;quot;, &amp;quot;PAM&amp;quot;, &amp;quot;GPC5-AS1&amp;quot;, &amp;quot;STMN2&amp;quot;, &amp;quot;PAX6&amp;quot;, &amp;quot;MEIS2&amp;quot;, &amp;quot;CMTM8&amp;quot;, &amp;quot;TTC3&amp;quot;, &amp;quot;ARX&amp;quot;, &amp;quot;FGFR1&amp;quot;, &amp;quot;AKAP9&amp;quot;, &amp;quot;ETV1&amp;quot;, &amp;quot;PPY2&amp;quot;, &amp;quot;NCKAP1&amp;quot;, &amp;quot;INPP5F&amp;quot;, &amp;quot;PXK&amp;quot;, &amp;quot;ID4&amp;quot;, &amp;quot;SERTM1&amp;quot;, &amp;quot;SLITRK6&amp;quot;, &amp;quot;SEMA3E&amp;quot;, &amp;quot;APCBEC2&amp;quot;, &amp;quot;ABCC9&amp;quot;)
+segerstolpe_delta &amp;lt;- c(&amp;quot;SST&amp;quot;, &amp;quot;RBP4&amp;quot;, &amp;quot;SEC11C&amp;quot;, &amp;quot;PCP4&amp;quot;, &amp;quot;AGS2&amp;quot;, &amp;quot;HHEX&amp;quot;, &amp;quot;TPPP3&amp;quot;, &amp;quot;UCP2&amp;quot;, &amp;quot;LEPA&amp;quot;, &amp;quot;BAIAP3&amp;quot;, &amp;quot;MS4A8&amp;quot;, &amp;quot;CASR&amp;quot;, &amp;quot;PSIP1&amp;quot;, &amp;quot;BCHE&amp;quot;, &amp;quot;GABRB3&amp;quot;, &amp;quot;LY6H&amp;quot;, &amp;quot;UNC5B&amp;quot;, &amp;quot;EDN3&amp;quot;, &amp;quot;OGDHL&amp;quot;, &amp;quot;NSG1&amp;quot;, &amp;quot;FFAR4&amp;quot;, &amp;quot;LINC00643&amp;quot;, &amp;quot;LINC01014&amp;quot;, &amp;quot;TMEM130&amp;quot;, &amp;quot;PRG4&amp;quot;)
+
+# these genes are taken from fig. 3
+segerstolpe_acinar &amp;lt;- c(&amp;quot;REG1A&amp;quot;, &amp;quot;SPINK1&amp;quot;, &amp;quot;PRSS1&amp;quot;, &amp;quot;REG3A&amp;quot;, &amp;quot;CTRB2&amp;quot;, &amp;quot;SERPINA3&amp;quot;, &amp;quot;RNASE1&amp;quot;, &amp;quot;IL32&amp;quot;, &amp;quot;PRSS3&amp;quot;, &amp;quot;REG1B&amp;quot;, &amp;quot;PRSS3P2&amp;quot;, &amp;quot;CTRB1&amp;quot;, &amp;quot;CFB&amp;quot;, &amp;quot;GDF15&amp;quot;, &amp;quot;MUC1&amp;quot;, &amp;quot;C15orf48&amp;quot;, &amp;quot;DUOXA2&amp;quot;, &amp;quot;AKR1C3&amp;quot;, &amp;quot;CPA2&amp;quot;, &amp;quot;OLFM4&amp;quot;, &amp;quot;GSTA1&amp;quot;, &amp;quot;LGALS2&amp;quot;, &amp;quot;MGST1&amp;quot;, &amp;quot;PDZK1IP1&amp;quot;, &amp;quot;SOD2&amp;quot;, &amp;quot;RARRES2&amp;quot;, &amp;quot;EIF4EBP1&amp;quot;, &amp;quot;CXCL17&amp;quot;, &amp;quot;RAMP1&amp;quot;, &amp;quot;C3&amp;quot;, &amp;quot;UBD&amp;quot;, &amp;quot;GSTA2&amp;quot;, &amp;quot;LDHB&amp;quot;, &amp;quot;ANPEP&amp;quot;, &amp;quot;SDC4&amp;quot;, &amp;quot;LYZ&amp;quot;, &amp;quot;ANGPTL4&amp;quot;, &amp;quot;IGFBP2&amp;quot;, &amp;quot;ALDOB&amp;quot;)
+segerstolpe_ductal &amp;lt;- c(&amp;quot;SPP1&amp;quot;, &amp;quot;KRT19&amp;quot;, &amp;quot;MMP7&amp;quot;, &amp;quot;ANXA4&amp;quot;, &amp;quot;ANXA2&amp;quot;, &amp;quot;DEFB1&amp;quot;, &amp;quot;SERPING1&amp;quot;, &amp;quot;ATP5B&amp;quot;, &amp;quot;ANXA2P2&amp;quot;, &amp;quot;TSPAN8&amp;quot;, &amp;quot;CLDN10&amp;quot;, &amp;quot;IFITM2&amp;quot;, &amp;quot;CTSH&amp;quot;, &amp;quot;SERPINA1&amp;quot;, &amp;quot;CD59&amp;quot;, &amp;quot;SLPI&amp;quot;, &amp;quot;S100A16&amp;quot;, &amp;quot;CD9&amp;quot;, &amp;quot;MIR492&amp;quot;, &amp;quot;SERPINA5&amp;quot;, &amp;quot;PIGR&amp;quot;, &amp;quot;PPAP2C&amp;quot;, &amp;quot;CFTR&amp;quot;, &amp;quot;S100A13&amp;quot;, &amp;quot;AMBP&amp;quot;, &amp;quot;CLDN1&amp;quot;, &amp;quot;LGALS4&amp;quot;, &amp;quot;ANXA3&amp;quot;, &amp;quot;ITGB1&amp;quot;, &amp;quot;PERP&amp;quot;, &amp;quot;LITAF&amp;quot;, &amp;quot;LY6E&amp;quot;, &amp;quot;CMTM7&amp;quot;, &amp;quot;PDLIM3&amp;quot;, &amp;quot;WFDC2&amp;quot;, &amp;quot;TXNIP&amp;quot;, &amp;quot;SLC3A1&amp;quot;, &amp;quot;AOP1&amp;quot;, &amp;quot;ALDH1A3&amp;quot;, &amp;quot;VTCN1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;muraro&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Muraro&lt;/h2&gt;
+&lt;p&gt;Now, when the gene index is created one can easily and very quickly query information from the dataset. One query which is likely to be of central interest is to retrieve the cell-types where a given set of genes is expressed. For a list of genes, we can then calculate the log-likelihood that all of them will be expressed in the cell-type in question. &lt;strong&gt;gCompass&lt;/strong&gt; uses theis log-likelihood to perform a likelihood-ratio test and identify cell types where the given list of genes is significantly expressed.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;queryGeneList&lt;/code&gt; function returns a list of p-values corresponding to all cell types in a given dataset. We will run it on all lists of marker genes defined above:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_alpha))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_beta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_delta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_gamma))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_alpha))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_alpha): Genes: SMIM24 were
+## exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_beta))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_beta): Genes: EIR4A2 were
+## exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-6.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_delta))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_delta): Genes: AGS2, LEPA,
+## MS4A8, LINC01014 were exluded from search since they are not present in the
+## Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-7.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_gamma))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_gamma): Genes: PPY2,
+## APCBEC2 were exluded from search since they are not present in the Gene
+## Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-8.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_acinar))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-9.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_ductal))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_ductal): Genes: MIR492,
+## AOP1 were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-10.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can also check whether the obtained p-values for marker genes are significantly different from p-values of random gene sets:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvals &amp;lt;- NULL
+while(length(pvals) &amp;lt; 100) {
+    tmp &amp;lt;- queryGeneList(geneIndex, sample(rownames(geneIndex), 10))
+    if(!all(is.na(tmp))) {
+        pvals &amp;lt;- c(pvals, min(tmp[!is.na(tmp)]))
+    }
+}
+
+boxplot(pvals)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;sessioninfo&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;sessionInfo()&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## R Under development (unstable) (2016-10-20 r71540)
+## Platform: x86_64-apple-darwin13.4.0 (64-bit)
+## Running under: OS X Yosemite 10.10.5
+## 
+## locale:
+## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
+## 
+## attached base packages:
+## [1] parallel  methods   stats     graphics  grDevices utils     datasets 
+## [8] base     
+## 
+## other attached packages:
+## [1] bindrcpp_0.1        scmap_0.99.3        scater_1.4.0       
+## [4] ggplot2_2.2.1.9000  Biobase_2.36.2      BiocGenerics_0.22.0
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.10         locfit_1.5-9.1       lattice_0.20-34     
+##  [4] class_7.3-14         assertthat_0.2.0     rprojroot_1.2       
+##  [7] digest_0.6.12        mime_0.5             R6_2.2.0            
+## [10] plyr_1.8.4           backports_1.0.5      stats4_3.4.0        
+## [13] RSQLite_1.1-2        evaluate_0.10        e1071_1.6-8         
+## [16] blogdown_0.0.13      zlibbioc_1.22.0      rlang_0.1.1         
+## [19] lazyeval_0.2.0       data.table_1.10.4    googleVis_0.6.2     
+## [22] S4Vectors_0.14.0     Matrix_1.2-10        rmarkdown_1.5       
+## [25] stringr_1.2.0        RCurl_1.95-4.8       biomaRt_2.32.0      
+## [28] munsell_0.4.3        proxy_0.4-17         shiny_1.0.3         
+## [31] vipor_0.4.5          httpuv_1.3.3         ggbeeswarm_0.5.3    
+## [34] htmltools_0.3.6      tximport_1.4.0       tibble_1.3.3        
+## [37] gridExtra_2.2.1      bookdown_0.3         edgeR_3.18.1        
+## [40] IRanges_2.10.0       codetools_0.2-15     matrixStats_0.52.2  
+## [43] randomForest_4.6-12  XML_3.98-1.7         viridisLite_0.2.0   
+## [46] dplyr_0.7.0          bitops_1.0-6         grid_3.4.0          
+## [49] jsonlite_1.4         xtable_1.8-2         gtable_0.2.0        
+## [52] DBI_0.6-1            magrittr_1.5         scales_0.4.1.9002   
+## [55] stringi_1.1.5        reshape2_1.4.2       viridis_0.4.0       
+## [58] limma_3.32.2         rjson_0.2.15         tools_3.4.0         
+## [61] glue_1.0.0           beeswarm_0.2.3       yaml_2.1.14         
+## [64] AnnotationDbi_1.38.0 colorspace_1.3-2     rhdf5_2.20.0        
+## [67] shinydashboard_0.5.3 memoise_1.1.0        bindr_0.1           
+## [70] knitr_1.15.1&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+
+&lt;!-- BLOGDOWN-HEAD
+
+
+
+
+/BLOGDOWN-HEAD --&gt;
+</description>
+    </item>
+    
+    <item>
       <title>New website theme</title>
       <link>http://genat.uk/post/2017-01-22-new-website-theme/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
@@ -268,20 +466,6 @@
       
       <guid>http://genat.uk/post/2015-09-22-ismara-client/</guid>
       <description>&lt;p&gt;I was using &lt;a href=&#34;https://ismara.unibas.ch/fcgi/mara&#34; target=&#34;_blank&#34;&gt;ISMARA&lt;/a&gt; for my last paper which is now in press in &lt;a href=&#34;http://nar.oxfordjournals.org/&#34; target=&#34;_blank&#34;&gt;NAR journal&lt;/a&gt;. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading. Finally this problem is solved now and ISMARA developers introduced a &lt;a href=&#34;https://ismara.unibas.ch/ISMARA/client/&#34; target=&#34;_blank&#34;&gt;client&lt;/a&gt; which can be downloaded and used for data preprocessing. The preprocessed data is then very small and light and can be easily and fastly uploaded even with a slow internet connection. This is excellent, thank you ISMARA guys for your great work. The next step would be to release the code! :-)&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Bioinformatics Algorithms</title>
-      <link>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</link>
-      <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</guid>
-      <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34; target=&#34;_blank&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
-
-&lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
-
-&lt;p&gt;That&amp;rsquo;s all for now, I am off to read some really cool stuff, hope you can share my excitement!&lt;/p&gt;
 </description>
     </item>
     
