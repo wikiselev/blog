@@ -1,0 +1,243 @@
+---
+title: scfind
+author: ~
+date: '2017-10-10'
+slug: scfind
+categories: ["work"]
+tags: ["R", "scRNA-Seq"]
+summary: "scfind is a tool that allows one to search large single cell RNA-Seq collections using either cells, gene lists or GO term lists..."
+---
+
+
+
+<div class="figure">
+<img src="/img/scfind2_colour.png" />
+
+</div>
+<div id="about" class="section level1">
+<h1>About</h1>
+<p><strong>scfind</strong> is a tool that allows one to search single cell RNA-Seq collections using either cells, lists of genes or GO term lists, e.g. searching for cell-types where a specific set of genes are expressed. Here we provide a tutorial on how to create an index from your dataset and how to run queries using the created index.</p>
+<p><strong>scfind</strong> is a <a href="http://bioconductor.org/packages/scfind">Bioconductor package</a>.</p>
+<p>Cloud implementation of <strong>scfind</strong> with a large collection of datasets is available on our <a href="http://www.hemberg-lab.cloud/scfind">website</a>.</p>
+</div>
+<div id="dataset" class="section level1">
+<h1>Dataset</h1>
+<p>We will run <strong>scfind</strong> on a human pancreas <a href="http://dx.doi.org/10.1016/j.cels.2016.09.002">dataset</a>. <code>SingleCellExperiment</code> object created from the data from this dataset can be downloaded from our <a href="https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#muraro">website</a>. We will put it in the <code>data</code> folder in the root directory. <strong>scfind</strong> is compatible with the <code>SingleCellExperiment</code> format and we will run it directly on the downloaded dataset:</p>
+<pre class="r"><code>library(SingleCellExperiment)
+muraro &lt;- readRDS(&quot;~/data/muraro.rds&quot;)</code></pre>
+</div>
+<div id="gene-index" class="section level1">
+<h1>Gene Index</h1>
+<p>Now we are ready to create a gene index using our dataset:</p>
+<pre class="r"><code>library(scfind)
+cellTypeIndex &lt;- buildCellTypeIndex(muraro)
+head(cellTypeIndex)</code></pre>
+<pre><code>##                alpha     ductal endothelial      delta     acinar
+## A1BG-AS1 0.000000000 0.00000000  0.00000000 0.00000000 0.00000000
+## A1BG     0.123152709 0.01224490  0.00000000 0.09844560 0.04109589
+## A1CF     0.895320197 0.11020408  0.04761905 0.68911917 0.62557078
+## A2M-AS1  0.027093596 0.02448980  0.00000000 0.02072539 0.01826484
+## A2ML1    0.013546798 0.01632653  0.04761905 0.02072539 0.05022831
+## A2M      0.004926108 0.06122449  0.95238095 0.02072539 0.02739726
+##                beta unclear      gamma mesenchymal epsilon
+## A1BG-AS1 0.00000000    0.00 0.00000000      0.0000       0
+## A1BG     0.14062500    0.00 0.12871287      0.2875       0
+## A1CF     0.55357143    0.25 0.69306931      0.0500       1
+## A2M-AS1  0.02455357    0.00 0.02970297      0.0625       0
+## A2ML1    0.01562500    0.00 0.01980198      0.0375       0
+## A2M      0.01116071    0.00 0.00990099      0.8125       0</code></pre>
+<pre class="r"><code>cellIndex &lt;- buildCellIndex(muraro)</code></pre>
+<p>The gene index contains probability of expression of each gene in each cell type (ratio of expressed cells versus all cells in a given cell type). Since we only need to store one floating point value for each gene and cell type, the size of the index will scale with the total number of cell types in the atlas.</p>
+<p>By default the <code>cell_type1</code> column of the <code>colData</code> slot of the <code>SingleCellExperiment</code> object is used to define cell types, however it can also be defined manually using the <code>cell_type_column</code> argument of the <code>buildCellTypeIndex</code> function (check <code>?buildCellTypeIndex</code>).</p>
+</div>
+<div id="marker-genes" class="section level1">
+<h1>Marker genes</h1>
+<p>Now let’s define lists of cell type specific marker genes. We will use the <a href="http://dx.doi.org/10.1016/j.cels.2016.09.002">original publication</a>, namely Figure 1:</p>
+<pre class="r"><code># these genes are taken from fig. 1
+muraro_alpha &lt;- c(&quot;GCG&quot;, &quot;LOXL4&quot;, &quot;PLCE1&quot;, &quot;IRX2&quot;, &quot;GC&quot;, &quot;KLHL41&quot;, &quot;CRYBA2&quot;, &quot;TTR&quot;, &quot;TM4SF4&quot;, &quot;RGS4&quot;)
+muraro_beta &lt;- c(&quot;INS&quot;, &quot;IAPP&quot;, &quot;MAFA&quot;, &quot;NPTX2&quot;, &quot;DLK1&quot;, &quot;ADCYAP1&quot;, &quot;PFKFB2&quot;, &quot;PDX1&quot;, &quot;TGFBR3&quot;, &quot;SYT13&quot;)
+muraro_gamma &lt;- c(&quot;PPY&quot;, &quot;SERTM1&quot;, &quot;CARTPT&quot;, &quot;SLITRK6&quot;, &quot;ETV1&quot;, &quot;THSD7A&quot;, &quot;AQP3&quot;, &quot;ENTPD2&quot;, &quot;PTGFR&quot;, &quot;CHN2&quot;)
+muraro_delta &lt;- c(&quot;SST&quot;, &quot;PRG4&quot;, &quot;LEPR&quot;, &quot;RBP4&quot;, &quot;BCHE&quot;, &quot;HHEX&quot;, &quot;FRZB&quot;, &quot;PCSK1&quot;, &quot;RGS2&quot;, &quot;GABRG2&quot;)</code></pre>
+<p>Additionally, we will use cell type specific marker genes from another human pancreas <a href="https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#segerstolpe">publication</a> (taken from Figures 2 and 3):</p>
+<pre class="r"><code># these genes are taken from fig. 2
+segerstolpe_alpha &lt;- c(&quot;GCG&quot;, &quot;TTR&quot;, &quot;SSR4&quot;, &quot;CRYBA2&quot;, &quot;SPINT2&quot;, &quot;PEMT&quot;, &quot;CHGA&quot;, &quot;GPX3&quot;, &quot;TMEM176B&quot;, &quot;GC&quot;, &quot;FKBP2&quot;, &quot;PCSK2&quot;, &quot;NAA20&quot;, &quot;TMEM176A&quot;, &quot;ERP29&quot;, &quot;DPM3&quot;, &quot;TMED3&quot;, &quot;CNPY2&quot;, &quot;C10orf10&quot;, &quot;TUBA1B&quot;, &quot;SMIM24&quot;, &quot;F10&quot;, &quot;FXYD5&quot;, &quot;CD46&quot;, &quot;SLC22A17&quot;)
+segerstolpe_beta &lt;- c(&quot;INS&quot;, &quot;SCGN&quot;, &quot;IAPP&quot;, &quot;FXYD2&quot;, &quot;RPL3&quot;, &quot;G6PC2&quot;, &quot;HSP90AB1&quot;, &quot;PEBP1&quot;, &quot;HSPA8&quot;, &quot;EIR4A2&quot;, &quot;ERO1LB&quot;, &quot;SERINC1&quot;, &quot;SLC30A8&quot;, &quot;FAM159B&quot;, &quot;SURF4&quot;, &quot;NPTX2&quot;, &quot;PFKFB2&quot;, &quot;EDARADD&quot;, &quot;MEG3&quot;, &quot;HOPX&quot;, &quot;LMO1&quot;, &quot;PDX1&quot;, &quot;PTEN&quot;, &quot;SH3GL2&quot;, &quot;ADCYAP1&quot;)
+segerstolpe_gamma &lt;- c(&quot;PPY&quot;, &quot;MALAT1&quot;, &quot;SCG2&quot;, &quot;SCGB2A1&quot;, &quot;PAM&quot;, &quot;GPC5-AS1&quot;, &quot;STMN2&quot;, &quot;PAX6&quot;, &quot;MEIS2&quot;, &quot;CMTM8&quot;, &quot;TTC3&quot;, &quot;ARX&quot;, &quot;FGFR1&quot;, &quot;AKAP9&quot;, &quot;ETV1&quot;, &quot;PPY2&quot;, &quot;NCKAP1&quot;, &quot;INPP5F&quot;, &quot;PXK&quot;, &quot;ID4&quot;, &quot;SERTM1&quot;, &quot;SLITRK6&quot;, &quot;SEMA3E&quot;, &quot;APCBEC2&quot;, &quot;ABCC9&quot;)
+segerstolpe_delta &lt;- c(&quot;SST&quot;, &quot;RBP4&quot;, &quot;SEC11C&quot;, &quot;PCP4&quot;, &quot;AGS2&quot;, &quot;HHEX&quot;, &quot;TPPP3&quot;, &quot;UCP2&quot;, &quot;LEPA&quot;, &quot;BAIAP3&quot;, &quot;MS4A8&quot;, &quot;CASR&quot;, &quot;PSIP1&quot;, &quot;BCHE&quot;, &quot;GABRB3&quot;, &quot;LY6H&quot;, &quot;UNC5B&quot;, &quot;EDN3&quot;, &quot;OGDHL&quot;, &quot;NSG1&quot;, &quot;FFAR4&quot;, &quot;LINC00643&quot;, &quot;LINC01014&quot;, &quot;TMEM130&quot;, &quot;PRG4&quot;)
+
+# these genes are taken from fig. 3
+segerstolpe_acinar &lt;- c(&quot;REG1A&quot;, &quot;SPINK1&quot;, &quot;PRSS1&quot;, &quot;REG3A&quot;, &quot;CTRB2&quot;, &quot;SERPINA3&quot;, &quot;RNASE1&quot;, &quot;IL32&quot;, &quot;PRSS3&quot;, &quot;REG1B&quot;, &quot;PRSS3P2&quot;, &quot;CTRB1&quot;, &quot;CFB&quot;, &quot;GDF15&quot;, &quot;MUC1&quot;, &quot;C15orf48&quot;, &quot;DUOXA2&quot;, &quot;AKR1C3&quot;, &quot;CPA2&quot;, &quot;OLFM4&quot;, &quot;GSTA1&quot;, &quot;LGALS2&quot;, &quot;MGST1&quot;, &quot;PDZK1IP1&quot;, &quot;SOD2&quot;, &quot;RARRES2&quot;, &quot;EIF4EBP1&quot;, &quot;CXCL17&quot;, &quot;RAMP1&quot;, &quot;C3&quot;, &quot;UBD&quot;, &quot;GSTA2&quot;, &quot;LDHB&quot;, &quot;ANPEP&quot;, &quot;SDC4&quot;, &quot;LYZ&quot;, &quot;ANGPTL4&quot;, &quot;IGFBP2&quot;, &quot;ALDOB&quot;)
+segerstolpe_ductal &lt;- c(&quot;SPP1&quot;, &quot;KRT19&quot;, &quot;MMP7&quot;, &quot;ANXA4&quot;, &quot;ANXA2&quot;, &quot;DEFB1&quot;, &quot;SERPING1&quot;, &quot;ATP5B&quot;, &quot;ANXA2P2&quot;, &quot;TSPAN8&quot;, &quot;CLDN10&quot;, &quot;IFITM2&quot;, &quot;CTSH&quot;, &quot;SERPINA1&quot;, &quot;CD59&quot;, &quot;SLPI&quot;, &quot;S100A16&quot;, &quot;CD9&quot;, &quot;MIR492&quot;, &quot;SERPINA5&quot;, &quot;PIGR&quot;, &quot;PPAP2C&quot;, &quot;CFTR&quot;, &quot;S100A13&quot;, &quot;AMBP&quot;, &quot;CLDN1&quot;, &quot;LGALS4&quot;, &quot;ANXA3&quot;, &quot;ITGB1&quot;, &quot;PERP&quot;, &quot;LITAF&quot;, &quot;LY6E&quot;, &quot;CMTM7&quot;, &quot;PDLIM3&quot;, &quot;WFDC2&quot;, &quot;TXNIP&quot;, &quot;SLC3A1&quot;, &quot;AOP1&quot;, &quot;ALDH1A3&quot;, &quot;VTCN1&quot;)</code></pre>
+<div id="search-cell-types-by-a-gene-list" class="section level2">
+<h2>Search cell types by a gene list</h2>
+<p>Now, when the gene index is created one can easily and very quickly query information from the dataset. One query which is likely to be of central interest is to retrieve the cell-types where a given set of genes is expressed. For a list of genes, we can then calculate the log-likelihood that all of them will be expressed in the cell-type in question. <strong>scfind</strong> uses theis log-likelihood to perform a likelihood-ratio test and identify cell types where the given list of genes is significantly expressed.</p>
+<p><code>findCellType</code> function returns a list of p-values corresponding to all cell types in a given dataset. We will run it on all lists of marker genes defined above:</p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, muraro_alpha))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, muraro_beta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-2.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, muraro_delta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-3.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, muraro_gamma))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-4.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, segerstolpe_alpha))</code></pre>
+<pre><code>## Warning in findCellType(cellTypeIndex, segerstolpe_alpha): Genes: SMIM24
+## were exluded from search since they are not present in the Gene Index!</code></pre>
+<pre class="r"><code>if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-5.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, segerstolpe_beta))</code></pre>
+<pre><code>## Warning in findCellType(cellTypeIndex, segerstolpe_beta): Genes: EIR4A2
+## were exluded from search since they are not present in the Gene Index!</code></pre>
+<pre class="r"><code>if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-6.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, segerstolpe_delta))</code></pre>
+<pre><code>## Warning in findCellType(cellTypeIndex, segerstolpe_delta): Genes: AGS2,
+## LEPA, MS4A8, LINC01014 were exluded from search since they are not present
+## in the Gene Index!</code></pre>
+<pre class="r"><code>if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-7.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, segerstolpe_gamma))</code></pre>
+<pre><code>## Warning in findCellType(cellTypeIndex, segerstolpe_gamma): Genes: PPY2,
+## APCBEC2 were exluded from search since they are not present in the Gene
+## Index!</code></pre>
+<pre class="r"><code>if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-8.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, segerstolpe_acinar))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-9.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCellType(cellTypeIndex, segerstolpe_ductal))</code></pre>
+<pre><code>## Warning in findCellType(cellTypeIndex, segerstolpe_ductal): Genes: MIR492,
+## AOP1 were exluded from search since they are not present in the Gene Index!</code></pre>
+<pre class="r"><code>if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-10.png" width="672" /></p>
+<p>We can also check whether the obtained p-values for marker genes are significantly different from p-values of random gene sets:</p>
+<pre class="r"><code>pvals &lt;- NULL
+while(length(pvals) &lt; 100) {
+    tmp &lt;- findCellType(cellTypeIndex, sample(rownames(cellTypeIndex), 10))
+    if(!all(is.na(tmp))) {
+        pvals &lt;- c(pvals, min(tmp[!is.na(tmp)]))
+    }
+}
+
+boxplot(pvals)</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="search-cells-by-a-gene-list" class="section level2">
+<h2>Search cells by a gene list</h2>
+<p><code>findCell</code> function returns a similar list of p-values corresponding to all cell types in a given dataset. However, it also outputs a list of cells in which genes from the given gene list are co-expressed. We will run it on all lists of marker genes defined above:</p>
+<pre class="r"><code>tmp &lt;- -log10(findCell(cellIndex, muraro_alpha)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCell(cellIndex, muraro_beta)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-2.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCell(cellIndex, muraro_delta)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-3.png" width="672" /></p>
+<pre class="r"><code>tmp &lt;- -log10(findCell(cellIndex, muraro_gamma)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+}</code></pre>
+<p><img src="/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-4.png" width="672" /></p>
+<pre class="r"><code># tmp &lt;- -log10(findCell(cellIndex, segerstolpe_alpha)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+# }
+# tmp &lt;- -log10(findCell(cellIndex, segerstolpe_beta)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+# }
+# tmp &lt;- -log10(findCell(cellIndex, segerstolpe_delta)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+# }
+# tmp &lt;- -log10(findCell(cellIndex, segerstolpe_gamma)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+# }
+# tmp &lt;- -log10(findCell(cellIndex, segerstolpe_acinar)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+# }
+# tmp &lt;- -log10(findCell(cellIndex, segerstolpe_ductal)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &quot;-log10(pval)&quot;, las = 2)
+# }</code></pre>
+</div>
+</div>
+<div id="sessioninfo" class="section level1">
+<h1>sessionInfo()</h1>
+<pre class="r"><code>sessionInfo()</code></pre>
+<pre><code>## R Under development (unstable) (2017-09-06 r73210)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Sierra 10.12.6
+## 
+## Matrix products: default
+## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
+## 
+## attached base packages:
+## [1] parallel  stats4    methods   stats     graphics  grDevices utils    
+## [8] datasets  base     
+## 
+## other attached packages:
+##  [1] bindrcpp_0.2                scfind_0.99.4              
+##  [3] SingleCellExperiment_0.99.3 SummarizedExperiment_1.7.6 
+##  [5] DelayedArray_0.3.19         matrixStats_0.52.2         
+##  [7] Biobase_2.37.2              GenomicRanges_1.29.13      
+##  [9] GenomeInfoDb_1.13.4         IRanges_2.11.15            
+## [11] S4Vectors_0.15.8            BiocGenerics_0.23.1        
+## 
+## loaded via a namespace (and not attached):
+##  [1] Rcpp_0.12.12            plyr_1.8.4             
+##  [3] compiler_3.5.0          XVector_0.17.1         
+##  [5] bindr_0.1               bitops_1.0-6           
+##  [7] tools_3.5.0             zlibbioc_1.23.0        
+##  [9] digest_0.6.12           bit_1.1-12             
+## [11] tibble_1.3.4            evaluate_0.10.1        
+## [13] lattice_0.20-35         pkgconfig_2.0.1        
+## [15] rlang_0.1.2             Matrix_1.2-11          
+## [17] yaml_2.1.14             blogdown_0.1           
+## [19] GenomeInfoDbData_0.99.1 stringr_1.2.0          
+## [21] dplyr_0.7.3             knitr_1.17             
+## [23] rprojroot_1.2           grid_3.5.0             
+## [25] glue_1.1.1              R6_2.2.2               
+## [27] hash_2.2.6              rmarkdown_1.6          
+## [29] bookdown_0.5            reshape2_1.4.2         
+## [31] magrittr_1.5            backports_1.1.0        
+## [33] htmltools_0.3.6         assertthat_0.2.0       
+## [35] stringi_1.1.5           RCurl_1.95-4.8</code></pre>
+</div>

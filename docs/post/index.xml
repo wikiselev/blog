@@ -7,38 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <lastBuildDate>Thu, 10 Aug 2017 17:19:20 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>gCompass</title>
-      <link>http://genat.uk/post/2017-08-10-gCompass/</link>
-      <pubDate>Thu, 10 Aug 2017 17:19:20 +0100</pubDate>
+      <title>scfind</title>
+      <link>http://genat.uk/post/scfind/</link>
+      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2017-08-10-gCompass/</guid>
-      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
+      <guid>http://genat.uk/post/scfind/</guid>
+      <description>&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;http://genat.uk/img/scfind2_colour.png&#34; /&gt;
 
-/BLOGDOWN-BODY-BEFORE --&gt;
-
+&lt;/div&gt;
 &lt;div id=&#34;about&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;About&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;gCompass&lt;/strong&gt; is a tool that allows one to search single cell RNA-Seq databases using either lists of genes or GO term lists, e.g. searching for cell-types where a specific set of genes are expressed. Here we provide a tutorial on how to create an index from your dataset and how to run queries using the created index.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;gCompass&lt;/strong&gt; is a part of &lt;a href=&#34;https://github.com/hemberg-lab/scmap&#34;&gt;scmap&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Cloud implementation of &lt;strong&gt;gCompass&lt;/strong&gt; with a large collection of datasets is available on our &lt;a href=&#34;http://www.hemberg-lab.cloud/gcompass&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;scfind&lt;/strong&gt; is a tool that allows one to search single cell RNA-Seq collections using either cells, lists of genes or GO term lists, e.g. searching for cell-types where a specific set of genes are expressed. Here we provide a tutorial on how to create an index from your dataset and how to run queries using the created index.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;scfind&lt;/strong&gt; is a &lt;a href=&#34;http://bioconductor.org/packages/scfind&#34;&gt;Bioconductor package&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Cloud implementation of &lt;strong&gt;scfind&lt;/strong&gt; with a large collection of datasets is available on our &lt;a href=&#34;http://www.hemberg-lab.cloud/scfind&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;dataset&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Dataset&lt;/h1&gt;
-&lt;p&gt;We will run &lt;strong&gt;gCompass&lt;/strong&gt; on a human pancreas &lt;a href=&#34;http://dx.doi.org/10.1016/j.cels.2016.09.002&#34;&gt;dataset&lt;/a&gt;. &lt;code&gt;scater&lt;/code&gt; object created from the data from this dataset can be downloaded from our &lt;a href=&#34;https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#muraro&#34;&gt;website&lt;/a&gt;. We will put it in the &lt;code&gt;data&lt;/code&gt; folder in the root directory. &lt;strong&gt;gCompass&lt;/strong&gt; is compatible with the &lt;code&gt;scater&lt;/code&gt; format and we will run it directly on the downloaded dataset:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scater)
+&lt;p&gt;We will run &lt;strong&gt;scfind&lt;/strong&gt; on a human pancreas &lt;a href=&#34;http://dx.doi.org/10.1016/j.cels.2016.09.002&#34;&gt;dataset&lt;/a&gt;. &lt;code&gt;SingleCellExperiment&lt;/code&gt; object created from the data from this dataset can be downloaded from our &lt;a href=&#34;https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#muraro&#34;&gt;website&lt;/a&gt;. We will put it in the &lt;code&gt;data&lt;/code&gt; folder in the root directory. &lt;strong&gt;scfind&lt;/strong&gt; is compatible with the &lt;code&gt;SingleCellExperiment&lt;/code&gt; format and we will run it directly on the downloaded dataset:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(SingleCellExperiment)
 muraro &amp;lt;- readRDS(&amp;quot;~/data/muraro.rds&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;gene-index&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Gene Index&lt;/h1&gt;
 &lt;p&gt;Now we are ready to create a gene index using our dataset:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scmap)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Creating a generic function for &amp;#39;toJSON&amp;#39; from package &amp;#39;jsonlite&amp;#39; in package &amp;#39;googleVis&amp;#39;&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;geneIndex &amp;lt;- buildGeneIndex(muraro)
-head(geneIndex)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scfind)
+cellTypeIndex &amp;lt;- buildCellTypeIndex(muraro)
+head(cellTypeIndex)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##                alpha     ductal endothelial      delta     acinar
 ## A1BG-AS1 0.000000000 0.00000000  0.00000000 0.00000000 0.00000000
 ## A1BG     0.123152709 0.01224490  0.00000000 0.09844560 0.04109589
@@ -53,8 +52,9 @@ head(geneIndex)&lt;/code&gt;&lt;/pre&gt;
 ## A2M-AS1  0.02455357    0.00 0.02970297      0.0625       0
 ## A2ML1    0.01562500    0.00 0.01980198      0.0375       0
 ## A2M      0.01116071    0.00 0.00990099      0.8125       0&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cellIndex &amp;lt;- buildCellIndex(muraro)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The gene index contains probability of expression of each gene in each cell type (ratio of expressed cells versus all cells in a given cell type). Since we only need to store one floating point value for each gene and cell type, the size of the index will scale with the total number of cell types in the atlas.&lt;/p&gt;
-&lt;p&gt;By default the &lt;code&gt;cell_type1&lt;/code&gt; column of the &lt;code&gt;pData&lt;/code&gt; slot of the &lt;code&gt;scater&lt;/code&gt; object is used to define cell types, however it can also be defined manually using the &lt;code&gt;cell_type_column&lt;/code&gt; argument of the &lt;code&gt;buildGeneIndex&lt;/code&gt; function (check &lt;code&gt;?buildGeneIndex&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;By default the &lt;code&gt;cell_type1&lt;/code&gt; column of the &lt;code&gt;colData&lt;/code&gt; slot of the &lt;code&gt;SingleCellExperiment&lt;/code&gt; object is used to define cell types, however it can also be defined manually using the &lt;code&gt;cell_type_column&lt;/code&gt; argument of the &lt;code&gt;buildCellTypeIndex&lt;/code&gt; function (check &lt;code&gt;?buildCellTypeIndex&lt;/code&gt;).&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;marker-genes&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Marker genes&lt;/h1&gt;
@@ -74,137 +74,179 @@ segerstolpe_delta &amp;lt;- c(&amp;quot;SST&amp;quot;, &amp;quot;RBP4&amp;quot;,
 # these genes are taken from fig. 3
 segerstolpe_acinar &amp;lt;- c(&amp;quot;REG1A&amp;quot;, &amp;quot;SPINK1&amp;quot;, &amp;quot;PRSS1&amp;quot;, &amp;quot;REG3A&amp;quot;, &amp;quot;CTRB2&amp;quot;, &amp;quot;SERPINA3&amp;quot;, &amp;quot;RNASE1&amp;quot;, &amp;quot;IL32&amp;quot;, &amp;quot;PRSS3&amp;quot;, &amp;quot;REG1B&amp;quot;, &amp;quot;PRSS3P2&amp;quot;, &amp;quot;CTRB1&amp;quot;, &amp;quot;CFB&amp;quot;, &amp;quot;GDF15&amp;quot;, &amp;quot;MUC1&amp;quot;, &amp;quot;C15orf48&amp;quot;, &amp;quot;DUOXA2&amp;quot;, &amp;quot;AKR1C3&amp;quot;, &amp;quot;CPA2&amp;quot;, &amp;quot;OLFM4&amp;quot;, &amp;quot;GSTA1&amp;quot;, &amp;quot;LGALS2&amp;quot;, &amp;quot;MGST1&amp;quot;, &amp;quot;PDZK1IP1&amp;quot;, &amp;quot;SOD2&amp;quot;, &amp;quot;RARRES2&amp;quot;, &amp;quot;EIF4EBP1&amp;quot;, &amp;quot;CXCL17&amp;quot;, &amp;quot;RAMP1&amp;quot;, &amp;quot;C3&amp;quot;, &amp;quot;UBD&amp;quot;, &amp;quot;GSTA2&amp;quot;, &amp;quot;LDHB&amp;quot;, &amp;quot;ANPEP&amp;quot;, &amp;quot;SDC4&amp;quot;, &amp;quot;LYZ&amp;quot;, &amp;quot;ANGPTL4&amp;quot;, &amp;quot;IGFBP2&amp;quot;, &amp;quot;ALDOB&amp;quot;)
 segerstolpe_ductal &amp;lt;- c(&amp;quot;SPP1&amp;quot;, &amp;quot;KRT19&amp;quot;, &amp;quot;MMP7&amp;quot;, &amp;quot;ANXA4&amp;quot;, &amp;quot;ANXA2&amp;quot;, &amp;quot;DEFB1&amp;quot;, &amp;quot;SERPING1&amp;quot;, &amp;quot;ATP5B&amp;quot;, &amp;quot;ANXA2P2&amp;quot;, &amp;quot;TSPAN8&amp;quot;, &amp;quot;CLDN10&amp;quot;, &amp;quot;IFITM2&amp;quot;, &amp;quot;CTSH&amp;quot;, &amp;quot;SERPINA1&amp;quot;, &amp;quot;CD59&amp;quot;, &amp;quot;SLPI&amp;quot;, &amp;quot;S100A16&amp;quot;, &amp;quot;CD9&amp;quot;, &amp;quot;MIR492&amp;quot;, &amp;quot;SERPINA5&amp;quot;, &amp;quot;PIGR&amp;quot;, &amp;quot;PPAP2C&amp;quot;, &amp;quot;CFTR&amp;quot;, &amp;quot;S100A13&amp;quot;, &amp;quot;AMBP&amp;quot;, &amp;quot;CLDN1&amp;quot;, &amp;quot;LGALS4&amp;quot;, &amp;quot;ANXA3&amp;quot;, &amp;quot;ITGB1&amp;quot;, &amp;quot;PERP&amp;quot;, &amp;quot;LITAF&amp;quot;, &amp;quot;LY6E&amp;quot;, &amp;quot;CMTM7&amp;quot;, &amp;quot;PDLIM3&amp;quot;, &amp;quot;WFDC2&amp;quot;, &amp;quot;TXNIP&amp;quot;, &amp;quot;SLC3A1&amp;quot;, &amp;quot;AOP1&amp;quot;, &amp;quot;ALDH1A3&amp;quot;, &amp;quot;VTCN1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;muraro&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Muraro&lt;/h2&gt;
-&lt;p&gt;Now, when the gene index is created one can easily and very quickly query information from the dataset. One query which is likely to be of central interest is to retrieve the cell-types where a given set of genes is expressed. For a list of genes, we can then calculate the log-likelihood that all of them will be expressed in the cell-type in question. &lt;strong&gt;gCompass&lt;/strong&gt; uses theis log-likelihood to perform a likelihood-ratio test and identify cell types where the given list of genes is significantly expressed.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;queryGeneList&lt;/code&gt; function returns a list of p-values corresponding to all cell types in a given dataset. We will run it on all lists of marker genes defined above:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_alpha))
+&lt;div id=&#34;search-cell-types-by-a-gene-list&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Search cell types by a gene list&lt;/h2&gt;
+&lt;p&gt;Now, when the gene index is created one can easily and very quickly query information from the dataset. One query which is likely to be of central interest is to retrieve the cell-types where a given set of genes is expressed. For a list of genes, we can then calculate the log-likelihood that all of them will be expressed in the cell-type in question. &lt;strong&gt;scfind&lt;/strong&gt; uses theis log-likelihood to perform a likelihood-ratio test and identify cell types where the given list of genes is significantly expressed.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;findCellType&lt;/code&gt; function returns a list of p-values corresponding to all cell types in a given dataset. We will run it on all lists of marker genes defined above:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_alpha))
 if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_beta))
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_beta))
 if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_delta))
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_delta))
 if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, muraro_gamma))
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_gamma))
 if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_alpha))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_alpha): Genes: SMIM24 were
-## exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_alpha))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_alpha): Genes: SMIM24
+## were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_beta))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_beta): Genes: EIR4A2 were
-## exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_beta))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_beta): Genes: EIR4A2
+## were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-6.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_delta))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_delta): Genes: AGS2, LEPA,
-## MS4A8, LINC01014 were exluded from search since they are not present in the
-## Gene Index!&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-6.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_delta))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_delta): Genes: AGS2,
+## LEPA, MS4A8, LINC01014 were exluded from search since they are not present
+## in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-7.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_gamma))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_gamma): Genes: PPY2,
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-7.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_gamma))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_gamma): Genes: PPY2,
 ## APCBEC2 were exluded from search since they are not present in the Gene
 ## Index!&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-8.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_acinar))
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-8.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_acinar))
 if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-9.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(queryGeneList(geneIndex, segerstolpe_ductal))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in queryGeneList(geneIndex, segerstolpe_ductal): Genes: MIR492,
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-9.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_ductal))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_ductal): Genes: MIR492,
 ## AOP1 were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
 }&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-5-10.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-10.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;We can also check whether the obtained p-values for marker genes are significantly different from p-values of random gene sets:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvals &amp;lt;- NULL
 while(length(pvals) &amp;lt; 100) {
-    tmp &amp;lt;- queryGeneList(geneIndex, sample(rownames(geneIndex), 10))
+    tmp &amp;lt;- findCellType(cellTypeIndex, sample(rownames(cellTypeIndex), 10))
     if(!all(is.na(tmp))) {
         pvals &amp;lt;- c(pvals, min(tmp[!is.na(tmp)]))
     }
 }
 
 boxplot(pvals)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-08-10-gCompass/figures/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;search-cells-by-a-gene-list&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Search cells by a gene list&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;findCell&lt;/code&gt; function returns a similar list of p-values corresponding to all cell types in a given dataset. However, it also outputs a list of cells in which genes from the given gene list are co-expressed. We will run it on all lists of marker genes defined above:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_alpha)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_beta)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_delta)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_gamma)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_alpha)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+# }
+# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_beta)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+# }
+# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_delta)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+# }
+# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_gamma)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+# }
+# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_acinar)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+# }
+# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_ductal)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
+# }&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;sessioninfo&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;sessionInfo()&lt;/h1&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## R Under development (unstable) (2016-10-20 r71540)
-## Platform: x86_64-apple-darwin13.4.0 (64-bit)
-## Running under: OS X Yosemite 10.10.5
+&lt;pre&gt;&lt;code&gt;## R Under development (unstable) (2017-09-06 r73210)
+## Platform: x86_64-apple-darwin15.6.0 (64-bit)
+## Running under: macOS Sierra 10.12.6
+## 
+## Matrix products: default
+## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
 ## 
 ## attached base packages:
-## [1] parallel  methods   stats     graphics  grDevices utils     datasets 
-## [8] base     
+## [1] parallel  stats4    methods   stats     graphics  grDevices utils    
+## [8] datasets  base     
 ## 
 ## other attached packages:
-## [1] bindrcpp_0.1        scmap_0.99.3        scater_1.4.0       
-## [4] ggplot2_2.2.1.9000  Biobase_2.36.2      BiocGenerics_0.22.0
+##  [1] bindrcpp_0.2                scfind_0.99.4              
+##  [3] SingleCellExperiment_0.99.3 SummarizedExperiment_1.7.6 
+##  [5] DelayedArray_0.3.19         matrixStats_0.52.2         
+##  [7] Biobase_2.37.2              GenomicRanges_1.29.13      
+##  [9] GenomeInfoDb_1.13.4         IRanges_2.11.15            
+## [11] S4Vectors_0.15.8            BiocGenerics_0.23.1        
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.10         locfit_1.5-9.1       lattice_0.20-34     
-##  [4] class_7.3-14         assertthat_0.2.0     rprojroot_1.2       
-##  [7] digest_0.6.12        mime_0.5             R6_2.2.0            
-## [10] plyr_1.8.4           backports_1.0.5      stats4_3.4.0        
-## [13] RSQLite_1.1-2        evaluate_0.10        e1071_1.6-8         
-## [16] blogdown_0.0.13      zlibbioc_1.22.0      rlang_0.1.1         
-## [19] lazyeval_0.2.0       data.table_1.10.4    googleVis_0.6.2     
-## [22] S4Vectors_0.14.0     Matrix_1.2-10        rmarkdown_1.5       
-## [25] stringr_1.2.0        RCurl_1.95-4.8       biomaRt_2.32.0      
-## [28] munsell_0.4.3        proxy_0.4-17         shiny_1.0.3         
-## [31] vipor_0.4.5          httpuv_1.3.3         ggbeeswarm_0.5.3    
-## [34] htmltools_0.3.6      tximport_1.4.0       tibble_1.3.3        
-## [37] gridExtra_2.2.1      bookdown_0.3         edgeR_3.18.1        
-## [40] IRanges_2.10.0       codetools_0.2-15     matrixStats_0.52.2  
-## [43] randomForest_4.6-12  XML_3.98-1.7         viridisLite_0.2.0   
-## [46] dplyr_0.7.0          bitops_1.0-6         grid_3.4.0          
-## [49] jsonlite_1.4         xtable_1.8-2         gtable_0.2.0        
-## [52] DBI_0.6-1            magrittr_1.5         scales_0.4.1.9002   
-## [55] stringi_1.1.5        reshape2_1.4.2       viridis_0.4.0       
-## [58] limma_3.32.2         rjson_0.2.15         tools_3.4.0         
-## [61] glue_1.0.0           beeswarm_0.2.3       yaml_2.1.14         
-## [64] AnnotationDbi_1.38.0 colorspace_1.3-2     rhdf5_2.20.0        
-## [67] shinydashboard_0.5.3 memoise_1.1.0        bindr_0.1           
-## [70] knitr_1.15.1&lt;/code&gt;&lt;/pre&gt;
+##  [1] Rcpp_0.12.12            plyr_1.8.4             
+##  [3] compiler_3.5.0          XVector_0.17.1         
+##  [5] bindr_0.1               bitops_1.0-6           
+##  [7] tools_3.5.0             zlibbioc_1.23.0        
+##  [9] digest_0.6.12           bit_1.1-12             
+## [11] tibble_1.3.4            evaluate_0.10.1        
+## [13] lattice_0.20-35         pkgconfig_2.0.1        
+## [15] rlang_0.1.2             Matrix_1.2-11          
+## [17] yaml_2.1.14             blogdown_0.1           
+## [19] GenomeInfoDbData_0.99.1 stringr_1.2.0          
+## [21] dplyr_0.7.3             knitr_1.17             
+## [23] rprojroot_1.2           grid_3.5.0             
+## [25] glue_1.1.1              R6_2.2.2               
+## [27] hash_2.2.6              rmarkdown_1.6          
+## [29] bookdown_0.5            reshape2_1.4.2         
+## [31] magrittr_1.5            backports_1.1.0        
+## [33] htmltools_0.3.6         assertthat_0.2.0       
+## [35] stringi_1.1.5           RCurl_1.95-4.8&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-
-&lt;!-- BLOGDOWN-HEAD
-
-
-
-
-/BLOGDOWN-HEAD --&gt;
 </description>
     </item>
     
@@ -320,20 +362,8 @@ boxplot(pvals)&lt;/code&gt;&lt;/pre&gt;
       <pubDate>Mon, 16 Jan 2017 08:54:39 +0000</pubDate>
       
       <guid>http://genat.uk/post/2017-01-16-hello-world/</guid>
-      <description>&lt;!-- BLOGDOWN-BODY-BEFORE
-
-/BLOGDOWN-BODY-BEFORE --&gt;
-
-&lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-01-16-hello-world/figures/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
-
-
-&lt;!-- BLOGDOWN-HEAD
-
-
-
-
-/BLOGDOWN-HEAD --&gt;
+      <description>&lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-01-16-hello-world_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

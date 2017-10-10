@@ -1,0 +1,181 @@
+---
+title: scfind
+author: ~
+date: '2017-10-10'
+slug: scfind
+categories: ["work"]
+tags: ["R", "scRNA-Seq"]
+summary: "scfind is a tool that allows one to search large single cell RNA-Seq collections using either cells, gene lists or GO term lists..."
+---
+
+![](/img/scfind2_colour.png)
+
+# About 
+
+__scfind__ is a tool that allows one to search single cell RNA-Seq collections using either cells, lists of genes or GO term lists, e.g. searching for cell-types where a specific set of genes are expressed. Here we provide a tutorial on how to create an index from your dataset and how to run queries using the created index.
+
+__scfind__ is a [Bioconductor package](	http://bioconductor.org/packages/scfind).
+
+Cloud implementation of __scfind__ with a large collection of datasets is available on our [website](http://www.hemberg-lab.cloud/scfind).
+
+# Dataset
+
+We will run __scfind__ on a human pancreas [dataset](http://dx.doi.org/10.1016/j.cels.2016.09.002). `SingleCellExperiment` object created from the data from this dataset can be downloaded from our [website](https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#muraro). We will put it in the `data` folder in the root directory. __scfind__ is compatible with the `SingleCellExperiment` format and we will run it directly on the downloaded dataset:
+```{r, message=FALSE, warning=FALSE}
+library(SingleCellExperiment)
+muraro <- readRDS("~/data/muraro.rds")
+```
+
+# Gene Index
+
+Now we are ready to create a gene index using our dataset:
+```{r}
+library(scfind)
+cellTypeIndex <- buildCellTypeIndex(muraro)
+head(cellTypeIndex)
+cellIndex <- buildCellIndex(muraro)
+```
+
+The gene index contains probability of expression of each gene in each cell type (ratio of expressed cells versus all cells in a given cell type). Since we only need to store one floating point value for each gene and cell type, the size of the index will scale with the total number of cell types in the atlas.
+
+By default the `cell_type1` column of the `colData` slot of the `SingleCellExperiment` object is used to define cell types, however it can also be defined manually using the `cell_type_column` argument of the `buildCellTypeIndex` function (check `?buildCellTypeIndex`).
+
+# Marker genes
+
+Now let's define lists of cell type specific marker genes. We will use the [original publication](http://dx.doi.org/10.1016/j.cels.2016.09.002), namely Figure 1:
+```{r}
+# these genes are taken from fig. 1
+muraro_alpha <- c("GCG", "LOXL4", "PLCE1", "IRX2", "GC", "KLHL41", "CRYBA2", "TTR", "TM4SF4", "RGS4")
+muraro_beta <- c("INS", "IAPP", "MAFA", "NPTX2", "DLK1", "ADCYAP1", "PFKFB2", "PDX1", "TGFBR3", "SYT13")
+muraro_gamma <- c("PPY", "SERTM1", "CARTPT", "SLITRK6", "ETV1", "THSD7A", "AQP3", "ENTPD2", "PTGFR", "CHN2")
+muraro_delta <- c("SST", "PRG4", "LEPR", "RBP4", "BCHE", "HHEX", "FRZB", "PCSK1", "RGS2", "GABRG2")
+```
+
+Additionally, we will use cell type specific marker genes from another human pancreas [publication](https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#segerstolpe) (taken from Figures 2 and 3):
+```{r}
+# these genes are taken from fig. 2
+segerstolpe_alpha <- c("GCG", "TTR", "SSR4", "CRYBA2", "SPINT2", "PEMT", "CHGA", "GPX3", "TMEM176B", "GC", "FKBP2", "PCSK2", "NAA20", "TMEM176A", "ERP29", "DPM3", "TMED3", "CNPY2", "C10orf10", "TUBA1B", "SMIM24", "F10", "FXYD5", "CD46", "SLC22A17")
+segerstolpe_beta <- c("INS", "SCGN", "IAPP", "FXYD2", "RPL3", "G6PC2", "HSP90AB1", "PEBP1", "HSPA8", "EIR4A2", "ERO1LB", "SERINC1", "SLC30A8", "FAM159B", "SURF4", "NPTX2", "PFKFB2", "EDARADD", "MEG3", "HOPX", "LMO1", "PDX1", "PTEN", "SH3GL2", "ADCYAP1")
+segerstolpe_gamma <- c("PPY", "MALAT1", "SCG2", "SCGB2A1", "PAM", "GPC5-AS1", "STMN2", "PAX6", "MEIS2", "CMTM8", "TTC3", "ARX", "FGFR1", "AKAP9", "ETV1", "PPY2", "NCKAP1", "INPP5F", "PXK", "ID4", "SERTM1", "SLITRK6", "SEMA3E", "APCBEC2", "ABCC9")
+segerstolpe_delta <- c("SST", "RBP4", "SEC11C", "PCP4", "AGS2", "HHEX", "TPPP3", "UCP2", "LEPA", "BAIAP3", "MS4A8", "CASR", "PSIP1", "BCHE", "GABRB3", "LY6H", "UNC5B", "EDN3", "OGDHL", "NSG1", "FFAR4", "LINC00643", "LINC01014", "TMEM130", "PRG4")
+
+# these genes are taken from fig. 3
+segerstolpe_acinar <- c("REG1A", "SPINK1", "PRSS1", "REG3A", "CTRB2", "SERPINA3", "RNASE1", "IL32", "PRSS3", "REG1B", "PRSS3P2", "CTRB1", "CFB", "GDF15", "MUC1", "C15orf48", "DUOXA2", "AKR1C3", "CPA2", "OLFM4", "GSTA1", "LGALS2", "MGST1", "PDZK1IP1", "SOD2", "RARRES2", "EIF4EBP1", "CXCL17", "RAMP1", "C3", "UBD", "GSTA2", "LDHB", "ANPEP", "SDC4", "LYZ", "ANGPTL4", "IGFBP2", "ALDOB")
+segerstolpe_ductal <- c("SPP1", "KRT19", "MMP7", "ANXA4", "ANXA2", "DEFB1", "SERPING1", "ATP5B", "ANXA2P2", "TSPAN8", "CLDN10", "IFITM2", "CTSH", "SERPINA1", "CD59", "SLPI", "S100A16", "CD9", "MIR492", "SERPINA5", "PIGR", "PPAP2C", "CFTR", "S100A13", "AMBP", "CLDN1", "LGALS4", "ANXA3", "ITGB1", "PERP", "LITAF", "LY6E", "CMTM7", "PDLIM3", "WFDC2", "TXNIP", "SLC3A1", "AOP1", "ALDH1A3", "VTCN1")
+```
+
+## Search cell types by a gene list
+
+Now, when the gene index is created one can easily and very quickly query information from the dataset. One query which is likely to be of central interest is to retrieve the cell-types where a given set of genes is expressed. For a list of genes, we can then calculate the log-likelihood that all of them will be expressed in the cell-type in question. __scfind__ uses theis log-likelihood to perform a likelihood-ratio test and identify cell types where the given list of genes is significantly expressed.
+
+`findCellType` function returns a list of p-values corresponding to all cell types in a given dataset. We will run it on all lists of marker genes defined above:
+```{r}
+tmp <- -log10(findCellType(cellTypeIndex, muraro_alpha))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, muraro_beta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, muraro_delta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, muraro_gamma))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+
+tmp <- -log10(findCellType(cellTypeIndex, segerstolpe_alpha))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, segerstolpe_beta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, segerstolpe_delta))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, segerstolpe_gamma))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, segerstolpe_acinar))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCellType(cellTypeIndex, segerstolpe_ductal))
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+```
+
+We can also check whether the obtained p-values for marker genes are significantly different from p-values of random gene sets:
+```{r}
+pvals <- NULL
+while(length(pvals) < 100) {
+    tmp <- findCellType(cellTypeIndex, sample(rownames(cellTypeIndex), 10))
+    if(!all(is.na(tmp))) {
+        pvals <- c(pvals, min(tmp[!is.na(tmp)]))
+    }
+}
+
+boxplot(pvals)
+```
+
+## Search cells by a gene list
+
+`findCell` function returns a similar list of p-values corresponding to all cell types in a given dataset. However, it also outputs a list of cells in which genes from the given gene list are co-expressed. We will run it on all lists of marker genes defined above:
+```{r}
+tmp <- -log10(findCell(cellIndex, muraro_alpha)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCell(cellIndex, muraro_beta)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCell(cellIndex, muraro_delta)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+tmp <- -log10(findCell(cellIndex, muraro_gamma)$p_values)
+if (!all(is.na(tmp))) {
+    barplot(tmp, ylab = "-log10(pval)", las = 2)
+}
+
+# tmp <- -log10(findCell(cellIndex, segerstolpe_alpha)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = "-log10(pval)", las = 2)
+# }
+# tmp <- -log10(findCell(cellIndex, segerstolpe_beta)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = "-log10(pval)", las = 2)
+# }
+# tmp <- -log10(findCell(cellIndex, segerstolpe_delta)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = "-log10(pval)", las = 2)
+# }
+# tmp <- -log10(findCell(cellIndex, segerstolpe_gamma)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = "-log10(pval)", las = 2)
+# }
+# tmp <- -log10(findCell(cellIndex, segerstolpe_acinar)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = "-log10(pval)", las = 2)
+# }
+# tmp <- -log10(findCell(cellIndex, segerstolpe_ductal)$p_values)
+# if (!all(is.na(tmp))) {
+#     barplot(tmp, ylab = "-log10(pval)", las = 2)
+# }
+```
+
+# sessionInfo()
+
+```{r}
+sessionInfo()
+```
+
