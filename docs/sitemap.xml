@@ -4,6 +4,14 @@
     
     
     <url>
+      <loc>http://genat.uk/post/upgrading-r-bioconductor/</loc>
+      <lastmod>2017-11-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://genat.uk/post/scfind/</loc>
       <lastmod>2017-10-10T00:00:00+00:00</lastmod>
     </url>
@@ -236,8 +244,24 @@
     
     
     <url>
+      <loc>http://genat.uk/post/2017-11-01-upgrading-r-bioconductor/</loc>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://genat.uk/tags/array-jobs/</loc>
       <lastmod>2013-11-19T22:19:28+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+      <loc>http://genat.uk/tags/bioconductor/</loc>
+      <lastmod>2017-11-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -346,6 +370,15 @@
     
     
     <url>
+      <loc>http://genat.uk/tags/notes/</loc>
+      <lastmod>2017-11-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
       <loc>http://genat.uk/tags/papers/</loc>
       <lastmod>2015-10-13T20:20:07+00:00</lastmod>
       <priority>0</priority>
@@ -365,7 +398,7 @@
     
     <url>
       <loc>http://genat.uk/post/</loc>
-      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -392,7 +425,7 @@
     
     <url>
       <loc>http://genat.uk/tags/r/</loc>
-      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -508,7 +541,7 @@
     
     <url>
       <loc>http://genat.uk/categories/work/</loc>
-      <lastmod>2017-10-10T00:00:00+00:00</lastmod>
+      <lastmod>2017-11-01T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

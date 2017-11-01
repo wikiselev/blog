@@ -7,8 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <lastBuildDate>Tue, 10 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Upgrading R &#43; Bioconductor</title>
+      <link>http://genat.uk/post/upgrading-r-bioconductor/</link>
+      <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://genat.uk/post/upgrading-r-bioconductor/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Consider this post as a personal note to my future self&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have just learnt that Bioconductor developers should &lt;strong&gt;NOT&lt;/strong&gt; always use the development version. On the &lt;a href=&#34;https://bioconductor.org/developers/how-to/useDevel/&#34; target=&#34;_blank&#34;&gt;official website&lt;/a&gt; it says:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;So I needed to change my &lt;em&gt;R&lt;/em&gt; version from &lt;code&gt;development&lt;/code&gt; to &lt;code&gt;release&lt;/code&gt; and I did. And as it usually happens I got into trouble while trying to use some of the R packages. Luckily I found this &lt;a href=&#34;http://shiny.rstudio.com/articles/upgrade-R.html&#34; target=&#34;_blank&#34;&gt;nice RStudio post&lt;/a&gt; on upgrading &lt;em&gt;R&lt;/em&gt; and I used some of the recommendations they provide.&lt;/p&gt;
+
+&lt;p&gt;However, then I ran into another problem which was a bit more complicated. When installing some of the packages where &lt;em&gt;C++&lt;/em&gt; compilation was required, my &lt;strong&gt;MacOS&lt;/strong&gt; &lt;code&gt;gcc&lt;/code&gt; installation complained that it couldn&amp;rsquo;t support &lt;code&gt;OpenMP&lt;/code&gt; flag. I spent quite a lot of time figuiring out how to solve it until I found &lt;a href=&#34;http://thecoatlessprofessor.com/programming/openmp-in-r-on-os-x/&#34; target=&#34;_blank&#34;&gt;this very useful post&lt;/a&gt;. By following their recommendations I was able to fix all issues and installed all the necessary packages.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>scfind</title>
@@ -204,13 +224,13 @@ if (!all(is.na(tmp))) {
 &lt;div id=&#34;sessioninfo&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;sessionInfo()&lt;/h1&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## R Under development (unstable) (2017-09-06 r73210)
+&lt;pre&gt;&lt;code&gt;## R version 3.4.2 (2017-09-28)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
 ## Running under: macOS Sierra 10.12.6
 ## 
 ## Matrix products: default
-## BLAS: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRblas.0.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.5/Resources/lib/libRlapack.dylib
+## BLAS: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
@@ -220,30 +240,30 @@ if (!all(is.na(tmp))) {
 ## [8] datasets  base     
 ## 
 ## other attached packages:
-##  [1] bindrcpp_0.2                scfind_0.99.4              
-##  [3] SingleCellExperiment_0.99.3 SummarizedExperiment_1.7.6 
-##  [5] DelayedArray_0.3.19         matrixStats_0.52.2         
-##  [7] Biobase_2.37.2              GenomicRanges_1.29.13      
-##  [9] GenomeInfoDb_1.13.4         IRanges_2.11.15            
-## [11] S4Vectors_0.15.8            BiocGenerics_0.23.1        
+##  [1] bindrcpp_0.2                scfind_0.99.6              
+##  [3] SingleCellExperiment_0.99.4 SummarizedExperiment_1.7.10
+##  [5] DelayedArray_0.3.21         matrixStats_0.52.2         
+##  [7] Biobase_2.37.2              GenomicRanges_1.29.15      
+##  [9] GenomeInfoDb_1.13.5         IRanges_2.11.19            
+## [11] S4Vectors_0.15.14           BiocGenerics_0.23.4        
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.12            plyr_1.8.4             
-##  [3] compiler_3.5.0          XVector_0.17.1         
+##  [1] Rcpp_0.12.13            plyr_1.8.4             
+##  [3] compiler_3.4.2          XVector_0.17.2         
 ##  [5] bindr_0.1               bitops_1.0-6           
-##  [7] tools_3.5.0             zlibbioc_1.23.0        
+##  [7] tools_3.4.2             zlibbioc_1.23.0        
 ##  [9] digest_0.6.12           bit_1.1-12             
 ## [11] tibble_1.3.4            evaluate_0.10.1        
 ## [13] lattice_0.20-35         pkgconfig_2.0.1        
 ## [15] rlang_0.1.2             Matrix_1.2-11          
 ## [17] yaml_2.1.14             blogdown_0.1           
 ## [19] GenomeInfoDbData_0.99.1 stringr_1.2.0          
-## [21] dplyr_0.7.3             knitr_1.17             
-## [23] rprojroot_1.2           grid_3.5.0             
+## [21] dplyr_0.7.4             knitr_1.17             
+## [23] rprojroot_1.2           grid_3.4.2             
 ## [25] glue_1.1.1              R6_2.2.2               
 ## [27] hash_2.2.6              rmarkdown_1.6          
 ## [29] bookdown_0.5            reshape2_1.4.2         
-## [31] magrittr_1.5            backports_1.1.0        
+## [31] magrittr_1.5            backports_1.1.1        
 ## [33] htmltools_0.3.6         assertthat_0.2.0       
 ## [35] stringi_1.1.5           RCurl_1.95-4.8&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
@@ -515,24 +535,6 @@ https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3J
 
 
 &lt;p&gt;Please find full description here: &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki/Kmer-expected-number-of-occurrences-in-a-DNA-string&#34; target=&#34;_blank&#34;&gt;K-mer expected number of occurrences in a DNA string&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Interesting bioinformatics questions</title>
-      <link>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</link>
-      <pubDate>Wed, 04 Dec 2013 22:20:56 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</guid>
-      <description>&lt;p&gt;While doing &lt;a href=&#34;https://class.coursera.org/bioinformatics-001/&#34; target=&#34;_blank&#34;&gt;Bioinformatics algorithms online course&lt;/a&gt; together with &lt;a href=&#34;https://beta.stepic.org/&#34; target=&#34;_blank&#34;&gt;Stepic online educational resource&lt;/a&gt; I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms&#34; target=&#34;_blank&#34;&gt;https://github.com/wikiselev/bioinformatics-algorithms&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope this will be useful for your everyday work.&lt;/p&gt;
-
-&lt;p&gt;List of all scripts and explanation to them can be found at the repository’s &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki&#34; target=&#34;_blank&#34;&gt;wiki&lt;/a&gt;. Please find all the descriptions there. Note that here I don’t provide any solutions to the course scored assignments. These are optional questions.&lt;/p&gt;
-
-&lt;p&gt;Please let me know if you have any comments or useful feedback! Enjoy!&lt;/p&gt;
 </description>
     </item>
     
