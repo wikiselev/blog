@@ -5,6 +5,7 @@ date: '2017-11-01'
 slug: upgrading-r-bioconductor
 categories: ["work"]
 tags: ["r", "bioconductor", "notes"]
+summary: "I have just learnt that Bioconductor developers should __NOT__ always use the development version..."
 ---
 
 _Consider this post as a personal note to my future self_
