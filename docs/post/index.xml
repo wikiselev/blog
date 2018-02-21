@@ -2,540 +2,231 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on женатик</title>
-    <link>http://genat.uk/post/index.xml</link>
+    <link>/post/</link>
     <description>Recent content in Posts on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Upgrading R &#43; Bioconductor</title>
-      <link>http://genat.uk/post/upgrading-r-bioconductor/</link>
+      <link>/post/upgrading-r-bioconductor/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/post/upgrading-r-bioconductor/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Consider this post as a personal note to my future self&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I have just learnt that Bioconductor developers should &lt;strong&gt;NOT&lt;/strong&gt; always use the development version. On the &lt;a href=&#34;https://bioconductor.org/developers/how-to/useDevel/&#34; target=&#34;_blank&#34;&gt;official website&lt;/a&gt; it says:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So I needed to change my &lt;em&gt;R&lt;/em&gt; version from &lt;code&gt;development&lt;/code&gt; to &lt;code&gt;release&lt;/code&gt; and I did. And as it usually happens I got into trouble while trying to use some of the R packages. Luckily I found this &lt;a href=&#34;http://shiny.rstudio.com/articles/upgrade-R.html&#34; target=&#34;_blank&#34;&gt;nice RStudio post&lt;/a&gt; on upgrading &lt;em&gt;R&lt;/em&gt; and I used some of the recommendations they provide.&lt;/p&gt;
-
-&lt;p&gt;However, then I ran into another problem which was a bit more complicated. When installing some of the packages where &lt;em&gt;C++&lt;/em&gt; compilation was required, my &lt;strong&gt;MacOS&lt;/strong&gt; &lt;code&gt;gcc&lt;/code&gt; installation complained that it couldn&amp;rsquo;t support &lt;code&gt;OpenMP&lt;/code&gt; flag. I spent quite a lot of time figuiring out how to solve it until I found &lt;a href=&#34;http://thecoatlessprofessor.com/programming/openmp-in-r-on-os-x/&#34; target=&#34;_blank&#34;&gt;this very useful post&lt;/a&gt;. By following their recommendations I was able to fix all issues and installed all the necessary packages.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>scfind</title>
-      <link>http://genat.uk/post/scfind/</link>
-      <pubDate>Tue, 10 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://genat.uk/post/scfind/</guid>
-      <description>&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;http://genat.uk/img/scfind2_colour.png&#34; /&gt;
-
-&lt;/div&gt;
-&lt;div id=&#34;about&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;About&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;scfind&lt;/strong&gt; is a tool that allows one to search single cell RNA-Seq collections using either cells, lists of genes or GO term lists, e.g. searching for cell-types where a specific set of genes are expressed. Here we provide a tutorial on how to create an index from your dataset and how to run queries using the created index.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;scfind&lt;/strong&gt; is a &lt;a href=&#34;http://bioconductor.org/packages/scfind&#34;&gt;Bioconductor package&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Cloud implementation of &lt;strong&gt;scfind&lt;/strong&gt; with a large collection of datasets is available on our &lt;a href=&#34;http://www.hemberg-lab.cloud/scfind&#34;&gt;website&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;dataset&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Dataset&lt;/h1&gt;
-&lt;p&gt;We will run &lt;strong&gt;scfind&lt;/strong&gt; on a human pancreas &lt;a href=&#34;http://dx.doi.org/10.1016/j.cels.2016.09.002&#34;&gt;dataset&lt;/a&gt;. &lt;code&gt;SingleCellExperiment&lt;/code&gt; object created from the data from this dataset can be downloaded from our &lt;a href=&#34;https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#muraro&#34;&gt;website&lt;/a&gt;. We will put it in the &lt;code&gt;data&lt;/code&gt; folder in the root directory. &lt;strong&gt;scfind&lt;/strong&gt; is compatible with the &lt;code&gt;SingleCellExperiment&lt;/code&gt; format and we will run it directly on the downloaded dataset:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(SingleCellExperiment)
-muraro &amp;lt;- readRDS(&amp;quot;~/data/muraro.rds&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;gene-index&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Gene Index&lt;/h1&gt;
-&lt;p&gt;Now we are ready to create a gene index using our dataset:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(scfind)
-cellTypeIndex &amp;lt;- buildCellTypeIndex(muraro)
-head(cellTypeIndex)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##                alpha     ductal endothelial      delta     acinar
-## A1BG-AS1 0.000000000 0.00000000  0.00000000 0.00000000 0.00000000
-## A1BG     0.123152709 0.01224490  0.00000000 0.09844560 0.04109589
-## A1CF     0.895320197 0.11020408  0.04761905 0.68911917 0.62557078
-## A2M-AS1  0.027093596 0.02448980  0.00000000 0.02072539 0.01826484
-## A2ML1    0.013546798 0.01632653  0.04761905 0.02072539 0.05022831
-## A2M      0.004926108 0.06122449  0.95238095 0.02072539 0.02739726
-##                beta unclear      gamma mesenchymal epsilon
-## A1BG-AS1 0.00000000    0.00 0.00000000      0.0000       0
-## A1BG     0.14062500    0.00 0.12871287      0.2875       0
-## A1CF     0.55357143    0.25 0.69306931      0.0500       1
-## A2M-AS1  0.02455357    0.00 0.02970297      0.0625       0
-## A2ML1    0.01562500    0.00 0.01980198      0.0375       0
-## A2M      0.01116071    0.00 0.00990099      0.8125       0&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;cellIndex &amp;lt;- buildCellIndex(muraro)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The gene index contains probability of expression of each gene in each cell type (ratio of expressed cells versus all cells in a given cell type). Since we only need to store one floating point value for each gene and cell type, the size of the index will scale with the total number of cell types in the atlas.&lt;/p&gt;
-&lt;p&gt;By default the &lt;code&gt;cell_type1&lt;/code&gt; column of the &lt;code&gt;colData&lt;/code&gt; slot of the &lt;code&gt;SingleCellExperiment&lt;/code&gt; object is used to define cell types, however it can also be defined manually using the &lt;code&gt;cell_type_column&lt;/code&gt; argument of the &lt;code&gt;buildCellTypeIndex&lt;/code&gt; function (check &lt;code&gt;?buildCellTypeIndex&lt;/code&gt;).&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;marker-genes&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Marker genes&lt;/h1&gt;
-&lt;p&gt;Now let’s define lists of cell type specific marker genes. We will use the &lt;a href=&#34;http://dx.doi.org/10.1016/j.cels.2016.09.002&#34;&gt;original publication&lt;/a&gt;, namely Figure 1:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# these genes are taken from fig. 1
-muraro_alpha &amp;lt;- c(&amp;quot;GCG&amp;quot;, &amp;quot;LOXL4&amp;quot;, &amp;quot;PLCE1&amp;quot;, &amp;quot;IRX2&amp;quot;, &amp;quot;GC&amp;quot;, &amp;quot;KLHL41&amp;quot;, &amp;quot;CRYBA2&amp;quot;, &amp;quot;TTR&amp;quot;, &amp;quot;TM4SF4&amp;quot;, &amp;quot;RGS4&amp;quot;)
-muraro_beta &amp;lt;- c(&amp;quot;INS&amp;quot;, &amp;quot;IAPP&amp;quot;, &amp;quot;MAFA&amp;quot;, &amp;quot;NPTX2&amp;quot;, &amp;quot;DLK1&amp;quot;, &amp;quot;ADCYAP1&amp;quot;, &amp;quot;PFKFB2&amp;quot;, &amp;quot;PDX1&amp;quot;, &amp;quot;TGFBR3&amp;quot;, &amp;quot;SYT13&amp;quot;)
-muraro_gamma &amp;lt;- c(&amp;quot;PPY&amp;quot;, &amp;quot;SERTM1&amp;quot;, &amp;quot;CARTPT&amp;quot;, &amp;quot;SLITRK6&amp;quot;, &amp;quot;ETV1&amp;quot;, &amp;quot;THSD7A&amp;quot;, &amp;quot;AQP3&amp;quot;, &amp;quot;ENTPD2&amp;quot;, &amp;quot;PTGFR&amp;quot;, &amp;quot;CHN2&amp;quot;)
-muraro_delta &amp;lt;- c(&amp;quot;SST&amp;quot;, &amp;quot;PRG4&amp;quot;, &amp;quot;LEPR&amp;quot;, &amp;quot;RBP4&amp;quot;, &amp;quot;BCHE&amp;quot;, &amp;quot;HHEX&amp;quot;, &amp;quot;FRZB&amp;quot;, &amp;quot;PCSK1&amp;quot;, &amp;quot;RGS2&amp;quot;, &amp;quot;GABRG2&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Additionally, we will use cell type specific marker genes from another human pancreas &lt;a href=&#34;https://hemberg-lab.github.io/scRNA.seq.datasets/human/pancreas/#segerstolpe&#34;&gt;publication&lt;/a&gt; (taken from Figures 2 and 3):&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# these genes are taken from fig. 2
-segerstolpe_alpha &amp;lt;- c(&amp;quot;GCG&amp;quot;, &amp;quot;TTR&amp;quot;, &amp;quot;SSR4&amp;quot;, &amp;quot;CRYBA2&amp;quot;, &amp;quot;SPINT2&amp;quot;, &amp;quot;PEMT&amp;quot;, &amp;quot;CHGA&amp;quot;, &amp;quot;GPX3&amp;quot;, &amp;quot;TMEM176B&amp;quot;, &amp;quot;GC&amp;quot;, &amp;quot;FKBP2&amp;quot;, &amp;quot;PCSK2&amp;quot;, &amp;quot;NAA20&amp;quot;, &amp;quot;TMEM176A&amp;quot;, &amp;quot;ERP29&amp;quot;, &amp;quot;DPM3&amp;quot;, &amp;quot;TMED3&amp;quot;, &amp;quot;CNPY2&amp;quot;, &amp;quot;C10orf10&amp;quot;, &amp;quot;TUBA1B&amp;quot;, &amp;quot;SMIM24&amp;quot;, &amp;quot;F10&amp;quot;, &amp;quot;FXYD5&amp;quot;, &amp;quot;CD46&amp;quot;, &amp;quot;SLC22A17&amp;quot;)
-segerstolpe_beta &amp;lt;- c(&amp;quot;INS&amp;quot;, &amp;quot;SCGN&amp;quot;, &amp;quot;IAPP&amp;quot;, &amp;quot;FXYD2&amp;quot;, &amp;quot;RPL3&amp;quot;, &amp;quot;G6PC2&amp;quot;, &amp;quot;HSP90AB1&amp;quot;, &amp;quot;PEBP1&amp;quot;, &amp;quot;HSPA8&amp;quot;, &amp;quot;EIR4A2&amp;quot;, &amp;quot;ERO1LB&amp;quot;, &amp;quot;SERINC1&amp;quot;, &amp;quot;SLC30A8&amp;quot;, &amp;quot;FAM159B&amp;quot;, &amp;quot;SURF4&amp;quot;, &amp;quot;NPTX2&amp;quot;, &amp;quot;PFKFB2&amp;quot;, &amp;quot;EDARADD&amp;quot;, &amp;quot;MEG3&amp;quot;, &amp;quot;HOPX&amp;quot;, &amp;quot;LMO1&amp;quot;, &amp;quot;PDX1&amp;quot;, &amp;quot;PTEN&amp;quot;, &amp;quot;SH3GL2&amp;quot;, &amp;quot;ADCYAP1&amp;quot;)
-segerstolpe_gamma &amp;lt;- c(&amp;quot;PPY&amp;quot;, &amp;quot;MALAT1&amp;quot;, &amp;quot;SCG2&amp;quot;, &amp;quot;SCGB2A1&amp;quot;, &amp;quot;PAM&amp;quot;, &amp;quot;GPC5-AS1&amp;quot;, &amp;quot;STMN2&amp;quot;, &amp;quot;PAX6&amp;quot;, &amp;quot;MEIS2&amp;quot;, &amp;quot;CMTM8&amp;quot;, &amp;quot;TTC3&amp;quot;, &amp;quot;ARX&amp;quot;, &amp;quot;FGFR1&amp;quot;, &amp;quot;AKAP9&amp;quot;, &amp;quot;ETV1&amp;quot;, &amp;quot;PPY2&amp;quot;, &amp;quot;NCKAP1&amp;quot;, &amp;quot;INPP5F&amp;quot;, &amp;quot;PXK&amp;quot;, &amp;quot;ID4&amp;quot;, &amp;quot;SERTM1&amp;quot;, &amp;quot;SLITRK6&amp;quot;, &amp;quot;SEMA3E&amp;quot;, &amp;quot;APCBEC2&amp;quot;, &amp;quot;ABCC9&amp;quot;)
-segerstolpe_delta &amp;lt;- c(&amp;quot;SST&amp;quot;, &amp;quot;RBP4&amp;quot;, &amp;quot;SEC11C&amp;quot;, &amp;quot;PCP4&amp;quot;, &amp;quot;AGS2&amp;quot;, &amp;quot;HHEX&amp;quot;, &amp;quot;TPPP3&amp;quot;, &amp;quot;UCP2&amp;quot;, &amp;quot;LEPA&amp;quot;, &amp;quot;BAIAP3&amp;quot;, &amp;quot;MS4A8&amp;quot;, &amp;quot;CASR&amp;quot;, &amp;quot;PSIP1&amp;quot;, &amp;quot;BCHE&amp;quot;, &amp;quot;GABRB3&amp;quot;, &amp;quot;LY6H&amp;quot;, &amp;quot;UNC5B&amp;quot;, &amp;quot;EDN3&amp;quot;, &amp;quot;OGDHL&amp;quot;, &amp;quot;NSG1&amp;quot;, &amp;quot;FFAR4&amp;quot;, &amp;quot;LINC00643&amp;quot;, &amp;quot;LINC01014&amp;quot;, &amp;quot;TMEM130&amp;quot;, &amp;quot;PRG4&amp;quot;)
-
-# these genes are taken from fig. 3
-segerstolpe_acinar &amp;lt;- c(&amp;quot;REG1A&amp;quot;, &amp;quot;SPINK1&amp;quot;, &amp;quot;PRSS1&amp;quot;, &amp;quot;REG3A&amp;quot;, &amp;quot;CTRB2&amp;quot;, &amp;quot;SERPINA3&amp;quot;, &amp;quot;RNASE1&amp;quot;, &amp;quot;IL32&amp;quot;, &amp;quot;PRSS3&amp;quot;, &amp;quot;REG1B&amp;quot;, &amp;quot;PRSS3P2&amp;quot;, &amp;quot;CTRB1&amp;quot;, &amp;quot;CFB&amp;quot;, &amp;quot;GDF15&amp;quot;, &amp;quot;MUC1&amp;quot;, &amp;quot;C15orf48&amp;quot;, &amp;quot;DUOXA2&amp;quot;, &amp;quot;AKR1C3&amp;quot;, &amp;quot;CPA2&amp;quot;, &amp;quot;OLFM4&amp;quot;, &amp;quot;GSTA1&amp;quot;, &amp;quot;LGALS2&amp;quot;, &amp;quot;MGST1&amp;quot;, &amp;quot;PDZK1IP1&amp;quot;, &amp;quot;SOD2&amp;quot;, &amp;quot;RARRES2&amp;quot;, &amp;quot;EIF4EBP1&amp;quot;, &amp;quot;CXCL17&amp;quot;, &amp;quot;RAMP1&amp;quot;, &amp;quot;C3&amp;quot;, &amp;quot;UBD&amp;quot;, &amp;quot;GSTA2&amp;quot;, &amp;quot;LDHB&amp;quot;, &amp;quot;ANPEP&amp;quot;, &amp;quot;SDC4&amp;quot;, &amp;quot;LYZ&amp;quot;, &amp;quot;ANGPTL4&amp;quot;, &amp;quot;IGFBP2&amp;quot;, &amp;quot;ALDOB&amp;quot;)
-segerstolpe_ductal &amp;lt;- c(&amp;quot;SPP1&amp;quot;, &amp;quot;KRT19&amp;quot;, &amp;quot;MMP7&amp;quot;, &amp;quot;ANXA4&amp;quot;, &amp;quot;ANXA2&amp;quot;, &amp;quot;DEFB1&amp;quot;, &amp;quot;SERPING1&amp;quot;, &amp;quot;ATP5B&amp;quot;, &amp;quot;ANXA2P2&amp;quot;, &amp;quot;TSPAN8&amp;quot;, &amp;quot;CLDN10&amp;quot;, &amp;quot;IFITM2&amp;quot;, &amp;quot;CTSH&amp;quot;, &amp;quot;SERPINA1&amp;quot;, &amp;quot;CD59&amp;quot;, &amp;quot;SLPI&amp;quot;, &amp;quot;S100A16&amp;quot;, &amp;quot;CD9&amp;quot;, &amp;quot;MIR492&amp;quot;, &amp;quot;SERPINA5&amp;quot;, &amp;quot;PIGR&amp;quot;, &amp;quot;PPAP2C&amp;quot;, &amp;quot;CFTR&amp;quot;, &amp;quot;S100A13&amp;quot;, &amp;quot;AMBP&amp;quot;, &amp;quot;CLDN1&amp;quot;, &amp;quot;LGALS4&amp;quot;, &amp;quot;ANXA3&amp;quot;, &amp;quot;ITGB1&amp;quot;, &amp;quot;PERP&amp;quot;, &amp;quot;LITAF&amp;quot;, &amp;quot;LY6E&amp;quot;, &amp;quot;CMTM7&amp;quot;, &amp;quot;PDLIM3&amp;quot;, &amp;quot;WFDC2&amp;quot;, &amp;quot;TXNIP&amp;quot;, &amp;quot;SLC3A1&amp;quot;, &amp;quot;AOP1&amp;quot;, &amp;quot;ALDH1A3&amp;quot;, &amp;quot;VTCN1&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
-&lt;div id=&#34;search-cell-types-by-a-gene-list&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Search cell types by a gene list&lt;/h2&gt;
-&lt;p&gt;Now, when the gene index is created one can easily and very quickly query information from the dataset. One query which is likely to be of central interest is to retrieve the cell-types where a given set of genes is expressed. For a list of genes, we can then calculate the log-likelihood that all of them will be expressed in the cell-type in question. &lt;strong&gt;scfind&lt;/strong&gt; uses theis log-likelihood to perform a likelihood-ratio test and identify cell types where the given list of genes is significantly expressed.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;findCellType&lt;/code&gt; function returns a list of p-values corresponding to all cell types in a given dataset. We will run it on all lists of marker genes defined above:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_alpha))
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_beta))
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_delta))
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, muraro_gamma))
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_alpha))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_alpha): Genes: SMIM24
-## were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-5.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_beta))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_beta): Genes: EIR4A2
-## were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-6.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_delta))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_delta): Genes: AGS2,
-## LEPA, MS4A8, LINC01014 were exluded from search since they are not present
-## in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-7.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_gamma))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_gamma): Genes: PPY2,
-## APCBEC2 were exluded from search since they are not present in the Gene
-## Index!&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-8.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_acinar))
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-9.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCellType(cellTypeIndex, segerstolpe_ductal))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Warning in findCellType(cellTypeIndex, segerstolpe_ductal): Genes: MIR492,
-## AOP1 were exluded from search since they are not present in the Gene Index!&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-5-10.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;We can also check whether the obtained p-values for marker genes are significantly different from p-values of random gene sets:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pvals &amp;lt;- NULL
-while(length(pvals) &amp;lt; 100) {
-    tmp &amp;lt;- findCellType(cellTypeIndex, sample(rownames(cellTypeIndex), 10))
-    if(!all(is.na(tmp))) {
-        pvals &amp;lt;- c(pvals, min(tmp[!is.na(tmp)]))
-    }
-}
-
-boxplot(pvals)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;search-cells-by-a-gene-list&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Search cells by a gene list&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;findCell&lt;/code&gt; function returns a similar list of p-values corresponding to all cell types in a given dataset. However, it also outputs a list of cells in which genes from the given gene list are co-expressed. We will run it on all lists of marker genes defined above:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_alpha)$p_values)
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_beta)$p_values)
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_delta)$p_values)
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-3.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tmp &amp;lt;- -log10(findCell(cellIndex, muraro_gamma)$p_values)
-if (!all(is.na(tmp))) {
-    barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-10-10-scfind_files/figure-html/unnamed-chunk-7-4.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_alpha)$p_values)
-# if (!all(is.na(tmp))) {
-#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-# }
-# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_beta)$p_values)
-# if (!all(is.na(tmp))) {
-#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-# }
-# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_delta)$p_values)
-# if (!all(is.na(tmp))) {
-#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-# }
-# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_gamma)$p_values)
-# if (!all(is.na(tmp))) {
-#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-# }
-# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_acinar)$p_values)
-# if (!all(is.na(tmp))) {
-#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-# }
-# tmp &amp;lt;- -log10(findCell(cellIndex, segerstolpe_ductal)$p_values)
-# if (!all(is.na(tmp))) {
-#     barplot(tmp, ylab = &amp;quot;-log10(pval)&amp;quot;, las = 2)
-# }&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;sessioninfo&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;sessionInfo()&lt;/h1&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;sessionInfo()&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## R version 3.4.2 (2017-09-28)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Sierra 10.12.6
-## 
-## Matrix products: default
-## BLAS: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
-## 
-## locale:
-## [1] en_GB.UTF-8/en_GB.UTF-8/en_GB.UTF-8/C/en_GB.UTF-8/en_GB.UTF-8
-## 
-## attached base packages:
-## [1] parallel  stats4    methods   stats     graphics  grDevices utils    
-## [8] datasets  base     
-## 
-## other attached packages:
-##  [1] bindrcpp_0.2                scfind_0.99.6              
-##  [3] SingleCellExperiment_0.99.4 SummarizedExperiment_1.7.10
-##  [5] DelayedArray_0.3.21         matrixStats_0.52.2         
-##  [7] Biobase_2.37.2              GenomicRanges_1.29.15      
-##  [9] GenomeInfoDb_1.13.5         IRanges_2.11.19            
-## [11] S4Vectors_0.15.14           BiocGenerics_0.23.4        
-## 
-## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.13            plyr_1.8.4             
-##  [3] compiler_3.4.2          XVector_0.17.2         
-##  [5] bindr_0.1               bitops_1.0-6           
-##  [7] tools_3.4.2             zlibbioc_1.23.0        
-##  [9] digest_0.6.12           bit_1.1-12             
-## [11] tibble_1.3.4            evaluate_0.10.1        
-## [13] lattice_0.20-35         pkgconfig_2.0.1        
-## [15] rlang_0.1.2             Matrix_1.2-11          
-## [17] yaml_2.1.14             blogdown_0.1           
-## [19] GenomeInfoDbData_0.99.1 stringr_1.2.0          
-## [21] dplyr_0.7.4             knitr_1.17             
-## [23] rprojroot_1.2           grid_3.4.2             
-## [25] glue_1.1.1              R6_2.2.2               
-## [27] hash_2.2.6              rmarkdown_1.6          
-## [29] bookdown_0.5            reshape2_1.4.2         
-## [31] magrittr_1.5            backports_1.1.1        
-## [33] htmltools_0.3.6         assertthat_0.2.0       
-## [35] stringi_1.1.5           RCurl_1.95-4.8&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
+      <guid>/post/upgrading-r-bioconductor/</guid>
+      <description>Consider this post as a personal note to my future self
+I have just learnt that Bioconductor developers should NOT always use the development version. On the official website it says:
+ This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.
+ So I needed to change my R version from development to release and I did.</description>
     </item>
     
     <item>
       <title>New website theme</title>
-      <link>http://genat.uk/post/2017-01-22-new-website-theme/</link>
+      <link>/post/2017-01-22-new-website-theme/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2017-01-22-new-website-theme/</guid>
-      <description>&lt;p&gt;I have just updated this website with an &lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34;&gt;academic theme&lt;/a&gt; and it looks amazing! I&amp;rsquo;m glad I&amp;rsquo;ve tried it. Now I not only have a solid functionality behind the website but also quite a pretty website&amp;rsquo;s face. I am convinced that &lt;a href=&#34;http://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; is great and very fast for building websites. Please do not hesitate to try it out!&lt;/p&gt;
-</description>
+      <guid>/post/2017-01-22-new-website-theme/</guid>
+      <description>I have just updated this website with an academic theme and it looks amazing! I&amp;rsquo;m glad I&amp;rsquo;ve tried it. Now I not only have a solid functionality behind the website but also quite a pretty website&amp;rsquo;s face. I am convinced that Hugo is great and very fast for building websites. Please do not hesitate to try it out!</description>
     </item>
     
     <item>
       <title>Get GSEA done!</title>
-      <link>http://genat.uk/post/2017-01-21-get-gsea-done/</link>
+      <link>/post/2017-01-21-get-gsea-done/</link>
       <pubDate>Sat, 21 Jan 2017 19:57:37 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2017-01-21-get-gsea-done/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Thousands of times I&amp;rsquo;ve heard of the &lt;a href=&#34;http://software.broadinstitute.org/gsea/index.jsp&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;Gene Set Enrichment Analysis&lt;/strong&gt;&lt;/a&gt; or GSEA. Thousands of times I tried to run it and thousands of times I failed!&lt;/p&gt;
-
-&lt;p&gt;As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn&amp;rsquo;t work out well&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;First of all, there are millions of R tools which can run GSEA analysis. A simple Google search provides quite a large list: &lt;a href=&#34;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&#34; target=&#34;_blank&#34;&gt;https://www.google.co.uk/search?q=Gene+Set+Enrichment+Analysis+r&lt;/a&gt;. However, if you read manuals from these tools it is still quite tricky to figure out how to run GSEA.&lt;/p&gt;
-
-&lt;p&gt;Additionally, most of the tools are written and explained for microarray data only. In my case I needed to perform GSEA on a mix of microarray and single-cell RNA-Seq data. So I still had no idea how to start.&lt;/p&gt;
-
-&lt;p&gt;As usual in these cases it is better to go to the origin and figure out what the definition of GSEA is. It is easy to find the original paper about GSEA: &lt;a href=&#34;http://www.pnas.org/content/102/43/15545.full.pdf&#34; target=&#34;_blank&#34;&gt;http://www.pnas.org/content/102/43/15545.full.pdf&lt;/a&gt;. From reading the paper it is clear that in a very primitive way to perform the GSEA one just needs two gene sets, where one is ranked using continuous variable and another one is just a simple gene list. Without going into the details, the goal of GSEA is to determine whether the members of the second set are randomly distributed throughout the first set or primarily found at its top or bottom. I had already prepared both gene sets but still could not find a tool to perform this simple procedure.&lt;/p&gt;
-
-&lt;p&gt;Again, going back to the origins, the first GSEA tool developed by the authors of the original publication is available from the Broad Institute webiste: &lt;a href=&#34;http://software.broadinstitute.org/gsea&#34; target=&#34;_blank&#34;&gt;http://software.broadinstitute.org/gsea&lt;/a&gt;. I downloaded and ran the tool. However, I was still unable ot get any meaningful result, except getting different uninterpretable errors.&lt;/p&gt;
-
-&lt;p&gt;So, when all hopes were lost, I desperately contacted a bioinformatician who was helping my collaborators with the analysis. Apparently he went through similar difficulties with GSEA before, but he was more persistent than I was and he was able to run it using the tool from the Broad Institute. But more importantly he recorded his steps in a manual and kindly shared it with me.&lt;/p&gt;
-
-&lt;p&gt;So, after such a long introduction I can finally tell you how to easily run GSEA when you have two gene sets, one of which is ranked using a continuous variable (e.g. log-fold change in expression if the genes are differentially expressed).&lt;/p&gt;
-
-&lt;h2 id=&#34;gene-rank-file-rnk&#34;&gt;Gene rank file (*.rnk)&lt;/h2&gt;
-
-&lt;p&gt;The first gene set should be created, ranked by some value and written to a file. The simplest example would be a set of differentially expressed genes ranked by their log-fold change. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#RNK:_Ranked_list_file_format_.28.2A.rnk.29&#34; target=&#34;_blank&#34;&gt;rnk&lt;/a&gt;:&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;http://genat.uk/img/Rnk_format_snapshot.gif&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-&lt;h2 id=&#34;gene-file-grp&#34;&gt;Gene file (*.grp)&lt;/h2&gt;
-
-&lt;p&gt;The second gene set should be just created and written to a file. The file format must be &lt;a href=&#34;http://software.broadinstitute.org/cancer/software/gsea/wiki/index.php/Data_formats#GRP:_Gene_set_file_format_.28.2A.grp.29&#34; target=&#34;_blank&#34;&gt;grp&lt;/a&gt;:&lt;/p&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;http://genat.uk/img/Grp_format_snapshot.gif&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-&lt;h2 id=&#34;run-gsea&#34;&gt;Run GSEA&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;You can download and launch the software by clicking the &lt;strong&gt;Launch&lt;/strong&gt; button at &lt;a href=&#34;http://www.broadinstitute.org/gsea/downloads.jsp&#34; target=&#34;_blank&#34;&gt;http://www.broadinstitute.org/gsea/downloads.jsp&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Click on &lt;strong&gt;Load data&lt;/strong&gt; button in the left menu.&lt;/li&gt;
-&lt;li&gt;Load the two data files (&lt;em&gt;rnk&lt;/em&gt; and &lt;em&gt;grp&lt;/em&gt;).&lt;/li&gt;
-&lt;li&gt;In the main menu at the top click on &lt;em&gt;Tools&lt;/em&gt; -&amp;gt; &lt;em&gt;GseaPreranked&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Click on &lt;em&gt;Gene sets database&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Click on &lt;em&gt;Gene sets (grp)&lt;/em&gt; tab and choose the &lt;em&gt;grp&lt;/em&gt; file you have loaded.&lt;/li&gt;
-&lt;li&gt;Click OK.&lt;/li&gt;
-&lt;li&gt;Click on &lt;em&gt;Ranked list&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Choose the &lt;em&gt;rnk&lt;/em&gt; file you have loaded.&lt;/li&gt;
-&lt;li&gt;Set &lt;em&gt;Collapse dataset to gene symbols&lt;/em&gt; to &lt;strong&gt;false&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Click on show &lt;em&gt;Basic Fields&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Change &lt;em&gt;Enrichment statistic&lt;/em&gt; to &lt;strong&gt;classic&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Set &lt;em&gt;Max size: exclude larger sets&lt;/em&gt; to a value higher than the number of genes in you gene set.&lt;/li&gt;
-&lt;li&gt;Set &lt;em&gt;Min size: exclude smaller sets&lt;/em&gt; to &lt;strong&gt;1&lt;/strong&gt; for the peace of mind.&lt;/li&gt;
-&lt;li&gt;Click &lt;em&gt;Run&lt;/em&gt; button!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;view-the-results&#34;&gt;View the results&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Click on &lt;em&gt;Analysis history&lt;/em&gt; in the left menu.&lt;/li&gt;
-&lt;li&gt;In &lt;em&gt;Reports&lt;/em&gt; -&amp;gt; &lt;em&gt;Current session&lt;/em&gt; click on your newly created report&lt;/li&gt;
-&lt;li&gt;In &lt;em&gt;Files produces as part of this analysis&lt;/em&gt; double click on the html report. The report will open in your browser window.&lt;/li&gt;
-&lt;li&gt;To view a standard GSEA plot click on the &lt;em&gt;Snapshot of enrichment results&lt;/em&gt; link:&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;figure &gt;
-    
-        &lt;img src=&#34;http://genat.uk/img/gsea_plot.png&#34; /&gt;
-    
-    
-&lt;/figure&gt;
-
-
-&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
-
-&lt;p&gt;Hope this manual was helpful for you and hope you have managed to run GSEA analysis on your data. If you know any other GSEA tools please let me know!&lt;/p&gt;
-</description>
+      <guid>/post/2017-01-21-get-gsea-done/</guid>
+      <description>Introduction Thousands of times I&amp;rsquo;ve heard of the Gene Set Enrichment Analysis or GSEA. Thousands of times I tried to run it and thousands of times I failed!
+As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn&amp;rsquo;t work out well&amp;hellip;
+First of all, there are millions of R tools which can run GSEA analysis.</description>
     </item>
     
     <item>
       <title>Hello, World!</title>
-      <link>http://genat.uk/post/2017-01-16-hello-world/</link>
+      <link>/post/2017-01-16-hello-world/</link>
       <pubDate>Mon, 16 Jan 2017 08:54:39 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2017-01-16-hello-world/</guid>
-      <description>&lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-01-16-hello-world_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
-</description>
+      <guid>/post/2017-01-16-hello-world/</guid>
+      <description>I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to blogdown, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!</description>
     </item>
     
     <item>
       <title>How to start working with R</title>
-      <link>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</link>
+      <link>/post/2015-12-11-how-to-start-working-with-r/</link>
       <pubDate>Fri, 11 Dec 2015 20:26:17 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve just come across a great &lt;a href=&#34;http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!&lt;/p&gt;
-</description>
+      <guid>/post/2015-12-11-how-to-start-working-with-r/</guid>
+      <description>I&amp;rsquo;ve just come across a great blog post about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!</description>
     </item>
     
     <item>
       <title>SC3 poster</title>
-      <link>http://genat.uk/post/2015-10-29-sc3-poster/</link>
+      <link>/post/2015-10-29-sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-10-29-sc3-poster/</guid>
-      <description>&lt;p&gt;I am attending the &lt;a href=&#34;https://registration.hinxton.wellcome.ac.uk/events/item.aspx?e=517&#34; target=&#34;_blank&#34;&gt;Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://f1000research.com/posters/4-1182&#34; target=&#34;_blank&#34;&gt;http://f1000research.com/posters/4-1182&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In total our group is presenting 5 posters! Here they are:&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/wikiselev&#34;&gt;@wikiselev&lt;/a&gt; with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/KhxnOGGlUW&#34;&gt;pic.twitter.com/KhxnOGGlUW&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659812760742707200&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Poster selfie at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/UYCwHJJwZB&#34;&gt;pic.twitter.com/UYCwHJJwZB&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659813009271967744&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Tallulah with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/jbJTzuMygQ&#34;&gt;pic.twitter.com/jbJTzuMygQ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659820075474665472&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/ge_parada&#34;&gt;@ge_parada&lt;/a&gt; with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/LIxgC0hSky&#34;&gt;pic.twitter.com/LIxgC0hSky&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659820180281925632&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;en&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/IGeoso&#34;&gt;@IGeoso&lt;/a&gt; with poster at &lt;a href=&#34;https://twitter.com/hashtag/FGSB15?src=hash&#34;&gt;#FGSB15&lt;/a&gt; &lt;a href=&#34;https://t.co/Vy8eIKiRWX&#34;&gt;pic.twitter.com/Vy8eIKiRWX&lt;/a&gt;&lt;/p&gt;&amp;mdash; Martin Hemberg (@m_hemberg) &lt;a href=&#34;https://twitter.com/m_hemberg/status/659812588059025408&#34;&gt;October 29, 2015&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+      <guid>/post/2015-10-29-sc3-poster/</guid>
+      <description>I am attending the Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health.
+Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:
+http://f1000research.com/posters/4-1182
+In total our group is presenting 5 posters! Here they are:
+@wikiselev with poster at #FGSB15 pic.twitter.com/KhxnOGGlUW
+&amp;mdash; Martin Hemberg (@m_hemberg) October 29, 2015 
+Poster selfie at #FGSB15 pic.twitter.com/UYCwHJJwZB
+&amp;mdash; Martin Hemberg (@m_hemberg) October 29, 2015 
+Tallulah with poster at #FGSB15 pic.</description>
     </item>
     
     <item>
       <title>How medicine turns into advertising</title>
-      <link>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</link>
+      <link>/post/2015-10-20-how-medicine-turns-into-advertising/</link>
       <pubDate>Tue, 20 Oct 2015 20:23:30 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</guid>
-      <description>&lt;p&gt;I have just learnt about some &lt;a href=&#34;https://www.washingtonpost.com/news/to-your-health/wp/2015/10/16/a-comprehensive-guide-to-theranos-troubles-and-what-it-means-for-you/&#34; target=&#34;_blank&#34;&gt;tension&lt;/a&gt; growing around &lt;a href=&#34;https://www.theranos.com/&#34; target=&#34;_blank&#34;&gt;Theranos&lt;/a&gt; biotech startup. Looks like their advertisement strategy worked very well, giving them more than 400 million dollars of investments. However, now the whole technology is under a big question. The topic is familiar to me because last year I took part in the &lt;a href=&#34;http://www.biotechnologyyes.co.uk/biotechnologyyes/index.aspx&#34; target=&#34;_blank&#34;&gt;Biotechnology YES&lt;/a&gt; competition and my team presented a similar idea of diagnosing cancer relapse from a blood test. We figured out how many bottlenecks and troubles appear once you start implementing the technology. And already at that time I felt that there are a lot of unrealistic projects out there that get some funding by really good advertising but then they usually quickly die. I am not sure the same is happenning with &lt;a href=&#34;https://www.theranos.com/&#34; target=&#34;_blank&#34;&gt;Theranos&lt;/a&gt; because they are alredy very big and are running, but let&amp;rsquo;s see.&lt;/p&gt;
-</description>
+      <guid>/post/2015-10-20-how-medicine-turns-into-advertising/</guid>
+      <description>I have just learnt about some tension growing around Theranos biotech startup. Looks like their advertisement strategy worked very well, giving them more than 400 million dollars of investments. However, now the whole technology is under a big question. The topic is familiar to me because last year I took part in the Biotechnology YES competition and my team presented a similar idea of diagnosing cancer relapse from a blood test.</description>
     </item>
     
     <item>
       <title>SC3 - consensus clustering of single cell RNA Seq data</title>
-      <link>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <link>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
       <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
-      <description>&lt;p&gt;Today I presented the &lt;a href=&#34;http://github.com/hemberg-lab/SC3&#34; target=&#34;_blank&#34;&gt;SC3 tool&lt;/a&gt; that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the &lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/edgeR.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;edgeR&lt;/strong&gt;&lt;/a&gt; developer &lt;a href=&#34;https://sites.google.com/site/davismcc/&#34; target=&#34;_blank&#34;&gt;Davis McCarthy&lt;/a&gt;. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:&lt;/p&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;922a274fae4b4e4ea08cdea190642bed&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;
-</description>
+      <guid>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <description>Today I presented the SC3 tool that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the edgeR developer Davis McCarthy. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:
+ Enjoy!</description>
     </item>
     
     <item>
       <title>My new paper is out!</title>
-      <link>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</link>
+      <link>/post/2015-10-13-my-new-paper-is-out/</link>
       <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</guid>
-      <description>&lt;p&gt;My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a &lt;a href=&#34;http://nar.oxfordjournals.org/content/early/2015/10/11/nar.gkv1015.full&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to it. It has been long 4 years since I started that project and I am very happy that finally it is published!&lt;/p&gt;
-
-&lt;p&gt;Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!&lt;/p&gt;
-</description>
+      <guid>/post/2015-10-13-my-new-paper-is-out/</guid>
+      <description>My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a link to it. It has been long 4 years since I started that project and I am very happy that finally it is published!
+Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!</description>
     </item>
     
     <item>
       <title>ISMARA client</title>
-      <link>http://genat.uk/post/2015-09-22-ismara-client/</link>
+      <link>/post/2015-09-22-ismara-client/</link>
       <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-09-22-ismara-client/</guid>
-      <description>&lt;p&gt;I was using &lt;a href=&#34;https://ismara.unibas.ch/fcgi/mara&#34; target=&#34;_blank&#34;&gt;ISMARA&lt;/a&gt; for my last paper which is now in press in &lt;a href=&#34;http://nar.oxfordjournals.org/&#34; target=&#34;_blank&#34;&gt;NAR journal&lt;/a&gt;. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading. Finally this problem is solved now and ISMARA developers introduced a &lt;a href=&#34;https://ismara.unibas.ch/ISMARA/client/&#34; target=&#34;_blank&#34;&gt;client&lt;/a&gt; which can be downloaded and used for data preprocessing. The preprocessed data is then very small and light and can be easily and fastly uploaded even with a slow internet connection. This is excellent, thank you ISMARA guys for your great work. The next step would be to release the code! :-)&lt;/p&gt;
-</description>
+      <guid>/post/2015-09-22-ismara-client/</guid>
+      <description>I was using ISMARA for my last paper which is now in press in NAR journal. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading.</description>
     </item>
     
     <item>
       <title>Bioinformatics Algorithms</title>
-      <link>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</link>
+      <link>/post/2015-09-15-bioinformatics-algorithms/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</guid>
-      <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34; target=&#34;_blank&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
-
-&lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
-
-&lt;p&gt;That&amp;rsquo;s all for now, I am off to read some really cool stuff, hope you can share my excitement!&lt;/p&gt;
-</description>
+      <guid>/post/2015-09-15-bioinformatics-algorithms/</guid>
+      <description>Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a comprehensive course with several specializations.</description>
     </item>
     
     <item>
       <title>ISMB 2015 Poster</title>
-      <link>http://genat.uk/post/2015-07-23-ismb-2015-poster/</link>
+      <link>/post/2015-07-23-ismb-2015-poster/</link>
       <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-07-23-ismb-2015-poster/</guid>
-      <description>&lt;p&gt;At &lt;a href=&#34;http://www.iscb.org/ismbeccb2015&#34; target=&#34;_blank&#34;&gt;ISMB-2015&lt;/a&gt; in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;You can view/download the poster at &lt;a href=&#34;http://f1000research.com/posters/4-226&#34; target=&#34;_blank&#34;&gt;F1000 website&lt;/a&gt;. All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <guid>/post/2015-07-23-ismb-2015-poster/</guid>
+      <description>At ISMB-2015 in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;
+You can view/download the poster at F1000 website. All ISMB posters submitted to F1000 can be viewed at their channel.
+All ISMB posters submitted to F1000 can be viewed at their channel.</description>
     </item>
     
     <item>
       <title>Job applications</title>
-      <link>http://genat.uk/post/2015-07-21-job-applications/</link>
+      <link>/post/2015-07-21-job-applications/</link>
       <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-07-21-job-applications/</guid>
-      <description>&lt;p&gt;Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.&lt;/p&gt;
-
-&lt;!-- timeline is created by http://timeline.knightlab.com/ using this Google spread sheet:
-https://docs.google.com/spreadsheet/ccc?key=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;usp=sharing --&gt;
-
-&lt;iframe src=&#39;http://cdn.knightlab.com/libs/timeline/latest/embed/index.html?source=0AtAEJU3ZybXIdG43MDdiWmpzR0t6UnVfQ3JNNU1NNUE&amp;font=Arvo-PTSans&amp;maptype=toner&amp;lang=en&amp;height=350&#39; width=&#39;100%&#39; height=&#39;360&#39; frameborder=&#39;0&#39;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The timeline was created by using a &lt;a href=&#34;http://timeline.knightlab.com/&#34; target=&#34;_blank&#34;&gt;timeline tool&lt;/a&gt; from KnightLab.&lt;/p&gt;
-</description>
+      <guid>/post/2015-07-21-job-applications/</guid>
+      <description>Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.
+ The timeline was created by using a timeline tool from KnightLab.</description>
     </item>
     
     <item>
       <title>K-mer expected number of occurrences in a DNA string</title>
-      <link>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
+      <link>/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</link>
       <pubDate>Fri, 10 Jan 2014 22:24:07 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
-      <description>
-&lt;figure &gt;
+      <guid>/post/2014-01-10-k-mer-expected-number-of-occurrences-in-a-dna-string/</guid>
+      <description>Please find full description here: K-mer expected number of occurrences in a DNA string</description>
+    </item>
     
-        &lt;img src=&#34;http://genat.uk/img/kmer-expect-occur.png&#34; /&gt;
+    <item>
+      <title>Interesting bioinformatics questions</title>
+      <link>/post/2013-12-04-interesting-bioinformatics-questions/</link>
+      <pubDate>Wed, 04 Dec 2013 22:20:56 +0000</pubDate>
+      
+      <guid>/post/2013-12-04-interesting-bioinformatics-questions/</guid>
+      <description>While doing Bioinformatics algorithms online course together with Stepic online educational resource I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:
+https://github.com/wikiselev/bioinformatics-algorithms
+I hope this will be useful for your everyday work.
+List of all scripts and explanation to them can be found at the repository’s wiki. Please find all the descriptions there. Note that here I don’t provide any solutions to the course scored assignments.</description>
+    </item>
     
+    <item>
+      <title>Array and Sequential Cluster Jobs</title>
+      <link>/post/2013-11-19-array-and-sequential-cluster-jobs/</link>
+      <pubDate>Tue, 19 Nov 2013 22:19:28 +0000</pubDate>
+      
+      <guid>/post/2013-11-19-array-and-sequential-cluster-jobs/</guid>
+      <description>Why didn’t I know about Array and Sequential Cluster Jobs before??? Very-very useful!
+https://hopstat.wordpress.com/2013/11/05/array-and-sequential-cluster-jobs/</description>
+    </item>
     
-&lt;/figure&gt;
-
-
-&lt;p&gt;Please find full description here: &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki/Kmer-expected-number-of-occurrences-in-a-DNA-string&#34; target=&#34;_blank&#34;&gt;K-mer expected number of occurrences in a DNA string&lt;/a&gt;&lt;/p&gt;
-</description>
+    <item>
+      <title>easy-Report script for easy R reporting</title>
+      <link>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
+      <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
+      
+      <guid>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
+      <description>Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best).</description>
+    </item>
+    
+    <item>
+      <title>Bioinformatics Algorithms Online Course</title>
+      <link>/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
+      <pubDate>Thu, 10 Oct 2013 22:11:12 +0000</pubDate>
+      
+      <guid>/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
+      <description>I am going to take the following online course which starts at the end of October:
+https://www.coursera.org/course/bioinformatics
+If you are interested and would like to join, please let me know, I think it would be more productive if we share our experiences!
+In addition I would also highly recommend this educational resource:
+www.rosalind.info
+It is made by the same people who organised the course and is a very good complementary exercise.</description>
+    </item>
+    
+    <item>
+      <title>Sublime SFTP package</title>
+      <link>/post/2013-01-29-sublime-sftp-package/</link>
+      <pubDate>Tue, 29 Jan 2013 22:03:06 +0000</pubDate>
+      
+      <guid>/post/2013-01-29-sublime-sftp-package/</guid>
+      <description>I’ve become an addicted fan of the Sublime Text editor. This is the most amazing text editor I’ve worked with. It’s been already greatly described in other blogs (see, for example here and here), so I am not going into the details about it’s cool features. What I want to write about is one it’s packages which I find particularly useful — Sublime SFTP.
+This package is very convenient if you run your jobs on a remote machine or a computational cluster.</description>
+    </item>
+    
+    <item>
+      <title>Automated snapshotting with IGV genomic browser</title>
+      <link>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</link>
+      <pubDate>Sat, 20 Oct 2012 21:28:49 +0000</pubDate>
+      
+      <guid>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</guid>
+      <description>Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given protein_list at specific genomic locations (a given gene_list). To take a snapshot of any genomic region I usually use IGV genomic browser (in this post version 2.1.24 (2563) was used). When protein_list (&amp;lt;10 data files) and gene_list (&amp;lt;10 regions) are small snapshotting can be easily done manually.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/post/2017-11-01-upgrading-r-bioconductor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-11-01-upgrading-r-bioconductor/</guid>
+      <description>Upgrading R + Bioconductor       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
   </channel>

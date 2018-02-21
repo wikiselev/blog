@@ -2,31 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on женатик</title>
-    <link>http://genat.uk/tags/notes/index.xml</link>
+    <link>/tags/notes/</link>
     <description>Recent content in Notes on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Upgrading R &#43; Bioconductor</title>
-      <link>http://genat.uk/post/upgrading-r-bioconductor/</link>
+      <link>/post/upgrading-r-bioconductor/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/post/upgrading-r-bioconductor/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Consider this post as a personal note to my future self&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I have just learnt that Bioconductor developers should &lt;strong&gt;NOT&lt;/strong&gt; always use the development version. On the &lt;a href=&#34;https://bioconductor.org/developers/how-to/useDevel/&#34; target=&#34;_blank&#34;&gt;official website&lt;/a&gt; it says:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;So I needed to change my &lt;em&gt;R&lt;/em&gt; version from &lt;code&gt;development&lt;/code&gt; to &lt;code&gt;release&lt;/code&gt; and I did. And as it usually happens I got into trouble while trying to use some of the R packages. Luckily I found this &lt;a href=&#34;http://shiny.rstudio.com/articles/upgrade-R.html&#34; target=&#34;_blank&#34;&gt;nice RStudio post&lt;/a&gt; on upgrading &lt;em&gt;R&lt;/em&gt; and I used some of the recommendations they provide.&lt;/p&gt;
-
-&lt;p&gt;However, then I ran into another problem which was a bit more complicated. When installing some of the packages where &lt;em&gt;C++&lt;/em&gt; compilation was required, my &lt;strong&gt;MacOS&lt;/strong&gt; &lt;code&gt;gcc&lt;/code&gt; installation complained that it couldn&amp;rsquo;t support &lt;code&gt;OpenMP&lt;/code&gt; flag. I spent quite a lot of time figuiring out how to solve it until I found &lt;a href=&#34;http://thecoatlessprofessor.com/programming/openmp-in-r-on-os-x/&#34; target=&#34;_blank&#34;&gt;this very useful post&lt;/a&gt;. By following their recommendations I was able to fix all issues and installed all the necessary packages.&lt;/p&gt;
-</description>
+      <guid>/post/upgrading-r-bioconductor/</guid>
+      <description>Consider this post as a personal note to my future self
+I have just learnt that Bioconductor developers should NOT always use the development version. On the official website it says:
+ This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.
+ So I needed to change my R version from development to release and I did.</description>
     </item>
     
   </channel>

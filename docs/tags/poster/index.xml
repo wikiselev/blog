@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Poster on женатик</title>
-    <link>http://genat.uk/tags/poster/index.xml</link>
+    <link>/tags/poster/</link>
     <description>Recent content in Poster on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <atom:link href="/tags/poster/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Jul 2015 19:50:48 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/poster/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ISMB 2015 Poster</title>
-      <link>http://genat.uk/post/2015-07-23-ismb-2015-poster/</link>
+      <link>/post/2015-07-23-ismb-2015-poster/</link>
       <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-07-23-ismb-2015-poster/</guid>
-      <description>&lt;p&gt;At &lt;a href=&#34;http://www.iscb.org/ismbeccb2015&#34; target=&#34;_blank&#34;&gt;ISMB-2015&lt;/a&gt; in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;You can view/download the poster at &lt;a href=&#34;http://f1000research.com/posters/4-226&#34; target=&#34;_blank&#34;&gt;F1000 website&lt;/a&gt;. All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;All ISMB posters submitted to F1000 can be viewed at &lt;a href=&#34;http://f1000research.com/channels/iscbcommj/ISMB&#34; target=&#34;_blank&#34;&gt;their channel&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <guid>/post/2015-07-23-ismb-2015-poster/</guid>
+      <description>At ISMB-2015 in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;
+You can view/download the poster at F1000 website. All ISMB posters submitted to F1000 can be viewed at their channel.
+All ISMB posters submitted to F1000 can be viewed at their channel.</description>
     </item>
     
   </channel>

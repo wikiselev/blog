@@ -2,92 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on женатик</title>
-    <link>http://genat.uk/project/index.xml</link>
+    <link>/project/</link>
     <description>Recent content in Projects on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Dec 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>scfind</title>
+      <link>/project/scfind/</link>
+      <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/scfind/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SC3</title>
-      <link>http://genat.uk/project/sc3/</link>
+      <link>/project/sc3/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/sc3/</guid>
+      <guid>/project/sc3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloud scmap</title>
-      <link>http://genat.uk/project/cloud-scmap/</link>
+      <link>/project/cloud-scmap/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/cloud-scmap/</guid>
+      <guid>/project/cloud-scmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scRNA-Seq datasets</title>
-      <link>http://genat.uk/project/datasets/</link>
+      <link>/project/datasets/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/datasets/</guid>
+      <guid>/project/datasets/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scRNA-seq course</title>
-      <link>http://genat.uk/project/sc-rna-seq-course/</link>
+      <link>/project/sc-rna-seq-course/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/sc-rna-seq-course/</guid>
+      <guid>/project/sc-rna-seq-course/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scmap</title>
-      <link>http://genat.uk/project/scmap/</link>
+      <link>/project/scmap/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/scmap/</guid>
+      <guid>/project/scmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My PhD thesis</title>
-      <link>http://genat.uk/project/phd/</link>
+      <link>/project/phd/</link>
       <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/phd/</guid>
+      <guid>/project/phd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My chords</title>
-      <link>http://genat.uk/project/chords/</link>
+      <link>/project/chords/</link>
       <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/chords/</guid>
+      <guid>/project/chords/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ftl1.support</title>
-      <link>http://genat.uk/project/ftl1/</link>
+      <link>/project/ftl1/</link>
       <pubDate>Fri, 27 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/ftl1/</guid>
+      <guid>/project/ftl1/</guid>
       <description></description>
     </item>
     
     <item>
       <title>St Ephraim Orthodox Parish</title>
-      <link>http://genat.uk/project/stephraim/</link>
+      <link>/project/stephraim/</link>
       <pubDate>Wed, 27 Apr 2011 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/project/stephraim/</guid>
+      <guid>/project/stephraim/</guid>
       <description></description>
     </item>
     

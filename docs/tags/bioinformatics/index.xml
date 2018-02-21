@@ -2,63 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bioinformatics on женатик</title>
-    <link>http://genat.uk/tags/bioinformatics/index.xml</link>
+    <link>/tags/bioinformatics/</link>
     <description>Recent content in Bioinformatics on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <atom:link href="/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Sep 2015 19:58:31 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Bioinformatics Algorithms</title>
-      <link>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</link>
+      <link>/post/2015-09-15-bioinformatics-algorithms/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</guid>
-      <description>&lt;p&gt;Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a &lt;a href=&#34;https://www.coursera.org/specializations/bioinformatics&#34; target=&#34;_blank&#34;&gt;comprehensive course&lt;/a&gt; with several specializations. These two books are basically a summary of those Coursera specializations.&lt;/p&gt;
-
-&lt;p&gt;In addition I would also highly recommend this educational resource: &lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;. It was made by the same people and contains a whole bunch of bioinformatics exercises. It&amp;rsquo;s a lot of fun, please have a look!&lt;/p&gt;
-
-&lt;p&gt;That&amp;rsquo;s all for now, I am off to read some really cool stuff, hope you can share my excitement!&lt;/p&gt;
-</description>
+      <guid>/post/2015-09-15-bioinformatics-algorithms/</guid>
+      <description>Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a comprehensive course with several specializations.</description>
     </item>
     
     <item>
       <title>Interesting bioinformatics questions</title>
-      <link>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</link>
+      <link>/post/2013-12-04-interesting-bioinformatics-questions/</link>
       <pubDate>Wed, 04 Dec 2013 22:20:56 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</guid>
-      <description>&lt;p&gt;While doing &lt;a href=&#34;https://class.coursera.org/bioinformatics-001/&#34; target=&#34;_blank&#34;&gt;Bioinformatics algorithms online course&lt;/a&gt; together with &lt;a href=&#34;https://beta.stepic.org/&#34; target=&#34;_blank&#34;&gt;Stepic online educational resource&lt;/a&gt; I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms&#34; target=&#34;_blank&#34;&gt;https://github.com/wikiselev/bioinformatics-algorithms&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope this will be useful for your everyday work.&lt;/p&gt;
-
-&lt;p&gt;List of all scripts and explanation to them can be found at the repository’s &lt;a href=&#34;https://github.com/wikiselev/bioinformatics-algorithms/wiki&#34; target=&#34;_blank&#34;&gt;wiki&lt;/a&gt;. Please find all the descriptions there. Note that here I don’t provide any solutions to the course scored assignments. These are optional questions.&lt;/p&gt;
-
-&lt;p&gt;Please let me know if you have any comments or useful feedback! Enjoy!&lt;/p&gt;
-</description>
+      <guid>/post/2013-12-04-interesting-bioinformatics-questions/</guid>
+      <description>While doing Bioinformatics algorithms online course together with Stepic online educational resource I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:
+https://github.com/wikiselev/bioinformatics-algorithms
+I hope this will be useful for your everyday work.
+List of all scripts and explanation to them can be found at the repository’s wiki. Please find all the descriptions there. Note that here I don’t provide any solutions to the course scored assignments.</description>
     </item>
     
     <item>
       <title>Bioinformatics Algorithms Online Course</title>
-      <link>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
+      <link>/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
       <pubDate>Thu, 10 Oct 2013 22:11:12 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
-      <description>&lt;p&gt;I am going to take the following online course which starts at the end of October:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.coursera.org/course/bioinformatics&#34; target=&#34;_blank&#34;&gt;https://www.coursera.org/course/bioinformatics&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If you are interested and would like to join, please let me know, I think it would be more productive if we share our experiences!&lt;/p&gt;
-
-&lt;p&gt;In addition I would also highly recommend this educational resource:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;www.rosalind.info&#34; target=&#34;_blank&#34;&gt;www.rosalind.info&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It is made by the same people who organised the course and is a very good complementary exercise. I am involved in it and am solving the problems presented there. I think it is very useful!&lt;/p&gt;
-</description>
+      <guid>/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
+      <description>I am going to take the following online course which starts at the end of October:
+https://www.coursera.org/course/bioinformatics
+If you are interested and would like to join, please let me know, I think it would be more productive if we share our experiences!
+In addition I would also highly recommend this educational resource:
+www.rosalind.info
+It is made by the same people who organised the course and is a very good complementary exercise.</description>
     </item>
     
   </channel>

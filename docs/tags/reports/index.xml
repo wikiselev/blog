@@ -2,46 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reports on женатик</title>
-    <link>http://genat.uk/tags/reports/index.xml</link>
+    <link>/tags/reports/</link>
     <description>Recent content in Reports on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <atom:link href="/tags/reports/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Nov 2013 22:14:08 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/reports/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>easy-Report script for easy R reporting</title>
-      <link>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
+      <link>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
       <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
-      <description>&lt;p&gt;Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best). In this case I would spend a lot of time for coding, then for commenting and then for creating a report in a pdf or powerpoint/keynote format. Luckily there are tools that can help with reporting your results in a very efficient way.&lt;/p&gt;
-
-&lt;p&gt;I was fascinated by those tools and wrote a script that quickly creates an html and slide reports from an &lt;a href=&#34;http://www.rstudio.com/ide/docs/authoring/using_markdown&#34; target=&#34;_blank&#34;&gt;RMarkdown&lt;/a&gt; file. The tools that I used were two existing R packages: &lt;a href=&#34;https://github.com/yihui/knitr&#34; target=&#34;_blank&#34;&gt;knitr&lt;/a&gt; and &lt;a href=&#34;https://github.com/ramnathv/slidify&#34; target=&#34;_blank&#34;&gt;slidify&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Proper reporting not only helped me a lot in my data analysis but now I also spend a significantly less amount of time for creating my project update reports every couple of weeks (I practically spend no time!)&lt;/p&gt;
-
-&lt;p&gt;The script is quite simple and ready to use, so I would highly recommend it to R users of any level.&lt;/p&gt;
-
-&lt;p&gt;The script repository is located here (there is also a detailed description on it’s usage):&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/wikiselev/easy-Report&#34; target=&#34;_blank&#34;&gt;https://github.com/wikiselev/easy-Report&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;To quickly get the script repository, run the script and see an example report please follow these steps:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/wikiselev/easy-Report.git
-cd easy-Report
-Rscript easy-Report.R script.Rmd report
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;After running the code above all output report files will be located in ‘report’ folder. If there was no error you should get the same HTML reports as these two:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wikiselev.github.io/easy-Report/report.html&#34; target=&#34;_blank&#34;&gt;http://wikiselev.github.io/easy-Report/report.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wikiselev.github.io/easy-Report/slides.html&#34; target=&#34;_blank&#34;&gt;http://wikiselev.github.io/easy-Report/slides.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope this script will be useful for some of you and very much accelerate your work progress! Please let me know if you have any questions.&lt;/p&gt;
-</description>
+      <guid>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
+      <description>Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best).</description>
     </item>
     
   </channel>

@@ -20,8 +20,8 @@ defaultContentLanguageInSubdir = false
 
 [params]
   name = "Vladimir Kiselev"
-  role = "Staff Scientist"
-  organization = "Sanger Institute"
+  role = "Senior Staff Scientist"
+  organization = "Wellcome Sanger Institute"
   avatar = "userpic.jpg"
   email = "vladimir.yu.kiselev@gmail.com"
   
@@ -71,6 +71,11 @@ defaultContentLanguageInSubdir = false
     icon = "envelope"
     icon_pack = "fa"
     link = "mailto:vladimir.yu.kiselev@gmail.com"
+
+  [[params.social]]
+    icon = "github"
+    icon_pack = "fa"
+    link = "http://github.com/wikiselev"
     
   [[params.social]]
     icon = "linkedin"
@@ -78,15 +83,15 @@ defaultContentLanguageInSubdir = false
     link = "https://uk.linkedin.com/in/wikiselev"
 
   [[params.social]]
+    icon = "google-scholar"
+    icon_pack = "ai"
+    link = "https://scholar.google.com/citations?user=ADHDR8EAAAAJ"
+
+  [[params.social]]
     icon = "twitter"
     icon_pack = "fa"
     link = "https://twitter.com/wikiselev"
 
-  [[params.social]]
-    icon = "google-scholar"
-    icon_pack = "ai"
-    link = "https://scholar.google.com/citations?user=ADHDR8EAAAAJ"
-    
   [[params.social]]
     icon = "publons"
     icon_pack = "ai"
@@ -96,11 +101,6 @@ defaultContentLanguageInSubdir = false
     icon = "orcid"
     icon_pack = "ai"
     link = "https://orcid.org/0000-0003-1893-2255"    
-
-  [[params.social]]
-    icon = "github"
-    icon_pack = "fa"
-    link = "http://github.com/wikiselev"
 
 # Navigation Links
 #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the

@@ -2,21 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on женатик</title>
-    <link>http://genat.uk/tags/tools/index.xml</link>
+    <link>/tags/tools/</link>
     <description>Recent content in Tools on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
-    <atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Sep 2015 20:15:33 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ISMARA client</title>
-      <link>http://genat.uk/post/2015-09-22-ismara-client/</link>
+      <link>/post/2015-09-22-ismara-client/</link>
       <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-09-22-ismara-client/</guid>
-      <description>&lt;p&gt;I was using &lt;a href=&#34;https://ismara.unibas.ch/fcgi/mara&#34; target=&#34;_blank&#34;&gt;ISMARA&lt;/a&gt; for my last paper which is now in press in &lt;a href=&#34;http://nar.oxfordjournals.org/&#34; target=&#34;_blank&#34;&gt;NAR journal&lt;/a&gt;. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading. Finally this problem is solved now and ISMARA developers introduced a &lt;a href=&#34;https://ismara.unibas.ch/ISMARA/client/&#34; target=&#34;_blank&#34;&gt;client&lt;/a&gt; which can be downloaded and used for data preprocessing. The preprocessed data is then very small and light and can be easily and fastly uploaded even with a slow internet connection. This is excellent, thank you ISMARA guys for your great work. The next step would be to release the code! :-)&lt;/p&gt;
-</description>
+      <guid>/post/2015-09-22-ismara-client/</guid>
+      <description>I was using ISMARA for my last paper which is now in press in NAR journal. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading.</description>
     </item>
     
   </channel>
