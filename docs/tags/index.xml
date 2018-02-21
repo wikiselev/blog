@@ -2,247 +2,247 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on женатик</title>
-    <link>/tags/</link>
+    <link>http://genat.uk/tags/</link>
     <description>Recent content in Tags on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Tue, 19 Nov 2013 22:19:28 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Array Jobs</title>
-      <link>/tags/array-jobs/</link>
+      <link>http://genat.uk/tags/array-jobs/</link>
       <pubDate>Tue, 19 Nov 2013 22:19:28 +0000</pubDate>
       
-      <guid>/tags/array-jobs/</guid>
+      <guid>http://genat.uk/tags/array-jobs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bioconductor</title>
-      <link>/tags/bioconductor/</link>
+      <link>http://genat.uk/tags/bioconductor/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/bioconductor/</guid>
+      <guid>http://genat.uk/tags/bioconductor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bioinformatics</title>
-      <link>/tags/bioinformatics/</link>
+      <link>http://genat.uk/tags/bioinformatics/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>/tags/bioinformatics/</guid>
+      <guid>http://genat.uk/tags/bioinformatics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bionformatics</title>
-      <link>/tags/bionformatics/</link>
+      <link>http://genat.uk/tags/bionformatics/</link>
       <pubDate>Fri, 10 Jan 2014 22:24:07 +0000</pubDate>
       
-      <guid>/tags/bionformatics/</guid>
+      <guid>http://genat.uk/tags/bionformatics/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>/tags/blog/</link>
+      <link>http://genat.uk/tags/blog/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
       
-      <guid>/tags/blog/</guid>
+      <guid>http://genat.uk/tags/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Books</title>
-      <link>/tags/books/</link>
+      <link>http://genat.uk/tags/books/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>/tags/books/</guid>
+      <guid>http://genat.uk/tags/books/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Conference</title>
-      <link>/tags/conference/</link>
+      <link>http://genat.uk/tags/conference/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>/tags/conference/</guid>
+      <guid>http://genat.uk/tags/conference/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gsea</title>
-      <link>/tags/gsea/</link>
+      <link>http://genat.uk/tags/gsea/</link>
       <pubDate>Sat, 21 Jan 2017 19:57:37 +0000</pubDate>
       
-      <guid>/tags/gsea/</guid>
+      <guid>http://genat.uk/tags/gsea/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hpc Cluster</title>
-      <link>/tags/hpc-cluster/</link>
+      <link>http://genat.uk/tags/hpc-cluster/</link>
       <pubDate>Tue, 19 Nov 2013 22:19:28 +0000</pubDate>
       
-      <guid>/tags/hpc-cluster/</guid>
+      <guid>http://genat.uk/tags/hpc-cluster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Igv</title>
-      <link>/tags/igv/</link>
+      <link>http://genat.uk/tags/igv/</link>
       <pubDate>Sat, 20 Oct 2012 21:28:49 +0000</pubDate>
       
-      <guid>/tags/igv/</guid>
+      <guid>http://genat.uk/tags/igv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jobs</title>
-      <link>/tags/jobs/</link>
+      <link>http://genat.uk/tags/jobs/</link>
       <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
       
-      <guid>/tags/jobs/</guid>
+      <guid>http://genat.uk/tags/jobs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Notes</title>
-      <link>/tags/notes/</link>
+      <link>http://genat.uk/tags/notes/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/notes/</guid>
+      <guid>http://genat.uk/tags/notes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Papers</title>
-      <link>/tags/papers/</link>
+      <link>http://genat.uk/tags/papers/</link>
       <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
       
-      <guid>/tags/papers/</guid>
+      <guid>http://genat.uk/tags/papers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Poster</title>
-      <link>/tags/poster/</link>
+      <link>http://genat.uk/tags/poster/</link>
       <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
       
-      <guid>/tags/poster/</guid>
+      <guid>http://genat.uk/tags/poster/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Private</title>
-      <link>/tags/private/</link>
+      <link>http://genat.uk/tags/private/</link>
       <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/tags/private/</guid>
+      <guid>http://genat.uk/tags/private/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/tags/r/</link>
+      <link>http://genat.uk/tags/r/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>http://genat.uk/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reports</title>
-      <link>/tags/reports/</link>
+      <link>http://genat.uk/tags/reports/</link>
       <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
       
-      <guid>/tags/reports/</guid>
+      <guid>http://genat.uk/tags/reports/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sc3</title>
-      <link>/tags/sc3/</link>
+      <link>http://genat.uk/tags/sc3/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>/tags/sc3/</guid>
+      <guid>http://genat.uk/tags/sc3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Snapshots</title>
-      <link>/tags/snapshots/</link>
+      <link>http://genat.uk/tags/snapshots/</link>
       <pubDate>Sat, 20 Oct 2012 21:28:49 +0000</pubDate>
       
-      <guid>/tags/snapshots/</guid>
+      <guid>http://genat.uk/tags/snapshots/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Startup</title>
-      <link>/tags/startup/</link>
+      <link>http://genat.uk/tags/startup/</link>
       <pubDate>Tue, 20 Oct 2015 20:23:30 +0000</pubDate>
       
-      <guid>/tags/startup/</guid>
+      <guid>http://genat.uk/tags/startup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sublime</title>
-      <link>/tags/sublime/</link>
+      <link>http://genat.uk/tags/sublime/</link>
       <pubDate>Tue, 29 Jan 2013 22:03:06 +0000</pubDate>
       
-      <guid>/tags/sublime/</guid>
+      <guid>http://genat.uk/tags/sublime/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Text Editor</title>
-      <link>/tags/text-editor/</link>
+      <link>http://genat.uk/tags/text-editor/</link>
       <pubDate>Tue, 29 Jan 2013 22:03:06 +0000</pubDate>
       
-      <guid>/tags/text-editor/</guid>
+      <guid>http://genat.uk/tags/text-editor/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tools</title>
-      <link>/tags/tools/</link>
+      <link>http://genat.uk/tags/tools/</link>
       <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
       
-      <guid>/tags/tools/</guid>
+      <guid>http://genat.uk/tags/tools/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Volunteering</title>
-      <link>/tags/volunteering/</link>
+      <link>http://genat.uk/tags/volunteering/</link>
       <pubDate>Fri, 27 Apr 2012 00:00:00 +0000</pubDate>
       
-      <guid>/tags/volunteering/</guid>
+      <guid>http://genat.uk/tags/volunteering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>/tags/web/</link>
+      <link>http://genat.uk/tags/web/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
       
-      <guid>/tags/web/</guid>
+      <guid>http://genat.uk/tags/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Work</title>
-      <link>/tags/work/</link>
+      <link>http://genat.uk/tags/work/</link>
       <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/tags/work/</guid>
+      <guid>http://genat.uk/tags/work/</guid>
       <description></description>
     </item>
     

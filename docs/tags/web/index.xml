@@ -2,32 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on женатик</title>
-    <link>/tags/web/</link>
+    <link>http://genat.uk/tags/web/</link>
     <description>Recent content in Web on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Sun, 22 Jan 2017 02:12:52 +0000</lastBuildDate>
     
-	<atom:link href="/tags/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New website theme</title>
-      <link>/post/2017-01-22-new-website-theme/</link>
+      <link>http://genat.uk/post/2017-01-22-new-website-theme/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
       
-      <guid>/post/2017-01-22-new-website-theme/</guid>
+      <guid>http://genat.uk/post/2017-01-22-new-website-theme/</guid>
       <description>I have just updated this website with an academic theme and it looks amazing! I&amp;rsquo;m glad I&amp;rsquo;ve tried it. Now I not only have a solid functionality behind the website but also quite a pretty website&amp;rsquo;s face. I am convinced that Hugo is great and very fast for building websites. Please do not hesitate to try it out!</description>
     </item>
     
     <item>
       <title>Hello, World!</title>
-      <link>/post/2017-01-16-hello-world/</link>
+      <link>http://genat.uk/post/2017-01-16-hello-world/</link>
       <pubDate>Mon, 16 Jan 2017 08:54:39 +0000</pubDate>
       
-      <guid>/post/2017-01-16-hello-world/</guid>
-      <description>I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to blogdown, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!</description>
+      <guid>http://genat.uk/post/2017-01-16-hello-world/</guid>
+      <description>I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to blogdown, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!
+## ======================================== ## circlize version 0.</description>
     </item>
     
   </channel>

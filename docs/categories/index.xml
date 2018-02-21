@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on женатик</title>
-    <link>/categories/</link>
+    <link>http://genat.uk/categories/</link>
     <description>Recent content in Categories on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Life</title>
-      <link>/categories/life/</link>
+      <link>http://genat.uk/categories/life/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
       
-      <guid>/categories/life/</guid>
+      <guid>http://genat.uk/categories/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Work</title>
-      <link>/categories/work/</link>
+      <link>http://genat.uk/categories/work/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/categories/work/</guid>
+      <guid>http://genat.uk/categories/work/</guid>
       <description></description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conference on женатик</title>
-    <link>/tags/conference/</link>
+    <link>http://genat.uk/tags/conference/</link>
     <description>Recent content in Conference on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Thu, 29 Oct 2015 20:25:03 +0000</lastBuildDate>
     
-	<atom:link href="/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/conference/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SC3 poster</title>
-      <link>/post/2015-10-29-sc3-poster/</link>
+      <link>http://genat.uk/post/2015-10-29-sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>/post/2015-10-29-sc3-poster/</guid>
+      <guid>http://genat.uk/post/2015-10-29-sc3-poster/</guid>
       <description>I am attending the Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health.
 Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:
 http://f1000research.com/posters/4-1182
@@ -31,10 +31,10 @@ Tallulah with poster at #FGSB15 pic.</description>
     
     <item>
       <title>ISMB 2015 Poster</title>
-      <link>/post/2015-07-23-ismb-2015-poster/</link>
+      <link>http://genat.uk/post/2015-07-23-ismb-2015-poster/</link>
       <pubDate>Thu, 23 Jul 2015 19:50:48 +0000</pubDate>
       
-      <guid>/post/2015-07-23-ismb-2015-poster/</guid>
+      <guid>http://genat.uk/post/2015-07-23-ismb-2015-poster/</guid>
       <description>At ISMB-2015 in Dublin I presented a poster on my previous PostDoc project: &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of gene expression and reveal a transcriptional feedback loop.&amp;rdquo;
 You can view/download the poster at F1000 website. All ISMB posters submitted to F1000 can be viewed at their channel.
 All ISMB posters submitted to F1000 can be viewed at their channel.</description>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Private on женатик</title>
-    <link>/tags/private/</link>
+    <link>http://genat.uk/tags/private/</link>
     <description>Recent content in Private on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Sat, 27 Apr 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/private/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/private/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My chords</title>
-      <link>/project/chords/</link>
+      <link>http://genat.uk/project/chords/</link>
       <pubDate>Sat, 27 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/project/chords/</guid>
+      <guid>http://genat.uk/project/chords/</guid>
       <description></description>
     </item>
     
