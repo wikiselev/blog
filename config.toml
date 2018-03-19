@@ -22,7 +22,7 @@ defaultContentLanguageInSubdir = false
   name = "Vladimir Kiselev"
   role = "Senior Staff Scientist"
   organization = "Wellcome Sanger Institute"
-  avatar = "userpic.jpg"
+  avatar = "kiselev_userpic.jpg"
   email = "vladimir.yu.kiselev@gmail.com"
   
   # options for highlight.js (version, additional languages, and theme)
