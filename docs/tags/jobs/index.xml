@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jobs on женатик</title>
-    <link>http://genat.uk/tags/jobs/</link>
+    <link>/tags/jobs/</link>
     <description>Recent content in Jobs on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Tue, 21 Jul 2015 19:46:25 +0000</lastBuildDate>
     
-	<atom:link href="http://genat.uk/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/jobs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Job applications</title>
-      <link>http://genat.uk/post/2015-07-21-job-applications/</link>
+      <link>/post/2015-07-21-job-applications/</link>
       <pubDate>Tue, 21 Jul 2015 19:46:25 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-07-21-job-applications/</guid>
+      <guid>/post/2015-07-21-job-applications/</guid>
       <description>Below is a timeline of my job applications since PhD. You can drag it to see the latest applications.
  The timeline was created by using a timeline tool from KnightLab.</description>
     </item>

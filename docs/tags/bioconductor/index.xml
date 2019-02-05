@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bioconductor on женатик</title>
-    <link>http://genat.uk/tags/bioconductor/</link>
+    <link>/tags/bioconductor/</link>
     <description>Recent content in Bioconductor on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://genat.uk/tags/bioconductor/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/bioconductor/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upgrading R &#43; Bioconductor</title>
-      <link>http://genat.uk/post/upgrading-r-bioconductor/</link>
+      <link>/post/upgrading-r-bioconductor/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://genat.uk/post/upgrading-r-bioconductor/</guid>
+      <guid>/post/upgrading-r-bioconductor/</guid>
       <description>Consider this post as a personal note to my future self
 I have just learnt that Bioconductor developers should NOT always use the development version. On the official website it says:
  This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.

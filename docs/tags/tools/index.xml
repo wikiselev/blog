@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on женатик</title>
-    <link>http://genat.uk/tags/tools/</link>
+    <link>/tags/tools/</link>
     <description>Recent content in Tools on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Tue, 22 Sep 2015 20:15:33 +0000</lastBuildDate>
     
-	<atom:link href="http://genat.uk/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ISMARA client</title>
-      <link>http://genat.uk/post/2015-09-22-ismara-client/</link>
+      <link>/post/2015-09-22-ismara-client/</link>
       <pubDate>Tue, 22 Sep 2015 20:15:33 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-09-22-ismara-client/</guid>
+      <guid>/post/2015-09-22-ismara-client/</guid>
       <description>I was using ISMARA for my last paper which is now in press in NAR journal. ISMARA is a very nice tools that allows one to obtain transcription factor activities from only RNA-Seq or Chip-Seq data. ISMARA analysis is a significant part of my paper and one of the main findings was revealed from the ISMARA analysis. The main bottleneck of this tool was that one had to upload their bam files using a browser and this could take a lot of time and could stop in the middle of the uploading.</description>
     </item>
     

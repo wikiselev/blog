@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sc3 on женатик</title>
-    <link>http://genat.uk/tags/sc3/</link>
+    <link>/tags/sc3/</link>
     <description>Recent content in Sc3 on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Thu, 29 Oct 2015 20:25:03 +0000</lastBuildDate>
     
-	<atom:link href="http://genat.uk/tags/sc3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/sc3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>SC3 poster</title>
-      <link>http://genat.uk/post/2015-10-29-sc3-poster/</link>
+      <link>/post/2015-10-29-sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-10-29-sc3-poster/</guid>
+      <guid>/post/2015-10-29-sc3-poster/</guid>
       <description>I am attending the Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health.
 Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:
 http://f1000research.com/posters/4-1182
@@ -31,10 +31,10 @@ Tallulah with poster at #FGSB15 pic.</description>
     
     <item>
       <title>SC3 - consensus clustering of single cell RNA Seq data</title>
-      <link>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <link>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
       <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <guid>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
       <description>Today I presented the SC3 tool that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the edgeR developer Davis McCarthy. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:
  Enjoy!</description>
     </item>

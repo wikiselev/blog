@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Igv on женатик</title>
-    <link>http://genat.uk/tags/igv/</link>
+    <link>/tags/igv/</link>
     <description>Recent content in Igv on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Sat, 20 Oct 2012 21:28:49 +0000</lastBuildDate>
     
-	<atom:link href="http://genat.uk/tags/igv/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/igv/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Automated snapshotting with IGV genomic browser</title>
-      <link>http://genat.uk/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</link>
+      <link>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</link>
       <pubDate>Sat, 20 Oct 2012 21:28:49 +0000</pubDate>
       
-      <guid>http://genat.uk/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</guid>
+      <guid>/post/2012-10-20-automated-snapshotting-with-igv-genomic-browser/</guid>
       <description>Working on my current project I ran into a problem of taking snapshots of protein-RNA binding sites (CLIP data) of proteins from a given protein_list at specific genomic locations (a given gene_list). To take a snapshot of any genomic region I usually use IGV genomic browser (in this post version 2.1.24 (2563) was used). When protein_list (&amp;lt;10 data files) and gene_list (&amp;lt;10 regions) are small snapshotting can be easily done manually.</description>
     </item>
     
