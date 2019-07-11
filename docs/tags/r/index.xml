@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on женатик</title>
-    <link>/tags/r/</link>
+    <link>http://genat.uk/tags/r/</link>
     <description>Recent content in R on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Wed, 01 Nov 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upgrading R &#43; Bioconductor</title>
-      <link>/post/upgrading-r-bioconductor/</link>
+      <link>http://genat.uk/post/upgrading-r-bioconductor/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/upgrading-r-bioconductor/</guid>
+      <guid>http://genat.uk/post/upgrading-r-bioconductor/</guid>
       <description>Consider this post as a personal note to my future self
 I have just learnt that Bioconductor developers should NOT always use the development version. On the official website it says:
  This means that, from mid-October through mid-April, Bioconductor developers should be developing against R-devel. From mid-April to mid-October, developers should use R-release (actually, the R snapshot from the R-x-y-branch) for Bioconductor development.
@@ -26,19 +26,19 @@ I have just learnt that Bioconductor developers should NOT always use the develo
     
     <item>
       <title>How to start working with R</title>
-      <link>/post/2015-12-11-how-to-start-working-with-r/</link>
+      <link>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</link>
       <pubDate>Fri, 11 Dec 2015 20:26:17 +0000</pubDate>
       
-      <guid>/post/2015-12-11-how-to-start-working-with-r/</guid>
+      <guid>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</guid>
       <description>I&amp;rsquo;ve just come across a great blog post about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!</description>
     </item>
     
     <item>
       <title>SC3 poster</title>
-      <link>/post/2015-10-29-sc3-poster/</link>
+      <link>http://genat.uk/post/2015-10-29-sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>/post/2015-10-29-sc3-poster/</guid>
+      <guid>http://genat.uk/post/2015-10-29-sc3-poster/</guid>
       <description>I am attending the Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health.
 Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:
 http://f1000research.com/posters/4-1182
@@ -52,20 +52,20 @@ Tallulah with poster at #FGSB15 pic.</description>
     
     <item>
       <title>SC3 - consensus clustering of single cell RNA Seq data</title>
-      <link>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <link>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
       <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
       
-      <guid>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <guid>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
       <description>Today I presented the SC3 tool that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the edgeR developer Davis McCarthy. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:
  Enjoy!</description>
     </item>
     
     <item>
       <title>easy-Report script for easy R reporting</title>
-      <link>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
+      <link>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
       <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
       
-      <guid>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
+      <guid>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
       <description>Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best).</description>
     </item>
     

@@ -2,59 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Homes on женатик</title>
-    <link>/home/</link>
+    <link>http://genat.uk/home/</link>
     <description>Recent content in Homes on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/home/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>/home/about/</link>
+      <link>http://genat.uk/home/about/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/about/</guid>
+      <guid>http://genat.uk/home/about/</guid>
       <description>About 
-I am the head of Cellular Genetics Informatics team at the Wellcome Sanger Institute. My team provides efficient access to cutting-edge analysis methods for Cellular Genetics department, which leads a number of world-class research initiatives including the Human Induced Pluripotent Stem Cell Initiative (HIPSCI) and Human Cell Atlas (HCA). Our team&amp;rsquo;s focus is the development and operation of workflows, tools and infrastructure for data analysis that support the department’s research goals.</description>
+I am leading the Cellular Genetics Informatics team at the Wellcome Sanger Institute. Our team provides efficient access to cutting-edge analysis methods, environments and pipelines for Cellular Genetics programme, which leads a number of world-class research initiatives including the Human Cell Atlas, Human Induced Pluripotent Stem Cell Initiative and Human BioMolecular Atlas Program. We work with large amounts of single-cell RNA sequencing and microscopy imaging data.</description>
     </item>
     
     <item>
       <title>Recent Posts</title>
-      <link>/home/posts/</link>
+      <link>http://genat.uk/home/posts/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/posts/</guid>
+      <guid>http://genat.uk/home/posts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/home/projects/</link>
+      <link>http://genat.uk/home/projects/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/projects/</guid>
+      <guid>http://genat.uk/home/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>/home/links/</link>
+      <link>http://genat.uk/home/links/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/links/</guid>
+      <guid>http://genat.uk/home/links/</guid>
       <description>Data Visualization  D3.js p5js UK Data Explorer Лаборатория Данных Interactive Data Visualization for the Web XVIVO - Scientific Animation   Just cool  Collectionerus Hubble Space Telescope flibusta Dan Foreman-Mackey Bayes&amp;rsquo; Theorem showmystreet VisitBritain   Bioinformatics  Karl Broman RExRepos NextGenetics NGS tutorials Getting Genetics Done   Academia  Designing conference posters   Machine Learning  Лекция Дмитрия Ветрова о математике больших данных   Tech  Video -&amp;gt; GIF converter GIF maker Google Fusion Tables CodePen Free Online IDE and Terminal   Health  Do you want to get rid of your knee pain?</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>/home/contact/</link>
+      <link>http://genat.uk/home/contact/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/home/contact/</guid>
+      <guid>http://genat.uk/home/contact/</guid>
       <description></description>
     </item>
     

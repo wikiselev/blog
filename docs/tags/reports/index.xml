@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reports on женатик</title>
-    <link>/tags/reports/</link>
+    <link>http://genat.uk/tags/reports/</link>
     <description>Recent content in Reports on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Sat, 02 Nov 2013 22:14:08 +0000</lastBuildDate>
     
-	<atom:link href="/tags/reports/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/reports/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>easy-Report script for easy R reporting</title>
-      <link>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
+      <link>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</link>
       <pubDate>Sat, 02 Nov 2013 22:14:08 +0000</pubDate>
       
-      <guid>/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
+      <guid>http://genat.uk/post/2013-11-02-easy-report-script-for-easy-r-reporting/</guid>
       <description>Coding can be very exciting. And the more excited you are the less you wish to comment your code or to create any simple report about what you have done. It becomes even more complicated if your code produces not just one output file but also a lot of different figures which can change upon changing some of the code parameters (for example when you need to experiment with your parameter set and find the best one and then prove that it was the best).</description>
     </item>
     

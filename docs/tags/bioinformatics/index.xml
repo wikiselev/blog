@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bioinformatics on женатик</title>
-    <link>/tags/bioinformatics/</link>
+    <link>http://genat.uk/tags/bioinformatics/</link>
     <description>Recent content in Bioinformatics on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Tue, 15 Sep 2015 19:58:31 +0000</lastBuildDate>
     
-	<atom:link href="/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/bioinformatics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Bioinformatics Algorithms</title>
-      <link>/post/2015-09-15-bioinformatics-algorithms/</link>
+      <link>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</link>
       <pubDate>Tue, 15 Sep 2015 19:58:31 +0000</pubDate>
       
-      <guid>/post/2015-09-15-bioinformatics-algorithms/</guid>
+      <guid>http://genat.uk/post/2015-09-15-bioinformatics-algorithms/</guid>
       <description>Today I received one of the best recent Bioinformatics books - Bioinformatics Algorithms by Phillip Compeau &amp;amp; Pavel Pevzner! Whether you are a specialist or a beginner this is a must read for you. The first time I found this course was in 2013 when I needed and wanted to learn the basics of Bioinformatics. It was a simple Coursera course that was just launched. In only a couple of years it has become a comprehensive course with several specializations.</description>
     </item>
     
     <item>
       <title>Interesting bioinformatics questions</title>
-      <link>/post/2013-12-04-interesting-bioinformatics-questions/</link>
+      <link>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</link>
       <pubDate>Wed, 04 Dec 2013 22:20:56 +0000</pubDate>
       
-      <guid>/post/2013-12-04-interesting-bioinformatics-questions/</guid>
+      <guid>http://genat.uk/post/2013-12-04-interesting-bioinformatics-questions/</guid>
       <description>While doing Bioinformatics algorithms online course together with Stepic online educational resource I’ve met some interesting biological questions and answers to them. I’ve created a GitHub repository where I will store my scripts and descriptions of these questions:
 https://github.com/wikiselev/bioinformatics-algorithms
 I hope this will be useful for your everyday work.
@@ -35,10 +35,10 @@ List of all scripts and explanation to them can be found at the repository’s w
     
     <item>
       <title>Bioinformatics Algorithms Online Course</title>
-      <link>/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
+      <link>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</link>
       <pubDate>Thu, 10 Oct 2013 22:11:12 +0000</pubDate>
       
-      <guid>/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
+      <guid>http://genat.uk/post/2013-10-10-bioinformatics-algorithms-online-course/</guid>
       <description>I am going to take the following online course which starts at the end of October:
 https://www.coursera.org/course/bioinformatics
 If you are interested and would like to join, please let me know, I think it would be more productive if we share our experiences!

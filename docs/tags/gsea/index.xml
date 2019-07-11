@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gsea on женатик</title>
-    <link>/tags/gsea/</link>
+    <link>http://genat.uk/tags/gsea/</link>
     <description>Recent content in Gsea on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Vladimir Kiselev</copyright>
     <lastBuildDate>Sat, 21 Jan 2017 19:57:37 +0000</lastBuildDate>
     
-	<atom:link href="/tags/gsea/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://genat.uk/tags/gsea/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Get GSEA done!</title>
-      <link>/post/2017-01-21-get-gsea-done/</link>
+      <link>http://genat.uk/post/2017-01-21-get-gsea-done/</link>
       <pubDate>Sat, 21 Jan 2017 19:57:37 +0000</pubDate>
       
-      <guid>/post/2017-01-21-get-gsea-done/</guid>
+      <guid>http://genat.uk/post/2017-01-21-get-gsea-done/</guid>
       <description>Introduction Thousands of times I&amp;rsquo;ve heard of the Gene Set Enrichment Analysis or GSEA. Thousands of times I tried to run it and thousands of times I failed!
 As lucky as it can get my recent collaborative work required me to run GSEA. I thought this time I will finally figure out how to do it. As usual it didn&amp;rsquo;t work out well&amp;hellip;
 First of all, there are millions of R tools which can run GSEA analysis.</description>

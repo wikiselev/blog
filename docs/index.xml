@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>женатик on женатик</title>
-    <link>/</link>
+    <link>http://genat.uk/</link>
     <description>Recent content in женатик on женатик</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -12,19 +12,19 @@
     
     <item>
       <title>scfind</title>
-      <link>/project/scfind/</link>
+      <link>http://genat.uk/project/scfind/</link>
       <pubDate>Wed, 20 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>/project/scfind/</guid>
+      <guid>http://genat.uk/project/scfind/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Upgrading R &#43; Bioconductor</title>
-      <link>/post/upgrading-r-bioconductor/</link>
+      <link>http://genat.uk/post/upgrading-r-bioconductor/</link>
       <pubDate>Wed, 01 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/upgrading-r-bioconductor/</guid>
+      <guid>http://genat.uk/post/upgrading-r-bioconductor/</guid>
       <description>&lt;p&gt;&lt;em&gt;Consider this post as a personal note to my future self&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;I have just learnt that Bioconductor developers should &lt;strong&gt;NOT&lt;/strong&gt; always use the development version. On the &lt;a href=&#34;https://bioconductor.org/developers/how-to/useDevel/&#34; target=&#34;_blank&#34;&gt;official website&lt;/a&gt; it says:&lt;/p&gt;
@@ -41,20 +41,20 @@
     
     <item>
       <title>New website theme</title>
-      <link>/post/2017-01-22-new-website-theme/</link>
+      <link>http://genat.uk/post/2017-01-22-new-website-theme/</link>
       <pubDate>Sun, 22 Jan 2017 02:12:52 +0000</pubDate>
       
-      <guid>/post/2017-01-22-new-website-theme/</guid>
+      <guid>http://genat.uk/post/2017-01-22-new-website-theme/</guid>
       <description>&lt;p&gt;I have just updated this website with an &lt;a href=&#34;https://github.com/gcushen/hugo-academic&#34; target=&#34;_blank&#34;&gt;academic theme&lt;/a&gt; and it looks amazing! I&amp;rsquo;m glad I&amp;rsquo;ve tried it. Now I not only have a solid functionality behind the website but also quite a pretty website&amp;rsquo;s face. I am convinced that &lt;a href=&#34;http://gohugo.io/&#34; target=&#34;_blank&#34;&gt;Hugo&lt;/a&gt; is great and very fast for building websites. Please do not hesitate to try it out!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Get GSEA done!</title>
-      <link>/post/2017-01-21-get-gsea-done/</link>
+      <link>http://genat.uk/post/2017-01-21-get-gsea-done/</link>
       <pubDate>Sat, 21 Jan 2017 19:57:37 +0000</pubDate>
       
-      <guid>/post/2017-01-21-get-gsea-done/</guid>
+      <guid>http://genat.uk/post/2017-01-21-get-gsea-done/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
@@ -82,7 +82,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;/img/Rnk_format_snapshot.gif&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/Rnk_format_snapshot.gif&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -95,7 +95,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;/img/Grp_format_snapshot.gif&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/Grp_format_snapshot.gif&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -133,7 +133,7 @@
 
 &lt;figure &gt;
     
-        &lt;img src=&#34;/img/gsea_plot.png&#34; /&gt;
+        &lt;img src=&#34;http://genat.uk/img/gsea_plot.png&#34; /&gt;
     
     
 &lt;/figure&gt;
@@ -147,10 +147,10 @@
     
     <item>
       <title>Hello, World!</title>
-      <link>/post/2017-01-16-hello-world/</link>
+      <link>http://genat.uk/post/2017-01-16-hello-world/</link>
       <pubDate>Mon, 16 Jan 2017 08:54:39 +0000</pubDate>
       
-      <guid>/post/2017-01-16-hello-world/</guid>
+      <guid>http://genat.uk/post/2017-01-16-hello-world/</guid>
       <description>&lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## ========================================
 ## circlize version 0.4.5
@@ -162,71 +162,71 @@
 ## Gu, Z. circlize implements and enhances circular visualization 
 ##   in R. Bioinformatics 2014.
 ## ========================================&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/post/2017-01-16-hello-world_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-01-16-hello-world_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SC3</title>
-      <link>/project/sc3/</link>
+      <link>http://genat.uk/project/sc3/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/sc3/</guid>
+      <guid>http://genat.uk/project/sc3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cloud scmap</title>
-      <link>/project/cloud-scmap/</link>
+      <link>http://genat.uk/project/cloud-scmap/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/cloud-scmap/</guid>
+      <guid>http://genat.uk/project/cloud-scmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scRNA-Seq datasets</title>
-      <link>/project/datasets/</link>
+      <link>http://genat.uk/project/datasets/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/datasets/</guid>
+      <guid>http://genat.uk/project/datasets/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scRNA-seq course</title>
-      <link>/project/sc-rna-seq-course/</link>
+      <link>http://genat.uk/project/sc-rna-seq-course/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/sc-rna-seq-course/</guid>
+      <guid>http://genat.uk/project/sc-rna-seq-course/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scmap</title>
-      <link>/project/scmap/</link>
+      <link>http://genat.uk/project/scmap/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>/project/scmap/</guid>
+      <guid>http://genat.uk/project/scmap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How to start working with R</title>
-      <link>/post/2015-12-11-how-to-start-working-with-r/</link>
+      <link>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</link>
       <pubDate>Fri, 11 Dec 2015 20:26:17 +0000</pubDate>
       
-      <guid>/post/2015-12-11-how-to-start-working-with-r/</guid>
+      <guid>http://genat.uk/post/2015-12-11-how-to-start-working-with-r/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve just come across a great &lt;a href=&#34;http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/&#34; target=&#34;_blank&#34;&gt;blog post&lt;/a&gt; about the best way of starting data analysis in R. I agree with all tips mentioned there, especially regarding RStudio. If you are just starting with R, please have a look and follow the tips - it will save you enormous amount of time!&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SC3 poster</title>
-      <link>/post/2015-10-29-sc3-poster/</link>
+      <link>http://genat.uk/post/2015-10-29-sc3-poster/</link>
       <pubDate>Thu, 29 Oct 2015 20:25:03 +0000</pubDate>
       
-      <guid>/post/2015-10-29-sc3-poster/</guid>
+      <guid>http://genat.uk/post/2015-10-29-sc3-poster/</guid>
       <description>&lt;p&gt;I am attending the &lt;a href=&#34;https://registration.hinxton.wellcome.ac.uk/events/item.aspx?e=517&#34; target=&#34;_blank&#34;&gt;Functional Genomics &amp;amp; Systems Biology: From Model Organisms to Human Health&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Here is my poster on SC3 clustering tool for single-cell RNA-Seq data:&lt;/p&gt;
@@ -254,20 +254,20 @@
     
     <item>
       <title>How medicine turns into advertising</title>
-      <link>/post/2015-10-20-how-medicine-turns-into-advertising/</link>
+      <link>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</link>
       <pubDate>Tue, 20 Oct 2015 20:23:30 +0000</pubDate>
       
-      <guid>/post/2015-10-20-how-medicine-turns-into-advertising/</guid>
+      <guid>http://genat.uk/post/2015-10-20-how-medicine-turns-into-advertising/</guid>
       <description>&lt;p&gt;I have just learnt about some &lt;a href=&#34;https://www.washingtonpost.com/news/to-your-health/wp/2015/10/16/a-comprehensive-guide-to-theranos-troubles-and-what-it-means-for-you/&#34; target=&#34;_blank&#34;&gt;tension&lt;/a&gt; growing around &lt;a href=&#34;https://www.theranos.com/&#34; target=&#34;_blank&#34;&gt;Theranos&lt;/a&gt; biotech startup. Looks like their advertisement strategy worked very well, giving them more than 400 million dollars of investments. However, now the whole technology is under a big question. The topic is familiar to me because last year I took part in the &lt;a href=&#34;http://www.biotechnologyyes.co.uk/biotechnologyyes/index.aspx&#34; target=&#34;_blank&#34;&gt;Biotechnology YES&lt;/a&gt; competition and my team presented a similar idea of diagnosing cancer relapse from a blood test. We figured out how many bottlenecks and troubles appear once you start implementing the technology. And already at that time I felt that there are a lot of unrealistic projects out there that get some funding by really good advertising but then they usually quickly die. I am not sure the same is happenning with &lt;a href=&#34;https://www.theranos.com/&#34; target=&#34;_blank&#34;&gt;Theranos&lt;/a&gt; because they are alredy very big and are running, but let&amp;rsquo;s see.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>SC3 - consensus clustering of single cell RNA Seq data</title>
-      <link>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
+      <link>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</link>
       <pubDate>Tue, 13 Oct 2015 20:21:44 +0000</pubDate>
       
-      <guid>/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
+      <guid>http://genat.uk/post/2015-10-13-sc3-consensus-clustering-of-single-cell-rna-seq-data/</guid>
       <description>&lt;p&gt;Today I presented the &lt;a href=&#34;http://github.com/hemberg-lab/SC3&#34; target=&#34;_blank&#34;&gt;SC3 tool&lt;/a&gt; that I am developing for clustering of single-cell RNA-Seq data. I think the audience liked my presentation, I received several very positive feedbacks and very interesting questions. One of the positive replies was from the &lt;a href=&#34;http://bioconductor.org/packages/release/bioc/html/edgeR.html&#34; target=&#34;_blank&#34;&gt;&lt;strong&gt;edgeR&lt;/strong&gt;&lt;/a&gt; developer &lt;a href=&#34;https://sites.google.com/site/davismcc/&#34; target=&#34;_blank&#34;&gt;Davis McCarthy&lt;/a&gt;. Now I feel honoured :-) Here are my slides if you are interested in single-cell research:&lt;/p&gt;
 
 &lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;922a274fae4b4e4ea08cdea190642bed&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
@@ -278,10 +278,10 @@
     
     <item>
       <title>My new paper is out!</title>
-      <link>/post/2015-10-13-my-new-paper-is-out/</link>
+      <link>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</link>
       <pubDate>Tue, 13 Oct 2015 20:20:07 +0000</pubDate>
       
-      <guid>/post/2015-10-13-my-new-paper-is-out/</guid>
+      <guid>http://genat.uk/post/2015-10-13-my-new-paper-is-out/</guid>
       <description>&lt;p&gt;My paper &amp;ldquo;Perturbations of PIP3 signalling trigger a global remodelling of mRNA landscape and reveal a transcriptional feedback loop&amp;rdquo; has been published in Nucleic Acids Research journal! Here is a &lt;a href=&#34;http://nar.oxfordjournals.org/content/early/2015/10/11/nar.gkv1015.full&#34; target=&#34;_blank&#34;&gt;link&lt;/a&gt; to it. It has been long 4 years since I started that project and I am very happy that finally it is published!&lt;/p&gt;
 
 &lt;p&gt;Special thanks to Veronique Juvin who performed all experiments for the paper and also thanks to all co-authors for their help, supervision and support!&lt;/p&gt;
