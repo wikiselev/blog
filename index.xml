@@ -153,14 +153,17 @@
       <guid>http://genat.uk/post/2017-01-16-hello-world/</guid>
       <description>&lt;p&gt;I haven’t written anything to this blog during 2016. So one of my New Year’s resolutions will be to start recording my work updates and personal thoughts here. I have also updated this blog to &lt;a href=&#34;https://github.com/rstudio/blogdown&#34;&gt;blogdown&lt;/a&gt;, so now I will be able to easily share my R wisdom with you. Here is what I will be able to plot and deploy in the blink of an eye!&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## ========================================
-## circlize version 0.4.5
+## circlize version 0.4.9
 ## CRAN page: https://cran.r-project.org/package=circlize
 ## Github page: https://github.com/jokergoo/circlize
-## Documentation: http://jokergoo.github.io/circlize_book/book/
+## Documentation: https://jokergoo.github.io/circlize_book/book/
 ## 
 ## If you use it in published research, please cite:
-## Gu, Z. circlize implements and enhances circular visualization 
+## Gu, Z. circlize implements and enhances circular visualization
 ##   in R. Bioinformatics 2014.
+## 
+## This message can be suppressed by:
+##   suppressPackageStartupMessages(library(circlize))
 ## ========================================&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;http://genat.uk/post/2017-01-16-hello-world_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;480&#34; /&gt;&lt;/p&gt;
 </description>
